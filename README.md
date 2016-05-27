@@ -55,7 +55,7 @@ AMR is totally free for the first month for a new app owner. If the app owner is
  
 We believe app owners can increase their revenues between 50% and 200% by using AMR. 
  
-###Sample :
+**Sample :**
  
 Average monthly revenue of the app is $100.
 Revenue of the app with AMR is $200 in the first month.
