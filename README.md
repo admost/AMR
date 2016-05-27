@@ -24,7 +24,7 @@ AMR SDK’s job is just to tell the app the order of calling ad networks to get 
  
 AMR system works just as a router to call ad networks. App owners get all their revenues from ad networks as usual.
  
-#What does AMR dashboard show?
+##What does AMR dashboard show?
  
 Normally all app owners who are working with many ad networks have to log in each ad network
 to see all the statistics and revenue. AMR already collects all this data and shows it in its own dashboard. 
