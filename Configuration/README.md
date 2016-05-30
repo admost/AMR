@@ -149,21 +149,21 @@ There are two critical fields in this pop-up.
 * **Adspace Report Id**: This value will be used to get reports from ad networks which is then used to optimize your revenue.The way of getting this value depends on the ad network.
 
 >Admob : Last part of the Adspace Id after "/" character.  
->Example: ca-app-pub-329764543589511112/243370934484
+>Example: ca-app-pub-329764543589511112/**243370934484**
 
 >Adx : Last part of the Adspace Id after "/" character.  
->Example: ca-mb-app-pub-47743342424239440310/928913422228
+>Example: ca-mb-app-pub-47743342424239440310/**928913422228**
 
 >Adcolony : Last part of the url of your zone detail.   
 >Example: https://clients.adcolony.com/zones/74567
 
 >Facebook : Last part of the Adspace Id after "_" character.  
->Example: 619292656345822_623324358661137271
+>Example: 619292656345822__**623324358661137271**
 
 >Chartboost : Campaign id
 
 >Flurry : In your gemini account reporting tab, you will see ad units you created on flurry dashboard. Reporting id is the value after the section part from the ad unit report url.  
->Example: https://gemini.yahoo.com/publisher/1030048/reporting/property/59590/section/**5489491**/adunit/92230  
+>Example: https://gemini.yahoo.com/publisher/1030048/reporting/property/59590/section/5489491/adunit/92230  
 If you don’t have a gemini account, please ask account consultant for it.
 
 >Mopub : When you click on your app name on inventory page of mopub dashboard, you will see the list of ad units. AdSpace Report Id of an ad unit is concatenation of the name of the app, a space character and the name of the ad unit.  
