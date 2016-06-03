@@ -388,12 +388,6 @@ If you are using Proguard, add these lines to your Proguard file
 # FLURRY
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
-# VUNGLE
--keep class com.vungle.** { public *; }
--keep class javax.inject.*
--keepattributes *Annotation*
--keepattributes Signature
--keep class dagger.*
 # MOPUB 
 -keepclassmembers class com.mopub.** { public *; }
 -keep public class com.mopub.**
@@ -415,7 +409,24 @@ If you are using Proguard, add these lines to your Proguard file
 # ADFALCON 
 -dontwarn com.noqoush.**
 -keep class com.noqoush.** {*;}
-# SUPERSONIC
+# MEDIABRIX
+-dontwarn com.mediabrix.**
+-keep class com.mediabrix.** { *; }
+-dontwarn com.moat.analytics.**
+-keep class com.moat.analytics.** { *; }
+# SUPERSONICADS
+-dontwarn com.supersonicads.**
+-keep class com.supersonicads.** { *; }
 -dontwarn com.supersonic.**
--keep class com.supersonic.** {*;}
+-keep class com.supersonic.** { *; }
+# VUNGLE
+-dontwarn com.vungle.**
+-keep class com.vungle.** { public *; }
+-keep class javax.inject.*
+-keepattributes *Annotation*
+-keepattributes Signature
+-keep class dagger.*
+# PUBNATIVE
+-keep class net.pubnative.** { *; }
+-dontwarn net.pubnative.**
 ```
