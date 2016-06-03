@@ -202,6 +202,9 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
       android:configChanges="orientation|screenSize"
       android:hardwareAccelerated="true"
       android:theme="@android:style/Theme.Translucent" />
+<!-- APPLOVIN -->
+   <meta-data android:name="applovin.sdk.key"
+        android:value="LN_tr4mUpK0zI5JgqhgM2IW5FkVtb0pxOpdDsPifksc1owhcbM-efUlwDEnpFZkdNNrDnTtVFUW2ODe_ZceD6N"  />      
 ```
 
 #Usage
