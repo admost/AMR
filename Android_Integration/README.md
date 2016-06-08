@@ -432,4 +432,7 @@ If you are using Proguard, add these lines to your Proguard file
 # PUBNATIVE
 -keep class net.pubnative.** { *; }
 -dontwarn net.pubnative.**
+# APPLOVIN
+-dontwarn com.applovin.**
+-keep class com.applovin.** { *; }
 ```
