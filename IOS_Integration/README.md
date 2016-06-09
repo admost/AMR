@@ -75,7 +75,7 @@ and add the following to your `didFinishLaunchingWithOptions` function;
 ```objectivec
 - (BOOL)application:(UIApplication *)application 
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ADMAdHandleNativealizer SharedInstance];
+  [ADMAdHandlerInitializer SharedInstance];
   return YES;
 }
 ```  
