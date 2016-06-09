@@ -81,7 +81,7 @@ and add the following to your `didFinishLaunchingWithOptions` function;
 ```  
    This starts pre-caching and prepares the SDK to display ads.
   + <a name="usage2"></a>Requesting Banner Ads  
-`ADMAdHandler` object is responsible for requesting and displaying banner ads. To start an ad request you should initialize an `ADMAdHandler` object with required parameters and set it's `delegate` as an object which implements `ADMAdLoadedDelegate` protocol. (Generally your UIViewController)
+`ADMAdHandler` object is responsible for requesting and displaying banner ads. To start an ad request you should initialize an `ADMAdHandler` object with required parameters and set it's `delegate` as an object which implements `ADMAdLoadedDelegate` protocol. (Generally your UIViewController)  
 First import `ADMAdHandler` file to your UIViewController;
 ```objectivec
 #import "ADMAdHandler.h"
@@ -144,7 +144,7 @@ The returned banner from `didReceiveAd` delegate method is in our customized con
 
   + <a name="usage3"></a>Requesting FullScreen Ads  
 Interstitial ads are loaded same as banner ads however **they are not shown automatically. `showInterstitialForPlacement` method should be called after successfully receiving an interstital ad**.
-Initialize an ADMAdHandler object and set it's delegate as described in [Requesting Banner Ads](#usage2) section above
+Initialize an ADMAdHandler object and set it's delegate as described in [Requesting Banner Ads](#usage2) section above.  
 Load interstitial;
 ```objectivec
 [self.adHandler loadInterstitialForPlacement:@"interstitial"]; 
