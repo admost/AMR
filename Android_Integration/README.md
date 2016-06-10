@@ -8,7 +8,7 @@
 * [Usage](#usage)
  * [Initialization](#initialization)
  * [Requesting Native Ads](#requesting-native-ads)
- * [Requesting FullScreen Ads](#requesting-fullScreen-ads)
+ * [Requesting FullScreen Ads](#requesting-fullscreen-ads)
  * [Requesting Video Ads](#requesting-video-ads)
 * [Misc](#misc)
  * [Proguard](#proguard)
@@ -42,7 +42,7 @@ Optionally but necessary to improve user targeting:
 
 Add the following lines to your module dependencies
 
-```sh
+```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 compile project(':admost-sdk')
 compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
@@ -59,7 +59,7 @@ compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
 
 And Repositories as follows;
 
-```sh
+```gradle
 repositories {
     flatDir {
         dirs 'libs'
@@ -96,7 +96,7 @@ Only admost-sdk.aar is compulsory for mediation system. If you don’t add any o
 
 Add the following lines to your application manifest file
 
-```sh
+```manifest
 <service android:name="admost.sdk.AdMostImpressionService" />
 
 <!-- ADMOB-->
@@ -212,15 +212,12 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
 Admost Mediation library is a lean yet complete library that allows you to request and show ads.
 
 >Basic integration steps are:
->1. Initialization
->2. Requesting Native Ads
->3. Requesting Fullscreen Ads
 
-###1) Initialization
+### Initialization
 
 Initialize the Admost Mediation SDK in your application’s first Activity. This starts pre-caching and prepares the SDK to display ads.
 
-```sh
+```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
 configuration.initIds(AdMostAdNetwork.NATIVEX, NATIVEX_APP_ID);
 configuration.initIds(AdMostAdNetwork.ADCOLONY, ADCOLONY_ID, ADCOLONY_REWARDED, ADCOLONY_INTERSTITIAL);
@@ -233,11 +230,11 @@ AdMost.getInstance().init(configuration.build());
 
 It is compulsory to initialize Inmobi, Flurry, Chartboost, Vungle, Nativex  and Adcolony when they are used in the mediation waterfall. Otherwise, ignore these lines.
 
-###2) Requesting Native Ads
+### Requesting Native Ads
 
 You will need to create a AdmostView. Add all the required parameters to it and start it with a listener for extra tracking.
 
-```sh
+```java
 int TYPE = AdMostManager.getInstance().AD_BANNER; 
 // AD_LEADERBOARD for 90dp height, AD_MEDIUM_RECTANGLE for big banners (height : 250dp)
 // You can use the following layouts by default, or define other layouts for your own designs
@@ -278,13 +275,13 @@ ADMOST_MEDIATION_VIEW.getView(POSITION);
 
 You have to call destroy method on ondestroy() method of the activity.
 
-```sh
+```java
 ADMOST_MEDIATION_VIEW.destroy();
 ```
 
-###3) Requesting FullScreen Ads
+### Requesting FullScreen Ads
 
-```sh
+```java
 AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, << ZONEID>>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
@@ -304,25 +301,25 @@ AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as
 
 You have to call destroy method on ondestroy() method of the activity.
 
-```sh
+```java
 AD_INTERSTITIAL.destroy();
 ```
 
-###4) Requesting Video Ads
+### Requesting Video Ads
 
-```sh
+```java
 AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, << ZONEID>>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.LOADED) {
-	AdMostLog.log(value + " MainActivity LOADED");
-} else if (value == AdMostAdListener.COMPLETED) {
-	AdMostLog.log(value + " MainActivity COMPLETED");
-} else if (value == AdMostAdListener.FAILED) {
-	AdMostLog.log(value + " MainActivity FAILED");
-} else if (value == AdMostAdListener.CLOSED) {
-	AdMostLog.log(value + " MainActivity CLOSED");
-}
+			AdMostLog.log(value + " MainActivity LOADED");
+		} else if (value == AdMostAdListener.COMPLETED) {
+			AdMostLog.log(value + " MainActivity COMPLETED");
+		} else if (value == AdMostAdListener.FAILED) {
+			AdMostLog.log(value + " MainActivity FAILED");
+		} else if (value == AdMostAdListener.CLOSED) {
+			AdMostLog.log(value + " MainActivity CLOSED");
+		}
 	}
 });
 
@@ -333,7 +330,7 @@ AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as
 
 In video ads, AMR sdk has to be aware of the activities lifecycle. So please use the following methods of AMR in your activities which the video ads are called.
 
-```sh
+```java
 @Override
 public void onStart() {
 	super.onStart();
@@ -367,7 +364,7 @@ public void onDestroy() {
 
 If you are using Proguard, add these lines to your Proguard file
 
-```sh
+```proguard
 # ADMOST 
 -keep class admost.sdk.** { *; }
 -dontwarn admost.sdk.**
