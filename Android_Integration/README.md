@@ -366,59 +366,112 @@ If you are using Proguard, add these lines to your Proguard file
 
 ```proguard
 # ADMOST 
--keep class admost.sdk.** { *; }
 -dontwarn admost.sdk.**
-# ADMOB
--dontwarn com.google.android.gms.ads.**
--keep public class com.google.android.gms.ads.** {public *;}
--keep public class com.google.ads.** {public *;}
--keep class com.google.android.gms.ads.** {*;}
--keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
-# AMAZON
--dontwarn com.amazon.**
--keep class com.amazon.** {*;}
-# CHARTBOOST
--dontwarn org.apache.http.**
--dontwarn com.chartboost.sdk.impl.**
--keep class com.chartboost.sdk.** { *; }
--keepattributes *Annotation*
-# INMOBI
--keep class com.inmobi.** {*;}
--dontwarn com.inmobi.**
+-keep class admost.sdk.** { *; }
+
+# UIL
+-dontnote com.nostra13.universalimageloader.core.**
+-dontwarn com.nostra13.universalimageloader.core.**
+-keep class com.nostra13.universalimageloader.core.** { *; }
+
+# GOOGLE
+-keep class com.android.vending.billing.**
+-keep public class com.google.android.gms.ads.** { public *; }
+ -keep public class com.google.ads.** { public *; }
+-keep class com.google.android.gms.** { *; }
+ -dontwarn com.google.android.gms.**
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+-keep @interface android.support.annotation.Keep
+-keep @android.support.annotation.Keep class *
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-dontwarn android.security.NetworkSecurityPolicy
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+
+# MOPUB
+-keepclassmembers class com.mopub.** { public *; }
+-keep class com.mopub.** { *; }
+-dontnote com.mopub.**
+-dontwarn com.mopub.**
+
+# FACEBOOK
+-dontnote com.facebook.**
+-dontwarn com.facebook.**
+-keep class com.facebook.** { *; }
+-keepattributes Signature
+
 # FLURRY
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
-# MOPUB 
--keepclassmembers class com.mopub.** { public *; }
--keep public class com.mopub.**
--keep public class android.webkit.JavascriptInterface {}
--keep class * extends com.mopub.mobileads.CustomEventBanner {}
--keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
--keep class * extends com.mopub.nativeads.CustomEventNative {}
-# FACEBOOK 
--dontwarn com.facebook.ads.**
--dontnote com.facebook.ads.**
--keep class com.facebook.** { *; }
--keepattributes Signature
+-keepattributes *Annotation*,EnclosingMethod,Signature
+-keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
+
 # MOBFOX
+-keep class com.mobfox.** { *; }
 -dontwarn com.mobfox.**
--keep class com.mobfox.** {*;}
-# LOOPME 
--dontwarn com.loopme.**
--keep class com.loopme.** {*;}
-# ADFALCON 
+-keepclassmembers class com.mobfox.** { *; }
+
+# LOOPME
+-dontwarn com.loopme.** 
+-keep class com.loopme.** { *; }
+
+# INMOBI
+-keep class com.inmobi.** { *; }
+-dontwarn com.inmobi.**
+
+# MILLENNIAL
+-keep class com.millennialmedia.** { *; }
+-dontwarn com.millennialmedia.**
+-keep class com.nineoldandroids.** { *; }
+-dontwarn com.nineoldandroids.**
+
+# AMAZON
+-dontwarn com.amazon.**
+-dontwarn org.apache.http.**
+-keep class com.amazon.** { *; }
+-keepattributes *Annotation*
+
+# ADFALCON
 -dontwarn com.noqoush.**
--keep class com.noqoush.** {*;}
+ -keep class com.noqoush.** { *; }
+
+# ADCOLONY
+-dontwarn com.jirbo.adcolony.**
+
+# APPLOVIN
+-dontwarn com.applovin.**
+-keep class com.applovin.** { *; }
+
+# NATIVEX
+-dontwarn com.nativex.**
+-keep class com.nativex.** { *; }
+-keep public class com.google.gson
+-keep class Gson**
+-keep classmembers class Gson** { *; }
+-keep attributes Signature, *Annotation*
+
 # MEDIABRIX
 -dontwarn com.mediabrix.**
 -keep class com.mediabrix.** { *; }
--dontwarn com.moat.analytics.**
--keep class com.moat.analytics.** { *; }
+
 # SUPERSONICADS
 -dontwarn com.supersonicads.**
 -keep class com.supersonicads.** { *; }
 -dontwarn com.supersonic.**
 -keep class com.supersonic.** { *; }
+
+# CHARTBOOST
+-dontwarn com.chartboost.**
+-dontwarn com.chartboost.sdk.impl.**
+-keep class com.chartboost.sdk.** { *; }
+
 # VUNGLE
 -dontwarn com.vungle.**
 -keep class com.vungle.** { public *; }
@@ -426,10 +479,8 @@ If you are using Proguard, add these lines to your Proguard file
 -keepattributes *Annotation*
 -keepattributes Signature
 -keep class dagger.*
+
 # PUBNATIVE
 -keep class net.pubnative.** { *; }
 -dontwarn net.pubnative.**
-# APPLOVIN
--dontwarn com.applovin.**
--keep class com.applovin.** { *; }
 ```
