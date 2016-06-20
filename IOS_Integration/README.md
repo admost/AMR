@@ -20,7 +20,7 @@
 
 ## Install
   + <a name="install1"></a>Core Libraries  
-Add all files in admost-iOSSDK folder to your project (framework, headers, xibs and assets)
+Add all files in libs folder to your project (framework, headers, xibs and assets)
   + <a name="install2"></a>External Frameworks Available On CocoaPods  
 Add following lines to your Podfile.
 ```perl
