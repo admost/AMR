@@ -432,4 +432,6 @@ If you are using Proguard, add these lines to your Proguard file
 # APPLOVIN
 -dontwarn com.applovin.**
 -keep class com.applovin.** { *; }
+# UNIVERSAL IMAGE LOADER
+-keep class com.nostra13.universalimageloader.core.* { ; }
 ```
