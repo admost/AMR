@@ -31,9 +31,6 @@ FACEBOOK
 Banner
 Native
 
-AMAZON
-Banner
-
 FLURRY
 Banner
 Native (Stream, Detailed Card)
