@@ -36,6 +36,7 @@ pod 'InMobiSDK'
 pod 'mopub-ios-sdk', '~> 4.3.0'
 pod 'LoopMeSDK', '~> 5.2.0'
 pod 'VungleSDK-iOS', '~> 3.2.0.1'
+pod 'UnityAds', '~> 1.5.6'
 pod 'MobFoxSDKCoreLib', :git => 'https://github.com/mobfox/MobFox-iOS-SDK-Core-Lib.git'
 ```
   + <a name="install3"></a>External Frameworks Not Available On CocoaPods  
@@ -64,6 +65,8 @@ Add Registery Keys you get from adnetwork’s dashboards to your `info.plist` fi
 	<string>####</string>
 	<key>VungleRegisterKey</key>
 	<string>####</string>
+	<key>UnityRegisterKey</key>
+        <string>####</string>
 ```
 ## Usage
   + <a name="usage1"></a>Initialization  
