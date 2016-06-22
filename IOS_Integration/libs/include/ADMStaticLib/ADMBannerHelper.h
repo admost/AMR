@@ -24,6 +24,7 @@ typedef enum {
     ADMAdHandlerBannerTypeChartboost,
     ADMAdHandlerBannerTypeAdFalcon,
     ADMAdHandlerBannerTypeMobFox,
+    ADMAdHandlerBannerTypeUnity = 99,
     ADMAdHandlerBannerTypeUndefined = 0
     
     
