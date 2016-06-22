@@ -66,7 +66,7 @@ Add Registery Keys you get from adnetwork’s dashboards to your `info.plist` fi
 	<key>VungleRegisterKey</key>
 	<string>####</string>
 	<key>UnityRegisterKey</key>
-        <string>####</string>
+	<string>####</string>
 ```
 ## Usage
   + <a name="usage1"></a>Initialization  
