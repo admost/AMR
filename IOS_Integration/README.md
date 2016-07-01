@@ -37,6 +37,7 @@ pod 'mopub-ios-sdk', '~> 4.3.0'
 pod 'LoopMeSDK', '~> 5.2.0'
 pod 'VungleSDK-iOS', '~> 3.2.0.1'
 pod 'UnityAds', '~> 1.5.6'
+pod 'SupersonicAds'
 pod 'MobFoxSDKCoreLib', :git => 'https://github.com/mobfox/MobFox-iOS-SDK-Core-Lib.git'
 ```
   + <a name="install3"></a>External Frameworks Not Available On CocoaPods  
@@ -44,6 +45,7 @@ You must add 2 external frameworks to your project manually. They are available 
 ```
 AmazonAd.framework
 AdFalcon headers and lib
+RevMobAds.framework
 ```
 ## Preperation
   + <a name="prep1"></a>Zone IDs  
@@ -66,6 +68,10 @@ Add Registery Keys you get from adnetwork’s dashboards to your `info.plist` fi
 	<key>VungleRegisterKey</key>
 	<string>####</string>
 	<key>UnityRegisterKey</key>
+	<string>####</string>
+	<key>RevMobRegisterKey</key>
+	<string>####c</string>
+	<key>SuperSonicRegisterKey</key>
 	<string>####</string>
 ```
 ## Usage
