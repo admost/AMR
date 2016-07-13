@@ -45,6 +45,8 @@ Add the following lines to your module dependencies
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 compile project(':admost-sdk1.1.1')
+compile project(':unity-ads1.5.8')
+
 compile 'com.android.volley:volley:1.0.0'
 compile 'com.facebook.android:audience-network-sdk:4.11.0'
 compile 'com.google.android.gms:play-services-ads:9.2.0'
@@ -77,6 +79,7 @@ Copy the following libraries to the libs folder of your app.
 
 ```sh
 admost-sdk1.1.1.aar
+unity-ads1.5.8.aar
 AdFalconAndroidSDK3.1.0.jar
 loopme-sdk-4.8.0.jar
 Chartboost.jar
