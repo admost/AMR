@@ -44,17 +44,18 @@ Add the following lines to your module dependencies
 
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile project(':admost-sdk')
-compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+compile project(':admost-sdk1.1.1')
+compile 'com.android.volley:volley:1.0.0'
 compile 'com.facebook.android:audience-network-sdk:4.11.0'
-compile 'com.google.android.gms:play-services-ads:8.4.0'
-compile 'com.amazon.android:mobile-ads:5.7.1.1'
-compile 'net.pubnative:library:2.0.1'
+compile 'com.google.android.gms:play-services-ads:9.2.0'
+compile 'com.amazon.android:mobile-ads:5.7.2'
 compile 'com.flurry.android:analytics:6.2.0'
 compile 'com.flurry.android:ads:6.2.0'
 compile 'com.inmobi.monetization:inmobi-ads:5.3.0'
 compile('com.mopub:mopub-sdk:4.6.1@aar') { transitive = true }
 compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
+compile 'com.flymob:FlyMobSdk:1.3.4'
+compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.0.9'
 ```
 
 And Repositories as follows;
@@ -75,8 +76,7 @@ repositories {
 Copy the following libraries to the libs folder of your app.
 
 ```sh
-admost-sdk.aar
-MobFox-Android-SDK-Core-1.5.1-RC1.jar
+admost-sdk1.1.1.aar
 AdFalconAndroidSDK3.1.0.jar
 loopme-sdk-4.8.0.jar
 Chartboost.jar
@@ -90,7 +90,7 @@ Dagger-1.2.2.jar
 Javax.inject-1.jar
 ```
 
-Only admost-sdk.aar is compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will go to the next network in the mediation waterfall.
+Only admost-sdk1.1.1.aar and volley library are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
 
 ###Manifest
 
@@ -202,16 +202,40 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
       android:configChanges="orientation|screenSize"
       android:hardwareAccelerated="true"
       android:theme="@android:style/Theme.Translucent" />
+      
 <!-- APPLOVIN -->
    <meta-data android:name="applovin.sdk.key"
         android:value="LN_tr4mUpK0zI5JgqhgM2IW5FkVtb0pxOpdDsPifksc1owhcbM-efUlwDEnpFZkdNNrDnTtVFUW2ODe_ZceD6N"  />      
+        
+<!-- FLYMOB -->
+   <activity
+     android:name="com.flymob.sdk.common.ads.interstitial.activity.FlyMobActivity"
+     android:configChanges="keyboardHidden|orientation|screenSize" />
+   <!--MRAID video-->
+   <activity
+     android:name="com.flymob.sdk.common.ads.interstitial.activity.FlyMobVideoActivity"
+     android:configChanges="keyboardHidden|orientation|screenSize" />
+   <!--MRAID video end-->
+   <service
+     android:name="com.flymob.sdk.common.server.FlyMobService"
+     android:exported="false" />
+
+<!-- UNITYADS -->
+<activity
+     android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
+     android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+     android:hardwareAccelerated="true"
+     tools:ignore="UnusedAttribute"/>    
+     
+
 ```
 
 #Usage
 
 Admost Mediation library is a lean yet complete library that allows you to request and show ads.
 
->Basic integration steps are:
+Basic integration steps are:
 
 ### Initialization
 
@@ -432,6 +456,12 @@ If you are using Proguard, add these lines to your Proguard file
 # APPLOVIN
 -dontwarn com.applovin.**
 -keep class com.applovin.** { *; }
-# UNIVERSAL IMAGE LOADER
--keep class com.nostra13.universalimageloader.core.* { ; }
+# FLYMOB
+-keep public class com.flymob.sdk.common.** { public *; }
+# UNITY
+-keep class com.unity3d.ads.android.** { *; }
+# VOLLEY
+-keep class com.android.volley.** { *; }
+-keep interface com.android.volley.** { *; }
+-keep class org.apache.commons.logging.**
 ```
