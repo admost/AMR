@@ -461,8 +461,10 @@ If you are using Proguard, add these lines to your Proguard file
 -dontwarn com.applovin.**
 -keep class com.applovin.** { *; }
 # FLYMOB
+-dontwarn com.flymob.sdk.**
 -keep public class com.flymob.sdk.common.** { public *; }
 # UNITY
+-dontwarn com.unity3d.**
 -keep class com.unity3d.ads.android.** { *; }
 # VOLLEY
 -keep class com.android.volley.** { *; }
