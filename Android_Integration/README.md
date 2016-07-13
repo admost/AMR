@@ -252,6 +252,7 @@ configuration.initIds(AdMostAdNetwork.VUNGLE, Statics.VUNGLE_ID);
 configuration.initIds(AdMostAdNetwork.CHARTBOOST, Statics.CHARTBOOST_ID, Statics.CHARTBOOST_SIGNATURE);
 configuration.initIds(AdMostAdNetwork.INMOBI, Statics.INMOBI_ACCOUNT_ID);
 configuration.initIds(AdMostAdNetwork.FLURRY, Statics.FLURRY_API_KEY);
+configuration.initIds(AdMostAdNetwork.UNITY, UNITY_ID);
 AdMost.getInstance().init(configuration.build());
 ```
 
