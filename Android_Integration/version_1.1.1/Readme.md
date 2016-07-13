@@ -58,7 +58,7 @@ configuration.initIds(AdMostAdNetwork.UNITY, UNITY_ID);
 AdMost.getInstance().init(configuration.build());
 ```
 
-<b>Proguard</>  
+<b>Proguard</b>  
 ```
 # FLYMOB
 -keep public class com.flymob.sdk.common.** { public *; }
