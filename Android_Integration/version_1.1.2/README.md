@@ -1,12 +1,13 @@
-Change Log (v1.1.2)
+## Change Log (v1.1.2)
 
-New
-Revmod Interstitial, Rewarded Video and banner added
-Millennial Interstitial added
+<b>New</b>  
+Revmod Interstitial, Rewarded Video and banner added   
+Millennial Interstitial added  
 
-Fixes
-Applovin bug fix
-UnityAds bug fix
+<b>Fixes</b>  
+Applovin bug fix  
+UnityAds bug fix  
 
-Sdk Upgrades
-Adcolony sdk upgraded to 2.3.6
+<b>Sdk Upgrades</b>   
+Adcolony sdk upgraded to 2.3.6  
+
