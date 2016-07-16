@@ -46,6 +46,7 @@ Add the following lines to your module dependencies
 compile fileTree(include: ['*.jar'], dir: 'libs')
 compile project(':admost-sdk1.1.1')
 compile project(':unity-ads1.5.8')
+compile project(':mm-ad-sdk')
 
 compile 'com.android.volley:volley:1.0.0'
 compile 'com.facebook.android:audience-network-sdk:4.11.0'
@@ -80,6 +81,7 @@ Copy the following libraries to the libs folder of your app.
 ```sh
 admost-sdk1.1.1.aar
 unity-ads1.5.8.aar
+mm-ad-sdk.aar
 AdFalconAndroidSDK3.1.0.jar
 loopme-sdk-4.8.0.jar
 Chartboost.jar
@@ -246,13 +248,14 @@ Initialize the Admost Mediation SDK in your application’s first Activity. This
 
 ```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
-configuration.initIds(AdMostAdNetwork.NATIVEX, NATIVEX_APP_ID);
-configuration.initIds(AdMostAdNetwork.ADCOLONY, ADCOLONY_ID, ADCOLONY_REWARDED, ADCOLONY_INTERSTITIAL);
-configuration.initIds(AdMostAdNetwork.VUNGLE, Statics.VUNGLE_ID);
-configuration.initIds(AdMostAdNetwork.CHARTBOOST, Statics.CHARTBOOST_ID, Statics.CHARTBOOST_SIGNATURE);
-configuration.initIds(AdMostAdNetwork.INMOBI, Statics.INMOBI_ACCOUNT_ID);
-configuration.initIds(AdMostAdNetwork.FLURRY, Statics.FLURRY_API_KEY);
-configuration.initIds(AdMostAdNetwork.UNITY, UNITY_ID);
+configuration.initIds(AdMostAdNetwork.NATIVEX, <<NATIVEX_APP_ID>>);
+configuration.initIds(AdMostAdNetwork.ADCOLONY, <<ADCOLONY_ID>>, <<ADCOLONY_REWARDED>>, <<ADCOLONY_INTERSTITIAL>>);
+configuration.initIds(AdMostAdNetwork.VUNGLE, <<VUNGLE_ID>>);
+configuration.initIds(AdMostAdNetwork.CHARTBOOST, <<CHARTBOOST_ID>>, <<CHARTBOOST_SIGNATURE>>);
+configuration.initIds(AdMostAdNetwork.INMOBI, <<INMOBI_ACCOUNT_ID>>);
+configuration.initIds(AdMostAdNetwork.FLURRY, <<FLURRY_API_KEY>>);
+configuration.initIds(AdMostAdNetwork.UNITY, <<UNITY_ID>>);
+configuration.initIds(AdMostAdNetwork.NEXTAGE, <<NEXTAGE_SITE_ID>>);
 AdMost.getInstance().init(configuration.build());
 ```
 
@@ -470,4 +473,10 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.android.volley.** { *; }
 -keep interface com.android.volley.** { *; }
 -keep class org.apache.commons.logging.**
+# MILLENNIAL AND NEXAGE
+-dontwarn com.millennialmedia**
+-keepclassmembers class com.millennialmedia** {
+public *;
+}
+-keep class com.millennialmedia**
 ```
