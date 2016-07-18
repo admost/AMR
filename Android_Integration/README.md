@@ -232,7 +232,11 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
      android:hardwareAccelerated="true"
      tools:ignore="UnusedAttribute"/>    
-     
+<!-- REVMOB -->
+<activity
+    android:name="com.revmob.FullscreenActivity"
+    android:configChanges="keyboardHidden|orientation"
+    android:theme="@android:style/Theme.Translucent" />     
 
 ```
 
