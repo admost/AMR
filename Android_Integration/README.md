@@ -86,6 +86,7 @@ AdFalconAndroidSDK3.1.0.jar
 loopme-sdk-4.8.0.jar
 Chartboost.jar
 Adcolony.jar
+Revmob.jar
 NativeXMonetizationSDK_v5.5.6.1.jar
 Applovin-sdk-6.1.5.jar
 
@@ -486,4 +487,7 @@ If you are using Proguard, add these lines to your Proguard file
 public *;
 }
 -keep class com.millennialmedia**
+# REVMOB
+-dontwarn com.revmob.**
+-keep class com.revmob.** { public *; }
 ```
