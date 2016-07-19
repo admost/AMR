@@ -57,7 +57,7 @@ compile 'com.flurry.android:ads:6.2.0'
 compile 'com.inmobi.monetization:inmobi-ads:5.3.0'
 compile('com.mopub:mopub-sdk:4.6.1@aar') { transitive = true }
 compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
-compile 'com.flymob:FlyMobSdk:1.3.4'
+compile 'com.flymob:FlyMobSdk:1.3.7'
 compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.0.9'
 ```
 
