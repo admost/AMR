@@ -159,6 +159,9 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
 <!-- FACEBOOK -->
 <activity android:name="com.facebook.ads.InterstitialAdActivity"
 	android:configChanges="keyboardHidden|orientation|screenSize" />
+<activity
+    android:name="com.facebook.ads.RewardedVideoAdActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize" />
 
 <!-- CHARTBOOST -->
 <activity android:name="com.chartboost.sdk.CBImpressionActivity"
