@@ -2,6 +2,7 @@
 
 <b>New</b>  
 Tapjoy Interstitial added  
+onRewarded(int value) method added to video ad listener  
 
 <b>Fixes</b>  
 Interstitial load response thread problem fixed  
