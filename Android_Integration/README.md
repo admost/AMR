@@ -236,11 +236,30 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
      android:hardwareAccelerated="true"
      tools:ignore="UnusedAttribute"/>    
+
 <!-- REVMOB -->
 <activity
     android:name="com.revmob.FullscreenActivity"
     android:configChanges="keyboardHidden|orientation"
-    android:theme="@android:style/Theme.Translucent" />     
+    android:theme="@android:style/Theme.Translucent" />
+
+<!-- TAPJOY -->
+<activity
+    android:name="com.tapjoy.TJAdUnitActivity"
+    android:configChanges="orientation|keyboardHidden|screenSize"
+    android:hardwareAccelerated="true"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+<activity
+    android:name="com.tapjoy.mraid.view.ActionHandler"
+    android:configChanges="orientation|keyboardHidden|screenSize" />
+<activity
+    android:name="com.tapjoy.mraid.view.Browser"
+    android:configChanges="orientation|keyboardHidden|screenSize" />
+
+<activity
+    android:name="com.tapjoy.TJContentActivity"
+    android:configChanges="orientation|keyboardHidden|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
 ```
 
@@ -490,4 +509,22 @@ public *;
 # REVMOB
 -dontwarn com.revmob.**
 -keep class com.revmob.** { public *; }
+# TAPJOY
+-keep class com.tapjoy.** { *; }
+-keepattributes JavascriptInterface
+-keep class * extends java.util.ListResourceBundle {
+protected Object[][] getContents();
+}
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+public static final *** NULL;
+}
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+@com.google.android.gms.common.annotation.KeepName *;
+}
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+-keep class com.google.android.gms.ads.identifier.** { *; }
+-dontwarn com.tapjoy.internal.**
 ```
