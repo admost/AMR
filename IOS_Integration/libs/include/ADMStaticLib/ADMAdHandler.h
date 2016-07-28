@@ -18,6 +18,7 @@
 #import <AmazonAd/AmazonAdView.h>
 #import "ADMAdLoadedDelegate.h"
 #import "ADMInterstitialShowDelegate.h"
+#import "ADMHelperBase.h"
 
 #define ADHANDLER_TIMEOUT 2
 typedef enum {

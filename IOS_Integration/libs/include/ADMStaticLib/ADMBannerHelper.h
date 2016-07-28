@@ -27,6 +27,10 @@ typedef enum {
     ADMAdHandlerBannerTypeUnity = 99,
     ADMAdHandlerBannerTypeRevMob = 98,
     ADMAdHandlerBannerTypeSupersonic = 97,
+    ADMAdHandlerBannerTypeNextage = 96,
+    ADMAdHandlerBannerTypeSmaato = 95,
+    ADMAdHandlerBannerTypeMillenial = 94,
+    ADMAdHandlerBannerTypeFlymob = 93,
     ADMAdHandlerBannerTypeUndefined = 0
     
     
