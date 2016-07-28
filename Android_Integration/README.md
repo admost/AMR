@@ -46,6 +46,7 @@ Add the following lines to your module dependencies
 compile fileTree(include: ['*.jar'], dir: 'libs')
 compile project(':admost-sdk1.1.1')
 compile project(':unity-ads1.5.8')
+compile project(':mm-ad-sdk')
 
 compile 'com.android.volley:volley:1.0.0'
 compile 'com.facebook.android:audience-network-sdk:4.11.0'
@@ -56,7 +57,7 @@ compile 'com.flurry.android:ads:6.2.0'
 compile 'com.inmobi.monetization:inmobi-ads:5.3.0'
 compile('com.mopub:mopub-sdk:4.6.1@aar') { transitive = true }
 compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
-compile 'com.flymob:FlyMobSdk:1.3.4'
+compile 'com.flymob:FlyMobSdk:1.3.7'
 compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.0.9'
 ```
 
@@ -80,10 +81,12 @@ Copy the following libraries to the libs folder of your app.
 ```sh
 admost-sdk1.1.1.aar
 unity-ads1.5.8.aar
+mm-ad-sdk.aar
 AdFalconAndroidSDK3.1.0.jar
 loopme-sdk-4.8.0.jar
 Chartboost.jar
 Adcolony.jar
+Revmob.jar
 NativeXMonetizationSDK_v5.5.6.1.jar
 Applovin-sdk-6.1.5.jar
 
@@ -157,6 +160,9 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
 <!-- FACEBOOK -->
 <activity android:name="com.facebook.ads.InterstitialAdActivity"
 	android:configChanges="keyboardHidden|orientation|screenSize" />
+<activity
+    android:name="com.facebook.ads.RewardedVideoAdActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize" />
 
 <!-- CHARTBOOST -->
 <activity android:name="com.chartboost.sdk.CBImpressionActivity"
@@ -230,7 +236,30 @@ android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareA
      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
      android:hardwareAccelerated="true"
      tools:ignore="UnusedAttribute"/>    
-     
+
+<!-- REVMOB -->
+<activity
+    android:name="com.revmob.FullscreenActivity"
+    android:configChanges="keyboardHidden|orientation"
+    android:theme="@android:style/Theme.Translucent" />
+
+<!-- TAPJOY -->
+<activity
+    android:name="com.tapjoy.TJAdUnitActivity"
+    android:configChanges="orientation|keyboardHidden|screenSize"
+    android:hardwareAccelerated="true"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+<activity
+    android:name="com.tapjoy.mraid.view.ActionHandler"
+    android:configChanges="orientation|keyboardHidden|screenSize" />
+<activity
+    android:name="com.tapjoy.mraid.view.Browser"
+    android:configChanges="orientation|keyboardHidden|screenSize" />
+
+<activity
+    android:name="com.tapjoy.TJContentActivity"
+    android:configChanges="orientation|keyboardHidden|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
 ```
 
@@ -246,13 +275,14 @@ Initialize the Admost Mediation SDK in your application’s first Activity. This
 
 ```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
-configuration.initIds(AdMostAdNetwork.NATIVEX, NATIVEX_APP_ID);
-configuration.initIds(AdMostAdNetwork.ADCOLONY, ADCOLONY_ID, ADCOLONY_REWARDED, ADCOLONY_INTERSTITIAL);
-configuration.initIds(AdMostAdNetwork.VUNGLE, Statics.VUNGLE_ID);
-configuration.initIds(AdMostAdNetwork.CHARTBOOST, Statics.CHARTBOOST_ID, Statics.CHARTBOOST_SIGNATURE);
-configuration.initIds(AdMostAdNetwork.INMOBI, Statics.INMOBI_ACCOUNT_ID);
-configuration.initIds(AdMostAdNetwork.FLURRY, Statics.FLURRY_API_KEY);
-configuration.initIds(AdMostAdNetwork.UNITY, UNITY_ID);
+configuration.initIds(AdMostAdNetwork.NATIVEX, <<NATIVEX_APP_ID>>);
+configuration.initIds(AdMostAdNetwork.ADCOLONY, <<ADCOLONY_ID>>, <<ADCOLONY_REWARDED>>, <<ADCOLONY_INTERSTITIAL>>);
+configuration.initIds(AdMostAdNetwork.VUNGLE, <<VUNGLE_ID>>);
+configuration.initIds(AdMostAdNetwork.CHARTBOOST, <<CHARTBOOST_ID>>, <<CHARTBOOST_SIGNATURE>>);
+configuration.initIds(AdMostAdNetwork.INMOBI, <<INMOBI_ACCOUNT_ID>>);
+configuration.initIds(AdMostAdNetwork.FLURRY, <<FLURRY_API_KEY>>);
+configuration.initIds(AdMostAdNetwork.UNITY, <<UNITY_ID>>);
+configuration.initIds(AdMostAdNetwork.NEXTAGE, <<NEXTAGE_SITE_ID>>);
 AdMost.getInstance().init(configuration.build());
 ```
 
@@ -470,4 +500,31 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.android.volley.** { *; }
 -keep interface com.android.volley.** { *; }
 -keep class org.apache.commons.logging.**
+# MILLENNIAL AND NEXAGE
+-dontwarn com.millennialmedia**
+-keepclassmembers class com.millennialmedia** {
+public *;
+}
+-keep class com.millennialmedia**
+# REVMOB
+-dontwarn com.revmob.**
+-keep class com.revmob.** { public *; }
+# TAPJOY
+-keep class com.tapjoy.** { *; }
+-keepattributes JavascriptInterface
+-keep class * extends java.util.ListResourceBundle {
+protected Object[][] getContents();
+}
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+public static final *** NULL;
+}
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+@com.google.android.gms.common.annotation.KeepName *;
+}
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+-keep class com.google.android.gms.ads.identifier.** { *; }
+-dontwarn com.tapjoy.internal.**
 ```
