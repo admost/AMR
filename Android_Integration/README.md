@@ -44,7 +44,7 @@ Add the following lines to your module dependencies
 
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile project(':admost-sdk1.1.1')
+compile project(':admost-sdk1.1.3')
 compile project(':unity-ads1.5.8')
 compile project(':mm-ad-sdk')
 
@@ -58,7 +58,7 @@ compile 'com.inmobi.monetization:inmobi-ads:5.3.0'
 compile('com.mopub:mopub-sdk:4.6.1@aar') { transitive = true }
 compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
 compile 'com.flymob:FlyMobSdk:1.3.7'
-compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.0.9'
+compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.1.0'
 ```
 
 And Repositories as follows;
