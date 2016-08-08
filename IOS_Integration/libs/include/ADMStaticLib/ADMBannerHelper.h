@@ -31,9 +31,8 @@ typedef enum {
     ADMAdHandlerBannerTypeSmaato = 95,
     ADMAdHandlerBannerTypeMillenial = 94,
     ADMAdHandlerBannerTypeFlymob = 93,
+    ADMAdHandlerBannerTypeTapjoy = 92,
     ADMAdHandlerBannerTypeUndefined = 0
-    
-    
 } ADMAdHandlerBannerType;
 
 
