@@ -11,5 +11,6 @@
 @interface ADMAdHandlerInitializer : NSObject
 @property (nonatomic, assign) BOOL shouldShowInterstitial;
 @property (nonatomic, assign) BOOL statusBarHidden;
+@property (nonatomic, assign) BOOL revmobInitialized;
 + (instancetype)SharedInstance;
 @end
