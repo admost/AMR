@@ -4,7 +4,6 @@
 * [Install](#install)
  * [Gradle](#gradle)
  * [Libs](#libs)
- * [Manifest](#manifest)
 * [Usage](#usage)
  * [Initialization](#initialization)
  * [Requesting Native Ads](#requesting-native-ads)
@@ -44,21 +43,49 @@ Add the following lines to your module dependencies
 
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile project(':admost-sdk1.1.3')
-compile project(':unity-ads1.5.8')
-compile project(':mm-ad-sdk')
 
+compile(name: 'admost-sdk', ext: 'aar')
+compile(name: 'unity-ads', ext: 'aar')
+compile(name: 'mm-ad-sdk', ext: 'aar')
+
+-
+// AMR
 compile 'com.android.volley:volley:1.0.0'
-compile 'com.facebook.android:audience-network-sdk:4.11.0'
-compile 'com.google.android.gms:play-services-ads:9.2.0'
+
+// GOOGLE
+compile 'com.google.android.gms:play-services-ads:9.2.1'
+
+// NATIVEX
+compile 'com.google.code.gson:gson:2.6.2'
+
+// AMAZON
 compile 'com.amazon.android:mobile-ads:5.7.2'
-compile 'com.flurry.android:analytics:6.2.0'
+
+// FACEBOOK
+compile 'com.facebook.android:audience-network-sdk:4.11.0'
+
+// FLURRY
 compile 'com.flurry.android:ads:6.2.0'
-compile 'com.inmobi.monetization:inmobi-ads:5.3.0'
-compile('com.mopub:mopub-sdk:4.6.1@aar') { transitive = true }
-compile 'com.supersonic.sdk:mediationsdk:6.4.4@jar'
-compile 'com.flymob:FlyMobSdk:1.3.7'
-compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.1.0'
+compile 'com.flurry.android:analytics:6.2.0'
+
+// INMOBI
+compile 'com.inmobi.monetization:inmobi-ads:5.3.1'
+
+// MOBFOX
+compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.1.2'
+
+// MOPUB
+compile('com.mopub:mopub-sdk:4.8.0@aar') { transitive = true }
+compile('com.mopub.volley:mopub-volley:1.1.0')
+
+// SUPERSONIC
+compile 'com.supersonic.sdk:mediationsdk:6.4.11@jar'
+
+// PUBNATIVE
+compile 'net.pubnative:library:2.2.1'
+compile 'net.pubnative:library.interstitial:2.2.1'
+compile 'net.pubnative:library.feed.banner:2.2.1'
+compile 'net.pubnative:library.video:2.2.1'
 ```
 
 And Repositories as follows;
@@ -79,189 +106,31 @@ repositories {
 Copy the following libraries to the libs folder of your app.
 
 ```sh
-admost-sdk1.1.1.aar
-unity-ads1.5.8.aar
+admost-sdk.aar
 mm-ad-sdk.aar
-AdFalconAndroidSDK3.1.0.jar
+unity-ads.aar
+
+adcolony.jar
+addictiveads-android.jar
+AdFalconAndroidSDK3.2.0.jar
+applovin-sdk-6.3.0.jar
+chartboost.jar
+FlyMobSdk-1.4.2.jar
 loopme-sdk-4.8.0.jar
-Chartboost.jar
-Adcolony.jar
-Revmob.jar
-NativeXMonetizationSDK_v5.5.6.1.jar
-Applovin-sdk-6.1.5.jar
+mediabrix-sdk-FBless.jar
+NativeXMonetizationSDK_v5.5.7.1.jar
+revmob.jar
+SOMAAndroidSDK5.0.7.jar
+tapjoy-11.7.0.jar
+vungle-publisher-adaptive-id-3.3.4.jar
 
 ////// Vungle ////////
-Vungle-publisher-adaptive-id-3.3.4.jar
 Dagger-1.2.2.jar
 Javax.inject-1.jar
+nineoldandroids-2.4.0.jar
 ```
 
-Only admost-sdk1.1.1.aar and volley library are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
-
-###Manifest
-
-Add the following lines to your application manifest file
-
-```manifest
-<service android:name="admost.sdk.AdMostImpressionService" />
-
-<!-- ADMOB-->
-<activity	android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />
-
-<!-- INMOBI -->
-<activity android:name="com.inmobi.rendering.InMobiAdActivity"  android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"  android:theme="@android:style/Theme.Translucent.NoTitleBar" 		  android:hardwareAccelerated="true" />
-
-<!-- AMAZON -->
-<activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-
-<!-- FLURRY -->
-<activity 	android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
-android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-
-<!-- ADFALCON-->
-<activity android:name="com.noqoush.adfalcon.android.sdk.ADFBrowser" android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenLayout|screenSize|smallestScreenSize" android:hardwareAccelerated="true">
-</activity>
-
-<activity android:name="com.noqoush.adfalcon.android.sdk.ADFActivity" android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenLayout|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:hardwareAccelerated="true">
-</activity>
-
-<activity android:name="com.noqoush.adfalcon.android.sdk.ADFCanvas" android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenLayout|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:hardwareAccelerated="true">
-</activity>
-
-<!-- LOOPME -->
-<activity android:name="com.loopme.AdActivity" android:theme="@android:style/Theme.Translucent"
-android:configChanges="orientation|keyboardHidden|screenSize"  android:hardwareAccelerated="true"/>
-<activity android:name="com.loopme.AdBrowserActivity" />
-
-<!-- MOBFOX -->
-<activity android:name="com.mobfox.sdk.interstitialads.InterstitialActivity"/>
-
-<!-- MOPUB -->
-<activity android:name="com.mopub.mobileads.MoPubActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize" />
-<activity android:name="com.mopub.mobileads.MraidActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize" />
-<activity android:name="com.mopub.common.MoPubBrowser"
-	android:configChanges="keyboardHidden|orientation|screenSize" />
-<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize" />
-
-<!-- ADCOLONY -->
-<activity android:name="com.jirbo.adcolony.AdColonyOverlay"
-	android:configChanges="keyboardHidden|orientation|screenSize"
-	android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-<activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
-	android:configChanges="keyboardHidden|orientation|screenSize"
-	android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-<activity android:name="com.jirbo.adcolony.AdColonyBrowser"
-	android:configChanges="keyboardHidden|orientation|screenSize"
-	android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-
-<!-- FACEBOOK -->
-<activity android:name="com.facebook.ads.InterstitialAdActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize" />
-<activity
-    android:name="com.facebook.ads.RewardedVideoAdActivity"
-    android:configChanges="keyboardHidden|orientation|screenSize" />
-
-<!-- CHARTBOOST -->
-<activity android:name="com.chartboost.sdk.CBImpressionActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize"
-	android:excludeFromRecents="true"
-	android:hardwareAccelerated="true"
-	android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-
-<!-- VUNGLE -->
-<activity android:name="com.vungle.publisher.FullScreenAdActivity"
-	android:configChanges="keyboardHidden|orientation|screenSize"
-	android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-<!-- MEDIABRIX -->
-<activity
-   android:name="com.mediabrix.android.service.AdViewActivity"
-   android:configChanges="orientation|screenSize|keyboard"
-   android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
-</activity>
-<service
-   android:name="com.mediabrix.android.service.MediaBrixService" >
-</service>
-
-<!-- NATIVEX -->
-  <activity
-      android:name="com.nativex.monetization.activities.InterstitialActivity"
-      android:configChanges="orientation|screenSize"
-      android:hardwareAccelerated="true"
-      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-  <activity
-      android:name="com.nativex.videoplayer.VideoActivity"
-      android:configChanges="orientation|screenSize" />
-
-<!-- SUPERSONIC -->
-  <activity
-      android:name="com.supersonicads.sdk.controller.ControllerActivity"
-      android:configChanges="orientation|screenSize"
-      android:hardwareAccelerated="true" />
-  <activity
-      android:name="com.supersonicads.sdk.controller.InterstitialActivity"
-      android:configChanges="orientation|screenSize"
-      android:hardwareAccelerated="true"
-      android:theme="@android:style/Theme.Translucent" />
-  <activity
-      android:name="com.supersonicads.sdk.controller.OpenUrlActivity"
-      android:configChanges="orientation|screenSize"
-      android:hardwareAccelerated="true"
-      android:theme="@android:style/Theme.Translucent" />
-      
-<!-- APPLOVIN -->
-   <meta-data android:name="applovin.sdk.key"
-        android:value="LN_tr4mUpK0zI5JgqhgM2IW5FkVtb0pxOpdDsPifksc1owhcbM-efUlwDEnpFZkdNNrDnTtVFUW2ODe_ZceD6N"  />      
-        
-<!-- FLYMOB -->
-   <activity
-     android:name="com.flymob.sdk.common.ads.interstitial.activity.FlyMobActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize" />
-   <!--MRAID video-->
-   <activity
-     android:name="com.flymob.sdk.common.ads.interstitial.activity.FlyMobVideoActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize" />
-   <!--MRAID video end-->
-   <service
-     android:name="com.flymob.sdk.common.server.FlyMobService"
-     android:exported="false" />
-
-<!-- UNITYADS -->
-<activity
-     android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
-     android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-     android:hardwareAccelerated="true"
-     tools:ignore="UnusedAttribute"/>    
-
-<!-- REVMOB -->
-<activity
-    android:name="com.revmob.FullscreenActivity"
-    android:configChanges="keyboardHidden|orientation"
-    android:theme="@android:style/Theme.Translucent" />
-
-<!-- TAPJOY -->
-<activity
-    android:name="com.tapjoy.TJAdUnitActivity"
-    android:configChanges="orientation|keyboardHidden|screenSize"
-    android:hardwareAccelerated="true"
-    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-<activity
-    android:name="com.tapjoy.mraid.view.ActionHandler"
-    android:configChanges="orientation|keyboardHidden|screenSize" />
-<activity
-    android:name="com.tapjoy.mraid.view.Browser"
-    android:configChanges="orientation|keyboardHidden|screenSize" />
-
-<activity
-    android:name="com.tapjoy.TJContentActivity"
-    android:configChanges="orientation|keyboardHidden|screenSize"
-    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-```
+Only admost-sdk.aar and volley library are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
 
 #Usage
 
@@ -275,14 +144,18 @@ Initialize the Admost Mediation SDK in your application’s first Activity. This
 
 ```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
-configuration.initIds(AdMostAdNetwork.NATIVEX, <<NATIVEX_APP_ID>>);
-configuration.initIds(AdMostAdNetwork.ADCOLONY, <<ADCOLONY_ID>>, <<ADCOLONY_REWARDED>>, <<ADCOLONY_INTERSTITIAL>>);
-configuration.initIds(AdMostAdNetwork.VUNGLE, <<VUNGLE_ID>>);
-configuration.initIds(AdMostAdNetwork.CHARTBOOST, <<CHARTBOOST_ID>>, <<CHARTBOOST_SIGNATURE>>);
-configuration.initIds(AdMostAdNetwork.INMOBI, <<INMOBI_ACCOUNT_ID>>);
-configuration.initIds(AdMostAdNetwork.FLURRY, <<FLURRY_API_KEY>>);
-configuration.initIds(AdMostAdNetwork.UNITY, <<UNITY_ID>>);
-configuration.initIds(AdMostAdNetwork.NEXTAGE, <<NEXTAGE_SITE_ID>>);
+
+configuration.initIds(AdMostAdNetwork.INMOBI, <INMOBI_PROPERTY_ID>);
+configuration.initIds(AdMostAdNetwork.FLURRY, <FLURRY_API_KEY>);
+configuration.initIds(AdMostAdNetwork.NATIVEX, <NATIVEX_APP_ID>);
+configuration.initIds(AdMostAdNetwork.CHARTBOOST, <CHARTBOOST_ID>, <CHARTBOOST_SIGNATURE>);
+configuration.initIds(AdMostAdNetwork.VUNGLE, <VUNGLE_ID>);
+configuration.initIds(AdMostAdNetwork.ADCOLONY, <ADCOLONY_ID>, <ADCOLONY_REWARDED>, <ADCOLONY_INTERSTITIAL>);
+configuration.initIds(AdMostAdNetwork.UNITY, <UNITY_ID>);
+configuration.initIds(AdMostAdNetwork.TAPJOY, <TAPJOY_ID>);
+configuration.initIds(AdMostAdNetwork.SMAATO, <SMAATO_ID>);
+configuration.initIds(AdMostAdNetwork.NEXAGE, <NEXAGE_SITE_ID>);
+
 AdMost.getInstance().init(configuration.build());
 ```
 
@@ -340,7 +213,7 @@ ADMOST_MEDIATION_VIEW.destroy();
 ### Requesting FullScreen Ads
 
 ```java
-AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, << ZONEID>>, new AdMostAdListener() {
+AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <ZONEID>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.FAILED) {
@@ -366,19 +239,25 @@ AD_INTERSTITIAL.destroy();
 ### Requesting Video Ads
 
 ```java
-AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, << ZONEID>>, new AdMostAdListener() {
+AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <ZONEID>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.LOADED) {
-			AdMostLog.log(value + " MainActivity LOADED");
-		} else if (value == AdMostAdListener.COMPLETED) {
-			AdMostLog.log(value + " MainActivity COMPLETED");
-		} else if (value == AdMostAdListener.FAILED) {
-			AdMostLog.log(value + " MainActivity FAILED");
-		} else if (value == AdMostAdListener.CLOSED) {
-			AdMostLog.log(value + " MainActivity CLOSED");
-		}
+                    AdMostLog.log("LOADED");
+                } else if (value == AdMostAdListener.COMPLETED) {
+                    AdMostLog.log("COMPLETED");
+                } else if (value == AdMostAdListener.FAILED) {
+                    AdMostLog.log("FAILED");
+                } else if (value == AdMostAdListener.CLOSED) {
+                    AdMostLog.log("CLOSED");
+                }
 	}
+	
+	//OPTIONAL
+	@Override
+            public void onRewarded(int value) {
+                AdMostLog.log("REWARDED " + value);
+            }
 });
 
 AD_VIDEO.refreshAd(AUTO_LOAD);
@@ -423,60 +302,88 @@ public void onDestroy() {
 If you are using Proguard, add these lines to your Proguard file
 
 ```proguard
-# ADMOST 
--keep class admost.sdk.** { *; }
+# ADMOST
+-keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
-# ADMOB
--dontwarn com.google.android.gms.ads.**
--keep public class com.google.android.gms.ads.** {public *;}
--keep public class com.google.ads.** {public *;}
--keep class com.google.android.gms.ads.** {*;}
--keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
-# AMAZON
--dontwarn com.amazon.**
--keep class com.amazon.** {*;}
-# CHARTBOOST
--dontwarn org.apache.http.**
--dontwarn com.chartboost.sdk.impl.**
--keep class com.chartboost.sdk.** { *; }
--keepattributes *Annotation*
-# INMOBI
--keep class com.inmobi.** {*;}
--dontwarn com.inmobi.**
-# FLURRY
--keep class com.flurry.** { *; }
--dontwarn com.flurry.**
-# MOPUB 
+-keep class admost.sdk.** { *; }
+
+# VOLLEY
+-keep class com.android.volley.** { *; }
+-keep interface com.android.volley.** { *; }
+-keep class org.apache.commons.logging.**
+
+# GOOGLE
+-keep class com.android.vending.billing.**
+-keep public class com.google.android.gms.ads.** { public *; }
+-keep public class com.google.ads.** { public *; }
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+-keep @interface android.support.annotation.Keep
+-keep @android.support.annotation.Keep class *
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+-keep class com.google.android.apps.common.proguard.UsedBy*
+-keep @com.google.android.apps.common.proguard.UsedBy* class *
+-keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
+-dontwarn android.security.NetworkSecurityPolicy
+-dontwarn android.app.Notification
+
+# MILLENNIAL
+-keep class com.millennialmedia.** { *; }
+-dontwarn com.millennialmedia.**
+
+# MOBFOX
+-dontwarn com.mobfox.**
+-keep class com.mobfox.** { *; }
+
+# MOPUB
 -keepclassmembers class com.mopub.** { public *; }
+-dontnote com.mopub.**
+-dontwarn com.mopub.**
 -keep public class com.mopub.**
 -keep public class android.webkit.JavascriptInterface {}
 -keep class * extends com.mopub.mobileads.CustomEventBanner {}
 -keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
 -keep class * extends com.mopub.nativeads.CustomEventNative {}
-# FACEBOOK 
--dontwarn com.facebook.ads.**
--dontnote com.facebook.ads.**
--keep class com.facebook.** { *; }
--keepattributes Signature
-# MOBFOX
--dontwarn com.mobfox.**
--keep class com.mobfox.** {*;}
-# LOOPME 
--dontwarn com.loopme.**
--keep class com.loopme.** {*;}
-# ADFALCON 
--dontwarn com.noqoush.**
--keep class com.noqoush.** {*;}
-# MEDIABRIX
--dontwarn com.mediabrix.**
--keep class com.mediabrix.** { *; }
--dontwarn com.moat.analytics.**
--keep class com.moat.analytics.** { *; }
-# SUPERSONICADS
--dontwarn com.supersonicads.**
--keep class com.supersonicads.** { *; }
--dontwarn com.supersonic.**
--keep class com.supersonic.** { *; }
+
+# REVMOB
+-dontwarn com.revmob.**
+-keep class com.revmob.** { public *; }
+
+# INMOBI
+-keep class com.inmobi.** {*;}
+-dontwarn com.inmobi.**
+
+# CHARTBOOST
+-dontwarn org.apache.http.**
+-dontwarn com.chartboost.sdk.impl.**
+-keep class com.chartboost.sdk.** { *; }
+-keepattributes *Annotation*
+
+# SMAATO
+-dontwarn com.smaato.**
+-keep class com.smaato.** { public *; }
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** i(...);
+}
+-keep public class com.smaato.soma.internal.connector.OrmmaBridge { public *; }
+-keepattributes *Annotation*
+
+# ADCOLONY
+-dontwarn com.jirbo.adcolony.**
+-keep class com.jirbo.adcolony.** { *; }
+
 # VUNGLE
 -dontwarn com.vungle.**
 -keep class com.vungle.** { public *; }
@@ -484,47 +391,80 @@ If you are using Proguard, add these lines to your Proguard file
 -keepattributes *Annotation*
 -keepattributes Signature
 -keep class dagger.*
-# PUBNATIVE
--keep class net.pubnative.** { *; }
--dontwarn net.pubnative.**
+
+# AMAZON
+-dontwarn com.amazon.**
+-keep class com.amazon.** { *; }
+-dontwarn org.apache.http.**
+-keepattributes *Annotation*
+
+# FACEBOOK
+-dontwarn com.facebook.ads.**
+-dontnote com.facebook.ads.**
+-keep class com.facebook.** { *; }
+-keepattributes Signature
+
+# FLURRY
+-keep class com.flurry.** { *; }
+-dontwarn com.flurry.**
+-keepattributes *Annotation*,EnclosingMethod,Signature
+-keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
+
+# SUPERSONICADS
+-dontwarn com.supersonicads.**
+-keep class com.supersonicads.** { *; }
+-dontwarn com.supersonic.**
+-keep class com.supersonic.** { *; }
+
 # APPLOVIN
 -dontwarn com.applovin.**
 -keep class com.applovin.** { *; }
-# FLYMOB
--dontwarn com.flymob.sdk.**
--keep public class com.flymob.sdk.common.** { public *; }
+
+# LOOPME
+-dontwarn com.loopme.**
+-keep class com.loopme.** { *; }
+
+# ADFALCON
+-dontwarn com.noqoush.**
+-keep class com.noqoush.** { *; }
+
+# MEDIABRIX
+-dontwarn com.mediabrix.**
+-keep class com.mediabrix.** { *; }
+-dontwarn com.moat.analytics.**
+-keep class com.moat.analytics.** { *; }
+
+# NATIVEX
+-dontwarn com.nativex.**
+-keep class com.nativex.** { *; }
+
 # UNITY
 -dontwarn com.unity3d.**
 -keep class com.unity3d.ads.android.** { *; }
-# VOLLEY
--keep class com.android.volley.** { *; }
--keep interface com.android.volley.** { *; }
--keep class org.apache.commons.logging.**
-# MILLENNIAL AND NEXAGE
--dontwarn com.millennialmedia**
--keepclassmembers class com.millennialmedia** {
-public *;
-}
--keep class com.millennialmedia**
-# REVMOB
--dontwarn com.revmob.**
--keep class com.revmob.** { public *; }
+
+# FLYMOB
+-dontwarn com.flymob.sdk.**
+-keep public class com.flymob.sdk.common.** { public *; }
+
 # TAPJOY
 -keep class com.tapjoy.** { *; }
 -keepattributes JavascriptInterface
--keep class * extends java.util.ListResourceBundle {
-protected Object[][] getContents();
-}
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
-public static final *** NULL;
-}
+-keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * {
-@com.google.android.gms.common.annotation.KeepName *;
-}
--keepnames class * implements android.os.Parcelable {
-public static final ** CREATOR;
-}
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 -keep class com.google.android.gms.ads.identifier.** { *; }
 -dontwarn com.tapjoy.internal.**
+
+# ADDICTIVEADS
+-dontwarn com.addictiveads.**
+-keep class com.addictiveads.** { public *; }
+
+# PUBNATIVE
+-keepattributes Signature
+-keep class net.pubnative.** { *; }
+-dontwarn net.pubnative.**
+-keep class com.squareup.picasso.** { *; }
+-dontwarn com.squareup.picasso.**
 ```
