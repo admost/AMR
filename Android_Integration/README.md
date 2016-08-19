@@ -18,13 +18,19 @@
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * Zone Ids provided in Admost Mediation Dashboard.
 
-Add the following permissions optionally for improve user targeting to your application AndroidManifest.xml file:
+Add the following permissions optionally for improve user targeting into your AndroidManifest.xml 
 
 ```sh
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+```
+
+###AppLovin Publishers
+Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
+```sh
+<meta-data android:name="applovin.sdk.key" android:value="<SDK_KEY>" />
 ```
 
 #Install
