@@ -18,15 +18,7 @@
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * Zone Ids provided in Admost Mediation Dashboard.
 
-Add the following permissions to your application AndroidManifest.xml file:
-
-```sh
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-```
-
-Optionally but necessary to improve user targeting:
+Add the following permissions optionally for improve user targeting to your application AndroidManifest.xml file:
 
 ```sh
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -48,7 +40,6 @@ compile(name: 'admost-sdk', ext: 'aar')
 compile(name: 'unity-ads', ext: 'aar')
 compile(name: 'mm-ad-sdk', ext: 'aar')
 
--
 // AMR
 compile 'com.android.volley:volley:1.0.0'
 
