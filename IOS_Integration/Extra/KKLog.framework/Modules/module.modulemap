@@ -1,0 +1,6 @@
+framework module KKLog {
+  umbrella header "KKLog.h"
+
+  export *
+  module * { export * }
+}
