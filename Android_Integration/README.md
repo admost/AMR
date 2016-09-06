@@ -76,7 +76,7 @@ compile('com.mopub:mopub-sdk:4.8.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
 // SUPERSONIC
-compile 'com.supersonic.sdk:mediationsdk:6.4.11@jar'
+compile 'com.supersonic.sdk:mediationsdk:6.4.13@jar'
 
 // PUBNATIVE
 compile 'net.pubnative:library:2.2.1'
