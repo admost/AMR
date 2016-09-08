@@ -464,4 +464,17 @@ If you are using Proguard, add these lines to your Proguard file
 -dontwarn net.pubnative.**
 -keep class com.squareup.picasso.** { *; }
 -dontwarn com.squareup.picasso.**
+
+# HYPERADS
+-dontwarn com.hyperadx.**
+-keep class com.hyperadx.** { public *; }
+
+# APPNEXT
+-keep class com.appnext.** { *; }
+-dontwarn com.appnext.**
+
+# DISPLAYIO
+-keep class io.display.sdk.Controller.** { *; }
+-dontwarn io.display.sdk.Controller.**
+
 ```
