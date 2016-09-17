@@ -114,6 +114,7 @@ applovin-sdk-6.3.0.jar
 chartboost.jar
 FlyMobSdk-1.4.2.jar
 loopme-sdk-4.8.0.jar
+HyperAdxSDK_1.2.7.jar
 mediabrix-sdk-FBless.jar
 NativeXMonetizationSDK_v5.5.7.1.jar
 revmob.jar
