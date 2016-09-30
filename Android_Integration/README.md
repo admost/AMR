@@ -76,7 +76,7 @@ compile('com.mopub:mopub-sdk:4.8.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
 // SUPERSONIC
-compile 'com.supersonic.sdk:mediationsdk:6.4.11@jar'
+compile 'com.supersonic.sdk:mediationsdk:6.4.13@jar'
 
 // PUBNATIVE
 compile 'net.pubnative:library:2.2.1'
@@ -114,6 +114,7 @@ applovin-sdk-6.3.0.jar
 chartboost.jar
 FlyMobSdk-1.4.2.jar
 loopme-sdk-4.8.0.jar
+HyperAdxSDK_1.2.7.jar
 mediabrix-sdk-FBless.jar
 NativeXMonetizationSDK_v5.5.7.1.jar
 revmob.jar
@@ -464,4 +465,17 @@ If you are using Proguard, add these lines to your Proguard file
 -dontwarn net.pubnative.**
 -keep class com.squareup.picasso.** { *; }
 -dontwarn com.squareup.picasso.**
+
+# HYPERADS
+-dontwarn com.hyperadx.**
+-keep class com.hyperadx.** { public *; }
+
+# APPNEXT
+-keep class com.appnext.** { *; }
+-dontwarn com.appnext.**
+
+# DISPLAYIO
+-keep class io.display.sdk.Controller.** { *; }
+-dontwarn io.display.sdk.Controller.**
+
 ```
