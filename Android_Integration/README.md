@@ -68,21 +68,21 @@ compile 'com.flurry.android:analytics:6.2.0'
 // INMOBI
 compile 'com.inmobi.monetization:inmobi-ads:5.3.1'
 
-// MOBFOX
-compile 'com.github.mobfox:MobFox-Android-SDK-Core:2.1.2'
-
 // MOPUB
 compile('com.mopub:mopub-sdk:4.8.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
 // SUPERSONIC
-compile 'com.supersonic.sdk:mediationsdk:6.4.13@jar'
+compile 'com.supersonic.sdk:mediationsdk:6.4.17@jar'
 
 // PUBNATIVE
 compile 'net.pubnative:library:2.2.1'
 compile 'net.pubnative:library.interstitial:2.2.1'
 compile 'net.pubnative:library.feed.banner:2.2.1'
 compile 'net.pubnative:library.video:2.2.1'
+
+// INLOCOMEDIA
+compile 'com.inlocomedia.android:android-sdk:2.3.3'
 ```
 
 And Repositories as follows;
@@ -108,19 +108,20 @@ mm-ad-sdk.aar
 unity-ads.aar
 
 adcolony.jar
-addictiveads-android.jar
 AdFalconAndroidSDK3.2.0.jar
 applovin-sdk-6.3.0.jar
+AppnextAndroidSDK.jar
 chartboost.jar
-FlyMobSdk-1.4.2.jar
+FlyMobSdk-1.5.5.jar
 loopme-sdk-4.8.0.jar
 HyperAdxSDK_1.2.7.jar
 mediabrix-sdk-FBless.jar
+MobFox-Android-SDK-Core-2.2.0.jar
 NativeXMonetizationSDK_v5.5.7.1.jar
 revmob.jar
-SOMAAndroidSDK5.0.7.jar
-tapjoy-11.7.0.jar
-vungle-publisher-adaptive-id-3.3.4.jar
+SOMAAndroidSDK5.0.8.jar
+tapjoy-11.8.1.jar
+vungle-publisher-adaptive-id-4.0.2.jar
 
 ////// Vungle ////////
 Dagger-1.2.2.jar
@@ -143,16 +144,10 @@ Initialize the Admost Mediation SDK in your application’s first Activity. This
 ```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
 
-configuration.initIds(AdMostAdNetwork.INMOBI, <INMOBI_PROPERTY_ID>);
-configuration.initIds(AdMostAdNetwork.FLURRY, <FLURRY_API_KEY>);
-configuration.initIds(AdMostAdNetwork.NATIVEX, <NATIVEX_APP_ID>);
-configuration.initIds(AdMostAdNetwork.CHARTBOOST, <CHARTBOOST_ID>, <CHARTBOOST_SIGNATURE>);
-configuration.initIds(AdMostAdNetwork.VUNGLE, <VUNGLE_ID>);
-configuration.initIds(AdMostAdNetwork.ADCOLONY, <ADCOLONY_ID>, <ADCOLONY_REWARDED>, <ADCOLONY_INTERSTITIAL>);
-configuration.initIds(AdMostAdNetwork.UNITY, <UNITY_ID>);
-configuration.initIds(AdMostAdNetwork.TAPJOY, <TAPJOY_ID>);
-configuration.initIds(AdMostAdNetwork.SMAATO, <SMAATO_ID>);
-configuration.initIds(AdMostAdNetwork.NEXAGE, <NEXAGE_SITE_ID>);
+//Optional
+configuration.age(24);
+configuration.gender(AdMost.GENDER_MALE);
+configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());
 ```
@@ -477,5 +472,9 @@ If you are using Proguard, add these lines to your Proguard file
 # DISPLAYIO
 -keep class io.display.sdk.Controller.** { *; }
 -dontwarn io.display.sdk.Controller.**
+
+# INLOCOMEDIA
+-keep class com.inlocomedia.** { *; }
+-dontwarn com.inlocomedia.**
 
 ```
