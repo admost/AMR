@@ -5,7 +5,7 @@
 * onShown and onClicked methods added to AdMostAdListener for fullscreen ads
 
 ###Updated
-* UnityAds (**v2.0.4**)
+* UnityAds (**v2.0.5**)
 * Facebook Rewarded (**v1.0.6**)
 * FlyMob (**v1.5.5**)
 * MobFox (**v2.2.0**)
