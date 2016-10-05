@@ -54,6 +54,18 @@
  */
 + (void)setStatusBarHidden:(BOOL)isHidden;
 
+/**
+ * Warning: Only applies to non-fullscreen banners.
+ * Preload banners in spesific zones to show instantly when they are needed to be shown.
+ * Pass your zone IDs displayed on AMR Dashboard to preload banners.
+ * Example usage:
+ * @code
+ * [AMRSDK preloadBannersWithZoneIds:@[<zoneId1>,<zoneId2>]];
+ * @endcode
+ * @param zoneIds NSArray with zoneIds string objects.
+ */
++ (void)preloadBannersWithZoneIds:(NSArray *)zoneIds;
+
 /// Get current SDK version
 + (NSString *)SDKVersion;
 

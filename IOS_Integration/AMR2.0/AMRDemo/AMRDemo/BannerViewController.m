@@ -29,6 +29,7 @@
     [super viewDidLoad];
 
     /*
+     AMR TEST ZONES
      2.0 Banner 50	native	b4009772-de04-42c4-bbaa-c18da9e4a1ab
      2.0 Banner 90	native	8b72580f-c8ed-4080-aac0-004ecab65030
      2.0 Banner 250	native	1b65e016-5b26-4ba0-aff5-b500a96d5157
