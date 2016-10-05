@@ -142,7 +142,7 @@ Basic integration steps are:
 Initialize the Admost Mediation SDK in your application’s first Activity. This starts pre-caching and prepares the SDK to display ads.
 
 ```java
-AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this);
+AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, <<ADMOST_APP_ID>>);
 
 //Optional
 configuration.age(24);
@@ -151,8 +151,6 @@ configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());
 ```
-
-It is compulsory to initialize Inmobi, Flurry, Chartboost, Vungle, Nativex  and Adcolony when they are used in the mediation waterfall. Otherwise, ignore these lines.
 
 ### Requesting Native Ads
 
@@ -180,7 +178,7 @@ AdMostViewBinder binder = new AdMostViewBinder.Builder(layout)
 
 // ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 
-ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, << ZONE_ID>>, TYPE,  new AdMostViewListener() {
+ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, TYPE,  new AdMostViewListener() {
     @Override
     public void onLoad(String network, int position) {
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
