@@ -204,7 +204,7 @@ ADMOST_MEDIATION_VIEW.destroy();
 ### Requesting FullScreen Ads
 
 ```java
-AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <ZONEID>, new AdMostAdListener() {
+AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.FAILED) {
@@ -230,7 +230,7 @@ AD_INTERSTITIAL.destroy();
 ### Requesting Video Ads
 
 ```java
-AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <ZONEID>, new AdMostAdListener() {
+AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.LOADED) {
