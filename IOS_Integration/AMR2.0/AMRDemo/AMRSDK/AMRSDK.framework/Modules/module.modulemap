@@ -1,0 +1,6 @@
+framework module AMRSDK {
+  umbrella header "AMRSDK.h"
+
+  export *
+  module * { export * }
+}
