@@ -448,10 +448,6 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.google.android.gms.ads.identifier.** { *; }
 -dontwarn com.tapjoy.internal.**
 
-# ADDICTIVEADS
--dontwarn com.addictiveads.**
--keep class com.addictiveads.** { public *; }
-
 # PUBNATIVE
 -keepattributes Signature
 -keep class net.pubnative.** { *; }
