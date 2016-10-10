@@ -18,7 +18,7 @@
 @property AMRBannerView *bannerView;
 /// A parent UIViewController required to catch taps.
 @property UIViewController *viewController;
-/// Width value of banner, default is screen width.
+/// Width value of banner, default is screen width. 
 @property (nonatomic) CGFloat bannerWidth;
 
 /**

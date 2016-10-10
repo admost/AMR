@@ -68,5 +68,6 @@
 
 /// Get current SDK version
 + (NSString *)SDKVersion;
++ (BOOL)isStatusBarHidden;
 
 @end

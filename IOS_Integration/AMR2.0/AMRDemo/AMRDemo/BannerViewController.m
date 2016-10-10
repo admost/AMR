@@ -9,8 +9,9 @@
 #import "BannerViewController.h"
 #import <KKLog/KKLog.h>
 #import <AMRSDK/AMRSDK.h>
+#import <AMRAdmostSDK/AMRAdmostSDK.h>
 
-@interface BannerViewController () <AMRBannerDelegate> {
+@interface BannerViewController () <AMRBannerDelegate, AMRAdmostLoaderDelegate> {
     AMRBanner* _banner50;
     AMRBanner* _banner90;
     AMRBanner* _banner250;
@@ -18,6 +19,8 @@
     IBOutlet UIView *VBannerContainer90;
     IBOutlet UIView *VBannerContainer250;
     IBOutlet UIActivityIndicatorView *AILoading;
+
+    AMRAdmostLoader *_admostLoader;
 }
 @end
 
@@ -39,19 +42,28 @@
      1.0 Native 10217edf-9a99-4fd0-be0a-a0ef2252af15
      */
 
-    _banner50 = [AMRBanner bannerForZoneId:@"b4009772-de04-42c4-bbaa-c18da9e4a1ab"];
+    _banner50 = [AMRBanner bannerForZoneId:@"10217edf-9a99-4fd0-be0a-a0ef2252af15"];
     _banner50.delegate = self;
+    _banner50.bannerWidth = 320;
     [_banner50 loadBanner];
 
-    _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
-    _banner90.delegate = self;
-    [_banner90 loadBanner];
+//    _banner90 = [AMRBanner bannerForZoneId:@"3b657ba6-a304-4c28-b419-a7fc55449bc9"];
+//    _banner90.delegate = self;
+//    _banner90.bannerWidth = 320;
+//    [_banner90 loadBanner];
+//
+//    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
+//    _banner250.delegate = self;
+//    _banner250.bannerWidth = 300;
+//    [_banner250 loadBanner];
 
-    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
-    _banner250.delegate = self;
-    [_banner250 loadBanner];
-
+    // AMRAdmostSDK
+    _admostLoader = [AMRAdmostLoader admostLoaderWithPBK:@"47725" customParameters:@{@"screen_name": @"BannerViewController"}];
+    _admostLoader.delegate = self;
+    [_admostLoader load];
 }
+
+- (void)dealloc {}
 
 #pragma mark - <AMRBannerDelegate>
 
@@ -69,6 +81,16 @@
 - (void)didFailToReceiveBanner:(AMRBanner *)banner error:(AMRError *)error {
     [AILoading stopAnimating];
     KKLogError(error.errorDescription);
+}
+
+#pragma mark - <AMRAdmostLoaderDelegate>
+
+- (void)didReceiveMediationZones:(NSArray *)zoneIds {
+
+}
+
+- (void)didFailWithError:(NSError *)error {
+
 }
 
 @end
