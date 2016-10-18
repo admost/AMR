@@ -128,4 +128,15 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
     AMRNetworkTypeVungle
 };
 
+typedef NS_ENUM(NSInteger, AMRReachabilityNetworkStatus){
+    /// Not reachable
+    AMRReachabilityNetworkStatusNotReachable = 0,
+
+    /// Reachable via Wireless LAN
+    AMRReachabilityNetworkStatusViaWifi,
+
+    /// Reachable via Wireless Wide Area Network
+    AMRReachabilityNetworkStatusViaWWAN,
+};
+
 #endif /* AMRTypes_h */

@@ -20,6 +20,8 @@
 
     [AMRSDK setLogLevel:AMRLogLevelAll];
     [AMRSDK startWithAppId:@"15066ddc-9c18-492c-8185-bea7e4c7f88c"];
+//    [AMRSDK startWithAppId:@"0cb5e69b-c98e-4d61-9e56-ae7603de1f2d"];
+
     [AMRSDK setStatusBarHidden:YES];
 //    [AMRSDK preloadBannersWithZoneIds:@[@"b4009772-de04-42c4-bbaa-c18da9e4a1ab"]];
 
