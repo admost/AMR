@@ -102,7 +102,7 @@ Add following lines to your `plist` file.
 
 
 ## Start Coding
-+ <a name="usage1"></a>Initialization   
++ <a name="usage1"></a>**Initialization**   
 
 To initialize Admost Mediation SDK, import `AMRSDK.h` to your `AppDelegate` file;  
 ```objectivec
