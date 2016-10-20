@@ -19,7 +19,7 @@
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 
 ## Setup
-  + <a name="install1"></a>AMR Framework files  
+  + <a name="install1"></a>**AMR Framework files**  
 
 Drag and drop following files in [AMRDemo/AMRSDK](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/AMRSDK) folder to your project.
 ```perl
@@ -27,7 +27,7 @@ AMRSDK.framework
 AMRResources.bundle
 KKLog.framework
 ```
-  + <a name="install2"></a>Other Frameworks and Libraries  
+  + <a name="install2"></a>**Other Frameworks and Libraries**  
 
 Add following frameworks and libraries to your project
 ```perl
@@ -55,7 +55,7 @@ SystemConfiguration.framework
 UIKit.framework
 WebKit.framework
 ```
-+ <a name="install3"></a>Mediation Adapters  
++ <a name="install3"></a>**Mediation Adapters**  
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
@@ -83,7 +83,7 @@ AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
 ```
-+ <a name="install4"></a>Xcode Setup  
++ <a name="install4"></a>**Xcode Setup**  
 
 Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
 Add `-ObjC` flag in your target's `Other Linker Flags` in `Build Settings`.  
@@ -102,7 +102,7 @@ Add following lines to your `plist` file.
 
 
 ## Start Coding
-+ <a name="usage1"></a>Initialization   
++ <a name="usage1"></a>**Initialization**   
 
 To initialize Admost Mediation SDK, import `AMRSDK.h` to your `AppDelegate` file;  
 ```objectivec
@@ -116,7 +116,7 @@ and initialize AMRSDK with your Application Id in `didFinishLaunchingWithOptions
   return YES;
 }
 ```  
-+ <a name="usage2"></a>Banner Ads  
++ <a name="usage2"></a>**Banner Ads**  
 
 To create and show a banner ad first import `AMRSDK.h` to your `UIViewController` file;  
 ```objectivec
@@ -149,7 +149,7 @@ If `didFailToReceiveBanner` callback method is called investigate `error` to adr
     NSLog(error.errorDescription);
 }
 ```
-+ <a name="usage3"></a>Interstitial Ads  
++ <a name="usage3"></a>**Interstitial Ads**  
 
 To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewController` file;  
 ```objectivec
@@ -180,7 +180,7 @@ If `didFailToReceiveInterstitial` callback method is called investigate `error` 
     NSLog(error.errorDescription);
 }
 ```
-+ <a name="usage4"></a>Rewarded Video Ads  
++ <a name="usage4"></a>**Rewarded Video Ads**  
 
 Rewarded video ads' implementation is pretty similar to Interstitial ads with 1 additional callback `didCompleteRewardedVideo` to reward the user.
 To create and show a rewarded video ad first import `AMRSDK.h` to your `UIViewController` file;  
