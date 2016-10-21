@@ -152,6 +152,36 @@ configuration.interests(“Games, Sports, News”);
 AdMost.getInstance().init(configuration.build());
 ```
 
+For all ad type, AMR sdk has to be aware of the activities lifecycle. So please use the following methods of AMR in your activities which ads are called.
+
+```java
+@Override
+public void onStart() {
+	super.onStart();
+	AdMost.getInstance().onStart(this);
+}
+@Override
+public void onResume() {
+	super.onResume();
+	AdMost.getInstance().onResume(this);
+}
+@Override
+public void onPause() {
+	super.onPause();
+	AdMost.getInstance().onPause(this);
+}
+@Override
+public void onStop() {
+	super.onStop();
+	AdMost.getInstance().onStop(this);
+}
+@Override
+public void onDestroy() {
+	super.onDestroy();
+	AdMost.getInstance().onDestroy(this);
+}
+```
+
 ### Requesting Native Ads
 
 You will need to create a AdmostView. Add all the required parameters to it and start it with a listener for extra tracking.
@@ -255,36 +285,6 @@ AD_VIDEO.refreshAd(AUTO_LOAD);
 ```
 
 AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
-
-In video ads, AMR sdk has to be aware of the activities lifecycle. So please use the following methods of AMR in your activities which the video ads are called.
-
-```java
-@Override
-public void onStart() {
-	super.onStart();
-	AdMost.getInstance().onStart(this);
-}
-@Override
-public void onResume() {
-	super.onResume();
-	AdMost.getInstance().onResume(this);
-}
-@Override
-public void onPause() {
-	super.onPause();
-	AdMost.getInstance().onPause(this);
-}
-@Override
-public void onStop() {
-	super.onStop();
-	AdMost.getInstance().onStop(this);
-}
-@Override
-public void onDestroy() {
-	super.onDestroy();
-	AdMost.getInstance().onDestroy(this);
-}
-```
 
 #Misc
 

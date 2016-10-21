@@ -31,6 +31,7 @@ KKLog.framework
 
 Add following frameworks and libraries to your project
 ```perl
+AddressBook.framework
 AdSupport.framework
 AudioToolbox.framework
 AVFoundation.framework
