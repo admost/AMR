@@ -47,20 +47,20 @@
 //    _banner50.bannerWidth = 320;
     [_banner50 loadBanner];
 
-    _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
-    _banner90.delegate = self;
-//    _banner90.bannerWidth = 320;
-    [_banner90 loadBanner];
-
-    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
-    _banner250.delegate = self;
-//    _banner250.bannerWidth = 300;
-    [_banner250 loadBanner];
-
-    // AMRAdmostSDK
-    _admostLoader = [AMRAdmostLoader admostLoaderWithPBK:@"47725" customParameters:@{@"screen_name": @"BannerViewController"}];
-    _admostLoader.delegate = self;
-    [_admostLoader load];
+//    _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
+//    _banner90.delegate = self;
+////    _banner90.bannerWidth = 320;
+//    [_banner90 loadBanner];
+//
+//    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
+//    _banner250.delegate = self;
+////    _banner250.bannerWidth = 300;
+//    [_banner250 loadBanner];
+//
+//    // AMRAdmostSDK
+//    _admostLoader = [AMRAdmostLoader admostLoaderWithPBK:@"47725" customParameters:@{@"screen_name": @"BannerViewController"}];
+//    _admostLoader.delegate = self;
+//    [_admostLoader load];
 }
 
 - (void)dealloc {}
