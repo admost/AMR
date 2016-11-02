@@ -10,8 +10,7 @@
 #import "MobFoxCustomEvent.h"
 #import "MFWebViewJavascriptBridge.h"
 #import "LocationServicesManager.h"
-
-//#import <MobFoxSDKCore/MobFoxSDKCore-Swift.h>
+#import "MFExceptionHandler.h"
 
 @class MobFoxAd;
 
@@ -96,6 +95,9 @@
 - (BOOL)isViewVisible;
 - (void)exceptionHandler;
 - (void)exceptionHandler:(NSException *)exception;
+
+- (void)_changeWidth:(float) newWidth;
+- (void)_setSize:(CGSize)size withContainer:(CGSize)container;
 
 
 @end

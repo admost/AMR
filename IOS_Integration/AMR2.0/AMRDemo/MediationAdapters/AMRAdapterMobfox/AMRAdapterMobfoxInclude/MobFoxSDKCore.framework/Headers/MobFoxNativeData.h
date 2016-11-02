@@ -37,6 +37,7 @@
 @property (nonatomic, copy) NSString *assetHeadline;
 @property (nonatomic, copy) NSString *assetDescription;
 @property (nonatomic, copy) NSString *callToActionText;
+@property (nonatomic, copy) NSString *sponsored;
 @property (nonatomic, copy) NSString *advertiserName;
 @property (nonatomic, copy) NSString *socialContext;
 @property (nonatomic, copy) NSNumber *rating;

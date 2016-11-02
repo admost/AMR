@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 /* Versions */
-#define SDK_VERSION @"Core_2.3.4"
+#define SDK_VERSION @"Core_2.4.0"
 #define OS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define FW_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]
 #define BUILD_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey]
