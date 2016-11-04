@@ -184,8 +184,6 @@ public void onDestroy() {
 
 ### Requesting Native Ads
 
-You will need to create a AdmostView. Add all the required parameters to it and start it with a listener for extra tracking.
-
 ```java
 
 /*
@@ -203,8 +201,10 @@ ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, <<TYPE>>,  new AdM
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
              // No Banner Found
         } else {
-            // Ad Loaded, You can get ad view by calling ADMOST_MEDIATION_VIEW.getView(0)
-            // Calling ADMOST_MEDIATION_VIEW.getView method multiple times will not cause any side effect.
+            // Ad Loaded
+	    // You can get adview by calling ADMOST_MEDIATION_VIEW.getView(0)
+	    // Attach it to a layout for impression.
+            // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
         }
     }
 }, <<BINDER>>);
