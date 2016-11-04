@@ -202,8 +202,8 @@ ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, <<TYPE>>,  new AdM
              // No Banner Found
         } else {
             // Ad Loaded
-	    // You can get adview by calling ADMOST_MEDIATION_VIEW.getView(0)
-	    // Attach it to a layout for impression.
+            // You can get adview by calling ADMOST_MEDIATION_VIEW.getView(0)
+            // Attach it to a layout for impression.
             // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
         }
     }
