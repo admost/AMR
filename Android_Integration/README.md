@@ -245,7 +245,7 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 		if (value == AdMostAdListener.FAILED) {
 			// Failed
 		} else {
-			// if it is auto loaded then no need to call show. Show will automatically triggered.
+			// if it is auto loaded then no need to call show. Show will be triggered automatically.
 			AD_INTERSTITIAL.show();
 		}
 	}
