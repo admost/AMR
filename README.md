@@ -1,6 +1,6 @@
 ##What is AMR?
  
-AMR (Admost Mediation Router) is a solely mobile ad mediation tool which is used to optimise the ad networks, geographically and ad type based, to maximise the revenue of applications.
+AMR (Admost Mediation Router) is a solely mobile ad mediation tool which is used to optimise the ad networks, country and ad type based, to maximise the revenue of applications.
  
 ##Which problem does AMR solve?
  
@@ -27,7 +27,7 @@ Normally all app owners who cooperate with many ad networks have to log in each 
 By tracking all the networks data together on AMR dashboard, publishers have flexibility to view/ compare the performances of each network in various aspects; zone-placement-ad type breakdown, ad network-country breakdown and more…
 
  
-##What is the differences of AMR from other mediations systems?
+##What is the differences of AMR from other mediation systems?
  
 Most of the mediations systems are the extension or part of an ad network, where they try to serve their own inventory first and if they cannot serve their own, they call other ad networks based on a waterfall in some algorithms.
 
@@ -49,8 +49,13 @@ AMR calculates eCPM rates itself. The system counts each impression with same me
 ##What is the pricing model of AMR?     
  
 AMR is free of a charge for the first month. AMR charge commission fee for the total earning after first month. The commission rate is %10 of the total monthly revenue up to first $100.000 and 5% over $100.000. We assert app publishers increase their revenues till 50% to 300% by using AMR.
- 
 
+For instance, your current mobile ad revenue is $50K and with the AMR integration;
+
+Scenario 1 (Worst Case): The revenue increased by 50% and reached to $75K. Your net revenue is $67.5K with 10%($7.5K) commission rate cut-off. Net revenue increased by 35%.
+
+Scenario 2 (Normal Case): The revenue increased by %200 and reached to $150K. Your net revenue is $137.5K with 10% for first $100K tier($10K) and 5% for second 50K tier($2.5K), totally $12.5K comission rate cut-off. Net revenue increased by 175%.
+ 
  
 ##What is the termination period?
  
