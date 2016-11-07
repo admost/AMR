@@ -161,6 +161,7 @@ and create an `AMRInterstitial` object, initialize it with your Zone Id and set 
 AMRInterstitial *fullScreen;
 fullScreen = [AMRInterstitial interstitialForZoneId:@"<zoneId>"];
 fullScreen.delegate = self;
+[fullScreen loadInterstitial];
 ```
 There are 3 callback methods in `<AMRInterstitialDelegate>` protocol.  
 When `didReceiveInterstitial` callback method is called just call the `showFromViewController` method to present interstitial from a viewController.
@@ -193,6 +194,7 @@ and create an `AMRRewardedVideo` object, initialize it with your Zone Id and set
 AMRRewardedVideo *rewardedVideo;
 rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"<zoneId>"];
 rewardedVideo.delegate = self;
+[rewardedVideo loadRewardedVideo];
 ```
 There are 4 callback methods in `<AMRRewardedVideoDelegate>` protocol.  
 When `didReceiveRewardedVideo` callback method is called just call the `showFromViewController` method to present rewarded video from a viewController.
