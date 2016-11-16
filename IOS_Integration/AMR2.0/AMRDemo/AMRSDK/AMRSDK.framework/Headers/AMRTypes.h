@@ -79,6 +79,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
     /// CHARTBOOST
     AMRNetworkTypeChartboost,
 
+    /// CONVERSANT
+    AMRNetworkTypeConversant,
+
     /// FACEBOOK
     AMRNetworkTypeFacebook,
 
@@ -87,6 +90,15 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
 
     /// FLYMOB
     AMRNetworkTypeFlymob,
+
+    /// FYBER
+    AMRNetworkTypeFyber,
+
+    /// HYPERADS
+    AMRNetworkTypeHyper,
+
+    /// INLOCO
+    AMRNetworkTypeInloco,
 
     /// INMOBI
     AMRNetworkTypeInMobi,

@@ -13,7 +13,7 @@
  * @brief The AMRRewardedVideoDelegate protocol.
  * This protocol is used as a delegate for rewarded video events.
  */
-@protocol AMRRewardedVideoDelegate
+@protocol AMRRewardedVideoDelegate <NSObject>
 
 /**
  * Successfully received a rewarded video. Call AMRRewardedVideo's showFromViewController method to start rewarded video.
@@ -27,10 +27,12 @@
 
 /**
  * Failed to receive an rewarded video. Inspect AMRError's errorCode and errorDescription properties to identify the problem.
- * @param interstitial Failed AMRInterstitial object
+ * @param rewardedVideo Failed AMRRewardedVideo object
  * @param error AMRError object with error code and descriptions
  */
 - (void)didFailToReceiveRewardedVideo:(AMRRewardedVideo *)rewardedVideo error:(AMRError *)error;
+
+@optional
 
 /**
  * Presented rewardedvideo is dismissed. Continue stopped tasks while the rewardedvideo ad is present. Called both after didCompleteRewardedVideo and didCancelRewardedVideo delegate callbacks.
@@ -49,5 +51,12 @@
  * @param rewardedVideo AMRRewardedVideo object
  */
 - (void)didCompleteRewardedVideo:(AMRRewardedVideo *)rewardedVideo;
+
+/**
+ * User rewarded with amount for completing a task or watching a rewarded video.
+ * @param AMRRewardedVideo AMRRewardedVideo object
+ * @param rewardAmount Reward amount
+ */
+- (void)didRewardUser:(NSNumber *)rewardAmount forRewardedVideo:(AMRRewardedVideo *)rewardedVideo;
 
 @end

@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    [AMRSDK setLogLevel:AMRLogLevelSilent];
+    [AMRSDK setLogLevel:AMRLogLevelAll];
     [AMRSDK startWithAppId:@"15066ddc-9c18-492c-8185-bea7e4c7f88c"];
 //  [AMRSDK startWithAppId:@"0cb5e69b-c98e-4d61-9e56-ae7603de1f2d"];
 

@@ -13,7 +13,7 @@
  * @brief The AMRInterstitialDelegate protocol.
  * This protocol is used as a delegate for interstitial events.
  */
-@protocol AMRInterstitialDelegate
+@protocol AMRInterstitialDelegate <NSObject>
 
 /**
  * Successfully received an interstitial. Call AMRInterstitial's showFromViewController method to show interstitial.

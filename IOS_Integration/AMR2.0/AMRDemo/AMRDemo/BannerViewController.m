@@ -44,17 +44,15 @@
 
     _banner50 = [AMRBanner bannerForZoneId:@"b4009772-de04-42c4-bbaa-c18da9e4a1ab"];
     _banner50.delegate = self;
-//    _banner50.bannerWidth = 320;
     [_banner50 loadBanner];
 
     _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
     _banner90.delegate = self;
-//    _banner90.bannerWidth = 320;
+    _banner50.bannerWidth = 320;
     [_banner90 loadBanner];
 
-    _banner250 = [AMRBanner bannerForZoneId:@"b6156204-9f62-4a68-bf88-2c630caa3683"];
+    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
     _banner250.delegate = self;
-//    _banner250.bannerWidth = 300;
     [_banner250 loadBanner];
 //
 //    // AMRAdmostSDK

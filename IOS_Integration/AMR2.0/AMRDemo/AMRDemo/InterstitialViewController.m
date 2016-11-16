@@ -38,7 +38,7 @@
 
 - (void)didReceiveInterstitial:(AMRInterstitial *)interstitial {
     [AILoading stopAnimating];
-    [interstitial showFromViewController:self];
+    [interstitial showFromViewController:self.navigationController];
 }
 
 - (void)didFailToReceiveInterstitial:(AMRInterstitial *)interstitial error:(AMRError *)error {

@@ -13,7 +13,7 @@
  * @brief The AMRBannerDelegate protocol.
  * This protocol is used as a delegate for banner events.
  */
-@protocol AMRBannerDelegate
+@protocol AMRBannerDelegate <NSObject>
 
 /**
  * Successfully received a banner. Add AMRBanner's bannerView as a subview to show banner.

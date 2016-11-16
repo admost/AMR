@@ -24,7 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"2bdefd44-5269-4cbc-b93a-373b74a2f067"];
+    // offerwall 1cadca08-33f9-4da7-969e-ef116d4e7d0e
+    // rewarded video c111d8cc-6441-4bd8-825a-b6d13a2cd957
+
+    _rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"1cadca08-33f9-4da7-969e-ef116d4e7d0e"];
     _rewardedVideo.delegate = self;
     [_rewardedVideo loadRewardedVideo];
 }
@@ -37,7 +40,7 @@
 
 - (void)didReceiveRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
     [AILoading stopAnimating];
-    [rewardedVideo showFromViewController:self];
+    [rewardedVideo showFromViewController:self.navigationController];
 }
 
 - (void)didFailToReceiveRewardedVideo:(AMRRewardedVideo *)rewardedVideo error:(AMRError *)error {
@@ -55,6 +58,10 @@
 
 - (void)didCompleteRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
     KKLogInfo(@"Rewarded video completed");
+}
+
+- (void)didRewardUser:(NSNumber *)rewardAmount forRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
+    KKLogInfo(@"User rewarded with amount: %@", rewardAmount);
 }
 
 @end
