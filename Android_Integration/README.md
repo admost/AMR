@@ -184,51 +184,56 @@ public void onDestroy() {
 
 ### Requesting Native Ads
 
-You will need to create a AdmostView. Add all the required parameters to it and start it with a listener for extra tracking.
-
 ```java
-int TYPE = AdMostManager.getInstance().AD_BANNER; 
-// AD_LEADERBOARD for 90dp height, AD_MEDIUM_RECTANGLE for big banners (height : 250dp)
-// You can use the following layouts by default, or define other layouts for your own designs
-int layout = admost.sdk.R.layout.admost_native;
-if (TYPE == AdMostManager.getInstance().AD_BANNER)
-layout = admost.sdk.R.layout.admost_native_50;
-AdMostLog.setLogEnabled(true);
-AdMostViewBinder binder = new AdMostViewBinder.Builder(layout)
-        .titleId(admost.sdk.R.id.ad_headline)
-        .textId(admost.sdk.R.id.ad_body)
-        .callToActionId(admost.sdk.R.id.ad_call_to_action)
-        .iconImageId(admost.sdk.R.id.ad_app_icon)
-        .mainImageId(admost.sdk.R.id.ad_image)
-        .backImageId(admost.sdk.R.id.ad_back)
-        .attributionId(admost.sdk.R.id.ad_attribution)
-        .isFixed(false)
-        .isCloseable(false)//(type & AD_CLOSEABLE) != 0
-        .build();
 
-// ZONE_ID : Your ZONE_ID defined on admost mediation panels.
+/*
+	ZONE_ID : Your ZONE_ID defined on admost mediation panels.
+	TYPE : The height of your banner, it may have 3 values;
+		1. AdMostManager.getInstance().AD_BANNER (50dp)
+		2. AdMostManager.getInstance().AD_LEADERBOARD (90dp)
+		3. AdMostManager.getInstance().AD_MEDIUM_RECTANGLE (250dp)
+	BINDER : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
+*/
 
-ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, TYPE,  new AdMostViewListener() {
+ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, <<TYPE>>,  new AdMostViewListener() {
     @Override
     public void onLoad(String network, int position) {
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
              // No Banner Found
         } else {
-            // Ad Loaded, You can get ad view by calling ADMOST_MEDIATION_VIEW.getView(postion)
-            // Calling ADMOST_MEDIATION_VIEW.getView method multiple times will not cause any side effect.
+            // Ad Loaded
+            // You can get adview by calling ADMOST_MEDIATION_VIEW.getView(0)
+            // Attach it to a layout for impression.
+            // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
         }
     }
-}, binder);
+}, <<BINDER>>);
 
-// Add the following line to get an ad from the admost mediation system.
-int POSITION = 0;
-ADMOST_MEDIATION_VIEW.getView(POSITION);
+// Add the following line to load an ad.
+ADMOST_MEDIATION_VIEW.getView(0);
 ```
 
 You have to call destroy method on ondestroy() method of the activity.
 
 ```java
 ADMOST_MEDIATION_VIEW.destroy();
+```
+
+If you want to create your own design for native ads, you have to create a binder object and pass it to AdMostView constructor as BINDER value. Example implementation for binder creation is as follows;
+
+```java
+int layout = layout.design_for_your_banner;
+AdMostViewBinder binder = new AdMostViewBinder.Builder(layout)
+	.titleId(R.id.ad_headline)
+	.textId(R.id.ad_body)
+	.callToActionId(R.id.ad_call_to_action)
+	.iconImageId(R.id.ad_app_icon)
+	.mainImageId(R.id.ad_image)
+	.backImageId(R.id.ad_back)
+	.attributionId(R.id.ad_attribution)
+	.isFixed(false)
+	.isCloseable(false)
+	.build();
 ```
 
 ### Requesting FullScreen Ads
@@ -240,8 +245,9 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 		if (value == AdMostAdListener.FAILED) {
 			// Failed
 		} else {
-			// if it is auto loaded then no need to call show. Show will automatically triggered.
-			AD_INTERSTITIAL.show();
+			// if it is auto loaded then no need to call show. Show will be triggered automatically.
+                        // Otherwise, you have to use show method like below
+			// AD_INTERSTITIAL.show();
 		}
 	}
 });
