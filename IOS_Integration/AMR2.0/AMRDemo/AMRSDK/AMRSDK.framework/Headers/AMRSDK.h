@@ -25,7 +25,7 @@
  * @code
  * [AMRSDK startWithAppId:@"<appId>"];
  * @endcode
- * @see https://github.com/kokteyldev/AMR/blob/master/IOS_Integration/README.md for more information.
+ * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
  * @param appId Your application ID.
  */
 + (void)startWithAppId:(NSString *)appId;
@@ -68,6 +68,8 @@
 
 /// Get current SDK version
 + (NSString *)SDKVersion;
+
+/// Check if the status bar is hidden
 + (BOOL)isStatusBarHidden;
 
 @end

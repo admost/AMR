@@ -29,13 +29,6 @@
 		2F2ADE581DB6AEDA002120D2 /* libAMRAdapterAdcolony.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDE61DB6AEDA002120D2 /* libAMRAdapterAdcolony.a */; };
 		2F2ADE591DB6AEDA002120D2 /* libAdFalconSDK3.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDE91DB6AEDA002120D2 /* libAdFalconSDK3.2.0.a */; };
 		2F2ADE5A1DB6AEDA002120D2 /* libAMRAdapterAdFalcon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDEA1DB6AEDA002120D2 /* libAMRAdapterAdFalcon.a */; };
-		2F2ADE5B1DB6AEDA002120D2 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDED1DB6AEDA002120D2 /* FirebaseAnalytics.framework */; };
-		2F2ADE5C1DB6AEDA002120D2 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDEE1DB6AEDA002120D2 /* FirebaseInstanceID.framework */; };
-		2F2ADE5D1DB6AEDA002120D2 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDEF1DB6AEDA002120D2 /* GoogleInterchangeUtilities.framework */; };
-		2F2ADE5E1DB6AEDA002120D2 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDF01DB6AEDA002120D2 /* GoogleMobileAds.framework */; };
-		2F2ADE5F1DB6AEDA002120D2 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDF11DB6AEDA002120D2 /* GoogleSymbolUtilities.framework */; };
-		2F2ADE601DB6AEDA002120D2 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDF21DB6AEDA002120D2 /* GoogleUtilities.framework */; };
-		2F2ADE611DB6AEDA002120D2 /* libAMRAdapterAdmob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDF31DB6AEDA002120D2 /* libAMRAdapterAdmob.a */; };
 		2F2ADE621DB6AEDA002120D2 /* AMRAdapterAdmostResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ADDF61DB6AEDA002120D2 /* AMRAdapterAdmostResources.bundle */; };
 		2F2ADE631DB6AEDA002120D2 /* libAMRAdapterAdmost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDF71DB6AEDA002120D2 /* libAMRAdapterAdmost.a */; };
 		2F2ADE641DB6AEDA002120D2 /* AmazonAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADDFA1DB6AEDA002120D2 /* AmazonAd.framework */; };
@@ -172,13 +165,6 @@
 		2F2ADDE61DB6AEDA002120D2 /* libAMRAdapterAdcolony.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterAdcolony.a; sourceTree = "<group>"; };
 		2F2ADDE91DB6AEDA002120D2 /* libAdFalconSDK3.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdFalconSDK3.2.0.a; sourceTree = "<group>"; };
 		2F2ADDEA1DB6AEDA002120D2 /* libAMRAdapterAdFalcon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterAdFalcon.a; sourceTree = "<group>"; };
-		2F2ADDED1DB6AEDA002120D2 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		2F2ADDEE1DB6AEDA002120D2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		2F2ADDEF1DB6AEDA002120D2 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		2F2ADDF01DB6AEDA002120D2 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		2F2ADDF11DB6AEDA002120D2 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		2F2ADDF21DB6AEDA002120D2 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
-		2F2ADDF31DB6AEDA002120D2 /* libAMRAdapterAdmob.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterAdmob.a; sourceTree = "<group>"; };
 		2F2ADDF61DB6AEDA002120D2 /* AMRAdapterAdmostResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMRAdapterAdmostResources.bundle; sourceTree = "<group>"; };
 		2F2ADDF71DB6AEDA002120D2 /* libAMRAdapterAdmost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterAdmost.a; sourceTree = "<group>"; };
 		2F2ADDFA1DB6AEDA002120D2 /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
@@ -300,8 +286,6 @@
 				2F6E42BF1DA657B6003572E4 /* AMRAdmostSDK.framework in Frameworks */,
 				2F2ADE6B1DB6AEDA002120D2 /* libAMRAdapterChartboost.a in Frameworks */,
 				2F2ADE8C1DB6AEDA002120D2 /* libAMRAdapterNativex.a in Frameworks */,
-				2F2ADE5B1DB6AEDA002120D2 /* FirebaseAnalytics.framework in Frameworks */,
-				2F2ADE611DB6AEDA002120D2 /* libAMRAdapterAdmob.a in Frameworks */,
 				2FDE737C1D99B76B004E9EA1 /* EventKitUI.framework in Frameworks */,
 				2FDE737A1D99B764004E9EA1 /* EventKit.framework in Frameworks */,
 				2FDE73781D99B757004E9EA1 /* CoreTelephony.framework in Frameworks */,
@@ -314,7 +298,6 @@
 				2F2ADE8F1DB6AEDA002120D2 /* RevMobAds.framework in Frameworks */,
 				2F2ADEA01DB6AEDA002120D2 /* VungleSDK.framework in Frameworks */,
 				2F2ADE921DB6AEDA002120D2 /* libAMRAdapterSmaato.a in Frameworks */,
-				2F2ADE5D1DB6AEDA002120D2 /* GoogleInterchangeUtilities.framework in Frameworks */,
 				2F2ADE661DB6AEDA002120D2 /* libAppLovinSdk.a in Frameworks */,
 				2F2ADE641DB6AEDA002120D2 /* AmazonAd.framework in Frameworks */,
 				2F2ADE741DB6AEDA002120D2 /* MobFoxSDKCore.framework in Frameworks */,
@@ -324,7 +307,6 @@
 				2FC525221D927B630095306E /* MediaPlayer.framework in Frameworks */,
 				2F08787E1D9481D6003A208A /* libsqlite3.tbd in Frameworks */,
 				2F2D90D21DCCBFD000127EAE /* libAppnextNativeAdsSDK.a in Frameworks */,
-				2F2ADE5E1DB6AEDA002120D2 /* GoogleMobileAds.framework in Frameworks */,
 				2F2ADE631DB6AEDA002120D2 /* libAMRAdapterAdmost.a in Frameworks */,
 				2F5DC7311DD9D99E0011A35F /* libAMRAdapterInloco.a in Frameworks */,
 				2F2ADE701DB6AEDA002120D2 /* InMobiSDK.framework in Frameworks */,
@@ -337,7 +319,6 @@
 				2F08787A1D9481BD003A208A /* Foundation.framework in Frameworks */,
 				2F0878781D9481B3003A208A /* CoreMedia.framework in Frameworks */,
 				2F0878761D9481AC003A208A /* CoreGraphics.framework in Frameworks */,
-				2F2ADE601DB6AEDA002120D2 /* GoogleUtilities.framework in Frameworks */,
 				2F2ADE651DB6AEDA002120D2 /* libAMRAdapterAmazon.a in Frameworks */,
 				2F0878741D9481A3003A208A /* CFNetwork.framework in Frameworks */,
 				2F2ADE5A1DB6AEDA002120D2 /* libAMRAdapterAdFalcon.a in Frameworks */,
@@ -353,10 +334,8 @@
 				2FC525241D927B6A0095306E /* CoreLocation.framework in Frameworks */,
 				2F2ADE571DB6AEDA002120D2 /* AdColony.framework in Frameworks */,
 				2F2ADE691DB6AEDA002120D2 /* libAMRAdapterAppnext.a in Frameworks */,
-				2F2ADE5F1DB6AEDA002120D2 /* GoogleSymbolUtilities.framework in Frameworks */,
 				2F456D141DD0A1DB00C916DC /* libFyberSDK-8.5.5.a in Frameworks */,
 				2F2ADE991DB6AEDA002120D2 /* libAMRAdapterUnity.a in Frameworks */,
-				2F2ADE5C1DB6AEDA002120D2 /* FirebaseInstanceID.framework in Frameworks */,
 				2F9565301DD35677006C6F42 /* libGreystripeSDK.a in Frameworks */,
 				2F2ADE591DB6AEDA002120D2 /* libAdFalconSDK3.2.0.a in Frameworks */,
 				2F2ADE711DB6AEDA002120D2 /* libAMRAdapterInmobi.a in Frameworks */,
@@ -451,28 +430,6 @@
 				2F2ADDE91DB6AEDA002120D2 /* libAdFalconSDK3.2.0.a */,
 			);
 			path = AMRAdapterAdFalconInclude;
-			sourceTree = "<group>";
-		};
-		2F2ADDEB1DB6AEDA002120D2 /* AMRAdapterAdmob */ = {
-			isa = PBXGroup;
-			children = (
-				2F2ADDEC1DB6AEDA002120D2 /* AMRAdapterAdmobInclude */,
-				2F2ADDF31DB6AEDA002120D2 /* libAMRAdapterAdmob.a */,
-			);
-			path = AMRAdapterAdmob;
-			sourceTree = "<group>";
-		};
-		2F2ADDEC1DB6AEDA002120D2 /* AMRAdapterAdmobInclude */ = {
-			isa = PBXGroup;
-			children = (
-				2F2ADDED1DB6AEDA002120D2 /* FirebaseAnalytics.framework */,
-				2F2ADDEE1DB6AEDA002120D2 /* FirebaseInstanceID.framework */,
-				2F2ADDEF1DB6AEDA002120D2 /* GoogleInterchangeUtilities.framework */,
-				2F2ADDF01DB6AEDA002120D2 /* GoogleMobileAds.framework */,
-				2F2ADDF11DB6AEDA002120D2 /* GoogleSymbolUtilities.framework */,
-				2F2ADDF21DB6AEDA002120D2 /* GoogleUtilities.framework */,
-			);
-			path = AMRAdapterAdmobInclude;
 			sourceTree = "<group>";
 		};
 		2F2ADDF41DB6AEDA002120D2 /* AMRAdapterAdmost */ = {
@@ -922,7 +879,6 @@
 				2F456D101DD0A1DB00C916DC /* AMRAdapterFyber */,
 				2F2ADDE31DB6AEDA002120D2 /* AMRAdapterAdcolony */,
 				2F2ADDE71DB6AEDA002120D2 /* AMRAdapterAdFalcon */,
-				2F2ADDEB1DB6AEDA002120D2 /* AMRAdapterAdmob */,
 				2F2ADDF41DB6AEDA002120D2 /* AMRAdapterAdmost */,
 				2F2ADDF81DB6AEDA002120D2 /* AMRAdapterAmazon */,
 				2F2ADDFC1DB6AEDA002120D2 /* AMRAdapterApplovin */,

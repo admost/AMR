@@ -22,7 +22,7 @@
  * @code
  * [AMRInterstitial interstitialForZoneId:@"<zoneId>"];
  * @endcode
- * @see https://github.com/kokteyldev/AMR/blob/master/IOS_Integration/README.md for more information.
+ * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
  * @param ZoneId Your interstitial's zone ID displayed on AMR Dashboard.
  * @return An instance of AMRInterstitial created by zoneId provided.
  */
@@ -43,7 +43,7 @@
  * @code
  * [interstitial showFromViewController:myViewController];
  * @endcode
- * @see https://github.com/kokteyldev/AMR/blob/master/IOS_Integration/README.md for more information.
+ * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
  * @param viewController Your interstitial's presenting viewcontroller.
  */
 - (void)showFromViewController:(UIViewController * )viewController;

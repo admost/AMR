@@ -22,7 +22,7 @@
  * @code
  * [AMRRewardedVideo rewardedVideoForZoneId:@"<zoneId>"];
  * @endcode
- * @see https://github.com/kokteyldev/AMR/blob/master/IOS_Integration/README.md for more information.
+ * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
  * @param ZoneId Your rewardedvideo's zone ID displayed on AMR Dashboard.
  * @return An instance of AMRRewardedVideo created by zoneId provided.
  */
@@ -43,7 +43,7 @@
  * @code
  * [rewardedVideo showFromViewController:myViewController];
  * @endcode
- * @see https://github.com/kokteyldev/AMR/blob/master/IOS_Integration/README.md for more information.
+ * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
  * @param viewController Your rewardedvideo's presenting viewcontroller.
  */
 - (void)showFromViewController:(UIViewController * )viewController;
