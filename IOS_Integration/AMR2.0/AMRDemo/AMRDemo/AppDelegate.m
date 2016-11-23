@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
 
     [AMRSDK setLogLevel:AMRLogLevelAll];
-    [AMRSDK startWithAppId:@"ca474375-5a55-4bb1-ac8b-eb5abf9ac315"]; //sozcu
+    [AMRSDK startWithAppId:@"15066ddc-9c18-492c-8185-bea7e4c7f88c"];
 
 //    [AMRSDK startWithAppId:@"15066ddc-9c18-492c-8185-bea7e4c7f88c"]; //ios test app
 //  [AMRSDK startWithAppId:@"0cb5e69b-c98e-4d61-9e56-ae7603de1f2d"];
