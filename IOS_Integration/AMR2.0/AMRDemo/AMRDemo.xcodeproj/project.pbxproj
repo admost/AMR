@@ -123,7 +123,7 @@
 		2FDE737E1D99B77E004E9EA1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDE737D1D99B77E004E9EA1 /* JavaScriptCore.framework */; };
 		2FDE73801D99B784004E9EA1 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDE737F1D99B784004E9EA1 /* SafariServices.framework */; };
 		2FE935A41DEC4DD2003664C7 /* OfferWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE935A31DEC4DD2003664C7 /* OfferWallViewController.m */; };
-		2FE935A71DEC510A003664C7 /* CollectRewardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE935A61DEC510A003664C7 /* CollectRewardsViewController.m */; };
+		2FE935A71DEC510A003664C7 /* SpendCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE935A61DEC510A003664C7 /* SpendCurrencyViewController.m */; };
 		2FFD45081D9C8FB60089824D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD45071D9C8FB60089824D /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -264,8 +264,8 @@
 		2FDE737F1D99B784004E9EA1 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		2FE935A21DEC4DD2003664C7 /* OfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferWallViewController.h; sourceTree = "<group>"; };
 		2FE935A31DEC4DD2003664C7 /* OfferWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferWallViewController.m; sourceTree = "<group>"; };
-		2FE935A51DEC510A003664C7 /* CollectRewardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectRewardsViewController.h; sourceTree = "<group>"; };
-		2FE935A61DEC510A003664C7 /* CollectRewardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectRewardsViewController.m; sourceTree = "<group>"; };
+		2FE935A51DEC510A003664C7 /* SpendCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpendCurrencyViewController.h; sourceTree = "<group>"; };
+		2FE935A61DEC510A003664C7 /* SpendCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpendCurrencyViewController.m; sourceTree = "<group>"; };
 		2FFD45071D9C8FB60089824D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -388,8 +388,8 @@
 				2F9A54C71D770F83007756AB /* RewardedVideoViewController.m */,
 				2FE935A21DEC4DD2003664C7 /* OfferWallViewController.h */,
 				2FE935A31DEC4DD2003664C7 /* OfferWallViewController.m */,
-				2FE935A51DEC510A003664C7 /* CollectRewardsViewController.h */,
-				2FE935A61DEC510A003664C7 /* CollectRewardsViewController.m */,
+				2FE935A51DEC510A003664C7 /* SpendCurrencyViewController.h */,
+				2FE935A61DEC510A003664C7 /* SpendCurrencyViewController.m */,
 				2F23EFE01D6749BA00CAC0FF /* Main.storyboard */,
 				2F23EFE31D6749BA00CAC0FF /* Assets.xcassets */,
 				2F23EFE51D6749BA00CAC0FF /* LaunchScreen.storyboard */,
@@ -1019,7 +1019,7 @@
 				2F9A54C81D770F83007756AB /* RewardedVideoViewController.m in Sources */,
 				2FE935A41DEC4DD2003664C7 /* OfferWallViewController.m in Sources */,
 				2F23EFDF1D6749BA00CAC0FF /* BannerViewController.m in Sources */,
-				2FE935A71DEC510A003664C7 /* CollectRewardsViewController.m in Sources */,
+				2FE935A71DEC510A003664C7 /* SpendCurrencyViewController.m in Sources */,
 				2F23EFDC1D6749BA00CAC0FF /* AppDelegate.m in Sources */,
 				2F8A8B491D6F35EF002F3022 /* InterstitialViewController.m in Sources */,
 				2F23EFD91D6749BA00CAC0FF /* main.m in Sources */,

@@ -120,7 +120,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-lR-qiU">
                                 <rect key="frame" x="244" y="491" width="111" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Collect Rewards"/>
+                                <state key="normal" title="Spend Currency"/>
                                 <connections>
                                     <segue destination="kUG-jn-9JX" kind="show" id="Yx7-pe-YMs"/>
                                 </connections>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="2637" y="454"/>
         </scene>
-        <!--Collect Rewards-->
+        <!--Spend Virtual Currency-->
         <scene sceneID="TCo-eX-yad">
             <objects>
-                <viewController id="kUG-jn-9JX" customClass="CollectRewardsViewController" sceneMemberID="viewController">
+                <viewController id="kUG-jn-9JX" customClass="SpendCurrencyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8DU-B3-mxW"/>
                         <viewControllerLayoutGuide type="bottom" id="z4V-Ze-eDu"/>
@@ -269,11 +269,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-b2-QCS">
-                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                                <rect key="frame" x="277.5" y="285" width="45" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Collect"/>
+                                <state key="normal" title="Spend"/>
                                 <connections>
-                                    <action selector="collect" destination="kUG-jn-9JX" eventType="touchUpInside" id="J3V-dk-ZwS"/>
+                                    <action selector="spend" destination="kUG-jn-9JX" eventType="touchUpInside" id="fRW-7a-cue"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -284,7 +284,7 @@
                             <constraint firstItem="w5D-b2-QCS" firstAttribute="centerX" secondItem="2Ev-8u-he2" secondAttribute="centerX" id="hzv-kR-jT8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Collect Rewards" id="bN3-Jp-sPY"/>
+                    <navigationItem key="navigationItem" title="Spend Virtual Currency" id="bN3-Jp-sPY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePV-Qd-BOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

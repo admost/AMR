@@ -19,7 +19,7 @@
 #import "AMROfferWallDelegate.h"
 #import "AMROfferWall.h"
 
-@protocol AMRSDKRewardDelegate;
+@protocol AMRVirtualCurrencyDelegate;
 
 @interface AMRSDK : NSObject
 
@@ -35,7 +35,7 @@
 + (void)startWithAppId:(NSString *)appId;
 
 /**
- * Set logging level of AMRSDK. 
+ * Set logging level of AMRSDK.
  * Default value is AMRLogLevelAll which logs everything.
  * Example usage:
  * @code
@@ -77,35 +77,35 @@
 + (BOOL)isStatusBarHidden;
 
 /**
- * Set reward delegate for reward collection events.
- * Reward delegate must be set before using rewarded videos or offerwalls.
- * @param delegate An object conforms to <AMRSDKRewardDelegate> protocol.
+ * Set virtual currenct delegate for virtual currency events.
+ * Virtual currency delegate must be set before using offerwalls.
+ * @param delegate An object conforms to <AMRVirtualCurrencyDelegate> protocol.
  */
-+ (void)setRewardDelegate:(id<AMRSDKRewardDelegate>)delegate;
++ (void)setVirtualCurrencyDelegate:(id<AMRVirtualCurrencyDelegate>)delegate;
 
 /**
- * Start collecting rewards.
- * Reward delegate must be set before starting to collect rewards.
+ * Start spending virtual currencies.
+ * Virtual currency delegate must be set before starting to spend virtual currencies.
  */
-+ (void)collectReward;
++ (void)spendVirtualCurrency;
 
 @end
 
 /**
- * @protocol AMRSDKRewardDelegate
- * @brief The AMRSDKRewardDelegate protocol.
- * This protocol is used as a delegate for reward collection events.
+ * @protocol AMRVirtualCurrencyDelegate
+ * @brief The AMRVirtualCurrencyDelegate protocol.
+ * This protocol is used as a delegate for virtual currency events.
  */
-@protocol AMRSDKRewardDelegate <NSObject>
+@protocol AMRVirtualCurrencyDelegate <NSObject>
 
 /**
- * Successfully acquired a reward.
- * @param amount Amount of collected reward.
- * @param currency Currency of collected reward.
- * @param network Network type of rewarding ad network.
+ * Successfully spent virtual currency.
+ * @param amount Amount of virtual currency.
+ * @param currency Currency of virtual currency.
+ * @param network Network type of cirtual currency ad network.
  */
-- (void)didCollectRewardWithAmount:(NSNumber *)amount
-                          currency:(NSString *)currency
-                           network:(AMRNetworkType)network;
+- (void)didSpendVirtualCurrenct:(NSString *)currency
+                          amout:(NSNumber *)amount
+                        network:(AMRNetworkType)network;
 
 @end
