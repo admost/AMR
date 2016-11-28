@@ -16,6 +16,10 @@
 #import "AMRInterstitial.h"
 #import "AMRRewardedVideoDelegate.h"
 #import "AMRRewardedVideo.h"
+#import "AMROfferWallDelegate.h"
+#import "AMROfferWall.h"
+
+@protocol AMRSDKRewardDelegate;
 
 @interface AMRSDK : NSObject
 
@@ -71,5 +75,37 @@
 
 /// Check if the status bar is hidden
 + (BOOL)isStatusBarHidden;
+
+/**
+ * Set reward delegate for reward collection events.
+ * Reward delegate must be set before using rewarded videos or offerwalls.
+ * @param delegate An object conforms to <AMRSDKRewardDelegate> protocol.
+ */
++ (void)setRewardDelegate:(id<AMRSDKRewardDelegate>)delegate;
+
+/**
+ * Start collecting rewards.
+ * Reward delegate must be set before starting to collect rewards.
+ */
++ (void)collectReward;
+
+@end
+
+/**
+ * @protocol AMRSDKRewardDelegate
+ * @brief The AMRSDKRewardDelegate protocol.
+ * This protocol is used as a delegate for reward collection events.
+ */
+@protocol AMRSDKRewardDelegate <NSObject>
+
+/**
+ * Successfully acquired a reward.
+ * @param amount Amount of collected reward.
+ * @param currency Currency of collected reward.
+ * @param network Network type of rewarding ad network.
+ */
+- (void)didCollectRewardWithAmount:(NSNumber *)amount
+                          currency:(NSString *)currency
+                           network:(AMRNetworkType)network;
 
 @end

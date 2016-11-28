@@ -11,7 +11,7 @@
 #import <AMRSDK/AMRSDK.h>
 
 @interface InterstitialViewController () <AMRInterstitialDelegate> {
-    AMRInterstitial* _interstitial;
+    AMRInterstitial *_interstitial;
     IBOutlet UIActivityIndicatorView *AILoading;
 }
 
@@ -30,6 +30,7 @@
      */
 
     _interstitial = [AMRInterstitial interstitialForZoneId:@"6c2a38f4-04d9-4b60-af6a-48befca7611b"];
+    
     _interstitial.delegate = self;
     [_interstitial loadInterstitial];
 }

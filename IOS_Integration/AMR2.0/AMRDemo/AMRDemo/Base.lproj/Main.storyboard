@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -101,30 +101,50 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="S2e-tZ-Qyv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-MQ-K1o">
-                                <rect key="frame" x="249.5" y="291" width="101" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Interstitial Test"/>
-                                <connections>
-                                    <segue destination="Lgj-j3-aAx" kind="show" id="TW4-ra-iRO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3s-WJ-KrN">
-                                <rect key="frame" x="249" y="371" width="102" height="30"/>
+                                <rect key="frame" x="249" y="351" width="102" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Rewarded Test"/>
                                 <connections>
                                     <segue destination="90D-gQ-Q8Q" kind="show" id="0kj-Ay-8LI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxo-ai-a3d">
+                                <rect key="frame" x="253" y="421" width="95" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Offerwall Test"/>
+                                <connections>
+                                    <segue destination="1H1-j4-Pfq" kind="show" id="M8n-C6-XkT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-lR-qiU">
+                                <rect key="frame" x="244" y="491" width="111" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Collect Rewards"/>
+                                <connections>
+                                    <segue destination="kUG-jn-9JX" kind="show" id="Yx7-pe-YMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-MQ-K1o">
+                                <rect key="frame" x="249" y="281" width="101" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Interstitial Test"/>
+                                <connections>
+                                    <segue destination="Lgj-j3-aAx" kind="show" id="TW4-ra-iRO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Su8-MQ-K1o" firstAttribute="top" secondItem="IV7-3X-8EL" secondAttribute="bottom" constant="50" id="0cJ-fS-xBv"/>
+                            <constraint firstItem="Su8-MQ-K1o" firstAttribute="top" secondItem="IV7-3X-8EL" secondAttribute="bottom" constant="40" id="0cJ-fS-xBv"/>
+                            <constraint firstItem="2Gu-lR-qiU" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="DC0-OU-hNa"/>
+                            <constraint firstItem="xxo-ai-a3d" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="LLp-Kz-Mun"/>
                             <constraint firstItem="4zx-i3-QtJ" firstAttribute="top" secondItem="V6y-Dm-BO3" secondAttribute="bottom" constant="47" id="QHT-pg-EXD"/>
-                            <constraint firstItem="e3s-WJ-KrN" firstAttribute="top" secondItem="Su8-MQ-K1o" secondAttribute="bottom" constant="50" id="SzS-OB-Pcg"/>
+                            <constraint firstItem="e3s-WJ-KrN" firstAttribute="top" secondItem="Su8-MQ-K1o" secondAttribute="bottom" constant="40" id="SzS-OB-Pcg"/>
+                            <constraint firstItem="xxo-ai-a3d" firstAttribute="top" secondItem="e3s-WJ-KrN" secondAttribute="bottom" constant="40" id="bX4-RC-gbM"/>
                             <constraint firstItem="IV7-3X-8EL" firstAttribute="top" secondItem="4zx-i3-QtJ" secondAttribute="bottom" constant="70" id="cea-Ce-SGk"/>
+                            <constraint firstItem="2Gu-lR-qiU" firstAttribute="top" secondItem="xxo-ai-a3d" secondAttribute="bottom" constant="40" id="kSj-4B-gMR"/>
                             <constraint firstItem="Su8-MQ-K1o" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="lZN-Za-zsa"/>
                             <constraint firstItem="e3s-WJ-KrN" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="lhi-6C-0hB"/>
                             <constraint firstItem="IV7-3X-8EL" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="r4x-Y3-XLd"/>
@@ -202,6 +222,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPy-Vp-o4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1927" y="450"/>
+        </scene>
+        <!--Offer Wall-->
+        <scene sceneID="g3s-dp-xm5">
+            <objects>
+                <viewController id="1H1-j4-Pfq" customClass="OfferWallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQb-F8-TGq"/>
+                        <viewControllerLayoutGuide type="bottom" id="QUm-gs-ExV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SAK-fP-lKD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A09-Q3-zE2">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A09-Q3-zE2" firstAttribute="centerX" secondItem="SAK-fP-lKD" secondAttribute="centerX" id="CSG-uY-rpP"/>
+                            <constraint firstItem="A09-Q3-zE2" firstAttribute="centerY" secondItem="SAK-fP-lKD" secondAttribute="centerY" id="bj2-Rh-FYa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Offer Wall" id="9Z7-ec-1Ks"/>
+                    <connections>
+                        <outlet property="AILoading" destination="A09-Q3-zE2" id="nVd-12-5nU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ver-ZD-16N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2637" y="454"/>
+        </scene>
+        <!--Collect Rewards-->
+        <scene sceneID="TCo-eX-yad">
+            <objects>
+                <viewController id="kUG-jn-9JX" customClass="CollectRewardsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8DU-B3-mxW"/>
+                        <viewControllerLayoutGuide type="bottom" id="z4V-Ze-eDu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ev-8u-he2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-b2-QCS">
+                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Collect"/>
+                                <connections>
+                                    <action selector="collect" destination="kUG-jn-9JX" eventType="touchUpInside" id="J3V-dk-ZwS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w5D-b2-QCS" firstAttribute="centerY" secondItem="2Ev-8u-he2" secondAttribute="centerY" id="Qix-bd-EFF"/>
+                            <constraint firstItem="w5D-b2-QCS" firstAttribute="centerX" secondItem="2Ev-8u-he2" secondAttribute="centerX" id="hzv-kR-jT8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Collect Rewards" id="bN3-Jp-sPY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePV-Qd-BOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3269" y="450"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fra-vw-bR3">

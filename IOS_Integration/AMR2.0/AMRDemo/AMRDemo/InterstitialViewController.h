@@ -8,6 +8,4 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InterstitialViewController : UIViewController
-
-@end
+@interface InterstitialViewController : UIViewController @end
