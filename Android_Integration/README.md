@@ -50,39 +50,50 @@ compile(name: 'mm-ad-sdk', ext: 'aar')
 compile 'com.android.volley:volley:1.0.0'
 
 // GOOGLE
-compile 'com.google.android.gms:play-services-ads:9.2.1'
+compile 'com.google.android.gms:play-services-ads:10.0.1’
 
 // NATIVEX
 compile 'com.google.code.gson:gson:2.6.2'
 
 // AMAZON
-compile 'com.amazon.android:mobile-ads:5.7.2'
+compile 'com.amazon.android:mobile-ads:5.8.1.1’
 
 // FACEBOOK
-compile 'com.facebook.android:audience-network-sdk:4.11.0'
+compile 'com.facebook.android:audience-network-sdk:4.17.0’
 
 // FLURRY
 compile 'com.flurry.android:ads:6.2.0'
 compile 'com.flurry.android:analytics:6.2.0'
 
 // INMOBI
-compile 'com.inmobi.monetization:inmobi-ads:5.3.1'
+compile 'com.inmobi.monetization:inmobi-ads:6.0.3’
 
 // MOPUB
-compile('com.mopub:mopub-sdk:4.8.0@aar') { transitive = true }
+compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
 // SUPERSONIC
 compile 'com.supersonic.sdk:mediationsdk:6.4.17@jar'
 
+// APPNEXT
+compile('com.appnext.sdk:appnext-sdk:1.7.2')
+compile 'com.appnext.sdk:native-ads-sdk:1.7.2'
+
 // PUBNATIVE
-compile 'net.pubnative:library:2.2.1'
-compile 'net.pubnative:library.interstitial:2.2.1'
-compile 'net.pubnative:library.feed.banner:2.2.1'
-compile 'net.pubnative:library.video:2.2.1'
+compile 'net.pubnative:library:2.3.6’
+compile 'net.pubnative:library.interstitial:2.3.6’
+compile 'net.pubnative:library.feed.banner:2.3.6’
+compile 'net.pubnative:library.video:2.3.6’
 
 // INLOCOMEDIA
-compile 'com.inlocomedia.android:android-sdk:2.3.3'
+compile 'com.inlocomedia.android:android-sdk:2.4.0’
+
+// TEADS
+compile('tv.teads.sdk:androidsdk:2.2.16:fullRelease@aar') { transitive = true; }
+
+//ADCOLONY
+compile 'com.adcolony:sdk:3.0.5'
+compile 'com.android.support:support-annotations:24.2.1'
 ```
 
 And Repositories as follows;
@@ -95,6 +106,10 @@ repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
     maven { url "https://dl.bintray.com/supersonic/android-sdk" }
+    maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
+    maven { url "http://repo.appnext.com/" }
+    maven { url "https://fyber.bintray.com/maven" }
+    maven { url "https://adcolony.bintray.com/AdColony" }
 }
 ```
 
@@ -107,19 +122,21 @@ admost-sdk.aar
 mm-ad-sdk.aar
 unity-ads.aar
 
-adcolony.jar
 AdFalconAndroidSDK3.2.0.jar
 applovin-sdk-6.3.0.jar
-AppnextAndroidSDK.jar
 chartboost.jar
-FlyMobSdk-1.5.5.jar
+conversant-android-sdk-2.4.2.jar
+FlyMobSdk-1.7.0.jar
+heyzap-unified-platform-10.2.0.jar
+io.display.sdk-1.0.1
 loopme-sdk-4.8.0.jar
-HyperAdxSDK_1.2.7.jar
 mediabrix-sdk-FBless.jar
-MobFox-Android-SDK-Core-2.2.0.jar
+MobFox-Android-SDK-Core-3.0.0b.jar
 NativeXMonetizationSDK_v5.5.7.1.jar
 revmob.jar
+RFMSDK.jar
 SOMAAndroidSDK5.0.8.jar
+StartAppInApp-3.5.1.jar
 tapjoy-11.8.1.jar
 vungle-publisher-adaptive-id-4.0.2.jar
 
@@ -180,6 +197,32 @@ public void onDestroy() {
 	super.onDestroy();
 	AdMost.getInstance().onDestroy(this);
 }
+
+@Override
+public void onBackPressed() {
+        AdMost.getInstance().onBackPressed(this);
+}
+
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
+}
+```
+
+### Spending Virtual Currencies with AdMostInterstitial
+
+```java
+offerwall.spendVirtualCurrency(offerwall.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
+                        @Override
+                        public void onSuccess(String network, String currency, double balance) {
+                            AdMostLog.log(network + " " + currency + " " + balance);
+                        }
+
+                        @Override
+                        public void onError(String network, String error) {
+                            AdMostLog.log(network + " " + error);
+                        }
+                    });
 ```
 
 ### Requesting Native Ads
@@ -246,7 +289,7 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 			// Failed
 		} else {
 			// if it is auto loaded then no need to call show. Show will be triggered automatically.
-                        // Otherwise, you have to use show method like below
+                       // Otherwise, you have to use show method like below
 			// AD_INTERSTITIAL.show();
 		}
 	}
@@ -476,5 +519,36 @@ If you are using Proguard, add these lines to your Proguard file
 # INLOCOMEDIA
 -keep class com.inlocomedia.** { *; }
 -dontwarn com.inlocomedia.**
+
+# RUBICON
+-keep public class com.rfm.** { *; }
+-dontwarn com.rfm.**
+
+# HEYZAP
+-keep public class com.heyzap.** { *; }
+-dontwarn com.heyzap.**
+
+# FYBER
+-keep public class com.fyber.** { *; }
+-dontwarn com.fyber.**
+
+-keep class com.fyber.mediation.MediationConfigProvider {
+    public static *;
+}
+-keep class com.fyber.mediation.MediationAdapterStarter {
+    public static *;
+}
+-keepclassmembers class com.fyber.ads.videos.mediation.** {
+    void setValue(java.lang.String);
+}
+
+# CONVERSANT
+-keep class com.greystripe.** { *; }
+
+# STARTAPP
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
+-dontwarn android.webkit.JavascriptInterface
+-keep class com.startapp.** { *; }
+-dontwarn com.startapp.**
 
 ```
