@@ -32,7 +32,19 @@ Add the following line into your AndroidManifest.xml (This needs to go inside th
 ```sh
 <meta-data android:name="applovin.sdk.key" android:value="<SDK_KEY>" />
 ```
-
+###Inmobi Publishers
+Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
+```sh
+<receiver
+    android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
+    android:enabled="true"
+    android:exported="true"
+    tools:ignore="ExportedReceiver">
+    <intent-filter>
+	<action android:name="com.inmobi.share.id" />
+    </intent-filter>
+</receiver>
+```
 #Install
 
 ###Gradle
