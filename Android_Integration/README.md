@@ -516,10 +516,6 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.squareup.picasso.** { *; }
 -dontwarn com.squareup.picasso.**
 
-# HYPERADS
--dontwarn com.hyperadx.**
--keep class com.hyperadx.** { public *; }
-
 # APPNEXT
 -keep class com.appnext.** { *; }
 -dontwarn com.appnext.**
