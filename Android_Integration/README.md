@@ -224,7 +224,12 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 ### Spending Virtual Currencies with AdMostInterstitial
 
 ```java
-offerwall.spendVirtualCurrency(offerwall.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
+OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
+	@Override
+	public void onAction(int value) {  
+                if (value == AdMostAdListener.CLOSED) {
+		    
+		    OFFERWALL.spendVirtualCurrency(OFFERWALL.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
                         @Override
                         public void onSuccess(String network, String currency, double balance) {
                             AdMostLog.log(network + " " + currency + " " + balance);
@@ -235,6 +240,10 @@ offerwall.spendVirtualCurrency(offerwall.getCurrentNetwork(), new AdMostVirtualC
                             AdMostLog.log(network + " " + error);
                         }
                     });
+		    
+                }
+	}
+});
 ```
 
 ### Requesting Native Ads
