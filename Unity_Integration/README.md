@@ -4,6 +4,7 @@
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
   + [AMR Unity Package](#install1)
+  + [Mediation Adapters](#install2)
 * [Start Coding](#start-coding)
   + [Initialization](#usage1)
   + [Banner Ads](#usage2)
@@ -22,38 +23,9 @@ Extract following package in your Unity Project;
 ```perl
 AMRUnity.unitypackage
 ```
-  + <a name="install2"></a>Other Frameworks and Libraries  
++ <a name="install2"></a>Mediation Adapters
 
-Add following frameworks and libraries to your project
-```perl
-AdSupport.framework
-AudioToolbox.framework
-AVFoundation.framework
-AVKit.framework
-CFNetwork.framework
-CoreGraphics.framework
-CoreLocation.framework
-CoreMedia.framework
-CoreMotion.framework
-CoreTelephony.framework
-EventKit.framework
-EventKitUI.framework
-Foundation.framework
-JavaScriptCore.framework
-libsqlite3.tbd
-libz.tbd
-MediaPlayer.framework
-QuartzCore.framework
-SafariServices.framework
-StoreKit.framework
-SystemConfiguration.framework
-UIKit.framework
-WebKit.framework
-```
-+ <a name="install3"></a>Mediation Adapters  
-
-At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
-Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
+All mediation adapters are included in target platform's plugins folder. At least one mediation adapter is required for AMRSDK to show banners. You can keep all adapters listed below (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 ```perl
 AMRAdapterAdFalcon
 AMRAdapterAdcolony
@@ -78,70 +50,41 @@ AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
 ```
-+ <a name="install4"></a>Xcode Setup  
-
-Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
-Add `-ObjC` flag in your target's `Other Linker Flags` in `Build Settings`.  
-Add following lines to your `plist` file.
-```plist
-<key>NSAppTransportSecurity</key>
-<dict>
-  <key>NSAllowsArbitraryLoads</key>
-  <true/>
-</dict>
-```
-```plist
-<key>NSCalendarsUsageDescription</key>
-<string>Some ad content may access calendar</string>
-```  
-
-
 ## Start Coding
 + <a name="usage1"></a>Initialization   
 
-To initialize Admost Mediation SDK, import `AMRSDK.h` to your `AppDelegate` file;  
-```objectivec
-#import <AMRSDK/AMRSDK.h>
-```  
-and initialize AMRSDK with your Application Id in `didFinishLaunchingWithOptions` callback;  
-```objectivec
-- (BOOL)application:(UIApplication *)application 
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [AMRSDK startWithAppId:@"<appId>"];
-  return YES;
-}
+To initialize Admost Mediation SDK, create an instance of AMRSDK and start the SDK with your iOS and Android application Ids;  
+```c#
+AMRSdk = new AMR.AMRSDK();
+AMRSdk.startWithAppId(<Your iOS App Id>, <Your Android App Id>);
 ```  
 + <a name="usage2"></a>Banner Ads  
 
-To create and show a banner ad first import `AMRSDK.h` to your `UIViewController` file;  
-```objectivec
-#import <AMRSDK/AMRSDK.h>
+To create and show a banner ad first create a `AMRBannerView` object
+```c#
+BannerView = new AMR.AMRBannerView();
 ```
-and create an `AMRBanner` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRBannerDelegate>` protocol.  
-```objectivec
-AMRBanner *mpuBanner;
-mpuBanner = [AMRBanner bannerForZoneId:@"<zoneId>"];
-mpuBanner.delegate = self;
+and call `loadBannerForZoneId` method with your iOS and Android Zone Ids, banner placement and callback handler;  
+```c#
+BannerView.loadBannerForZoneId( <Your iOS Zone Id>,
+                                <Your Android Zone Id>, 
+                                pos,
+                                this);
 ```
-Optionally you can set the width of the banner, default value is screen width.
-```objectivec
-mpuBanner.bannerWidth = 300;
-```
-Start loading banner with `loadBanner` method and wait for the `<AMRBannerDelegate>` protocol callbacks.
-```objectivec
-[mpuBanner loadBanner];
-```
-There are 2 callback methods in `<AMRBannerDelegate>` protocol.  
-When `didReceiveBanner` callback method is called just add banner's `bannerView` as a subview on your viewcontroller to show banner.
-```objectivec
-- (void)didReceiveBanner:(AMRBanner *)banner {
-    [self.view addSubview:banner.bannerView];
+
+There are 2 callback methods in `<AMRBannerViewDelegate>` interface.  
+`didReceiveBanner` callback method is called to inform the app that the banner is loaded.
+```c#
+public void didReceiveBanner()
+{
+    Debug.Log("Banner Received");
 }
 ```
 If `didFailToReceiveBanner` callback method is called investigate `error` to adress the problem.
-```objectivec
-- (void)didFailToReceiveBanner:(AMRBanner *)banner error:(AMRError *)error {
-    NSLog(error.errorDescription);
+```c#
+public void didFailtoReceiveBanner(string error)
+{
+	Debug.Log("ERROR: "+error);
 }
 ```
 + <a name="usage3"></a>Interstitial Ads  
