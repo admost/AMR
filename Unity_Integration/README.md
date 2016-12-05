@@ -64,14 +64,13 @@ To create and show a banner ad first create a `AMRBannerView` object
 ```c#
 BannerView = new AMR.AMRBannerView();
 ```
-and call `loadBannerForZoneId` method with your iOS and Android Zone Ids, banner placement and callback handler;  
+and call `loadBannerForZoneId` method with your iOS and Android Zone Ids, banner placement and callback handler who implements `AMRBannerViewDelegate` interface;  
 ```c#
 BannerView.loadBannerForZoneId( <Your iOS Zone Id>,
                                 <Your Android Zone Id>, 
                                 BannerPositionTop,
                                 this);
 ```
-
 There are 2 callback methods in `<AMRBannerViewDelegate>` interface.  
 `didReceiveBanner` callback method is called to inform the app that the banner is loaded.
 ```c#
@@ -80,7 +79,7 @@ public void didReceiveBanner()
     Debug.Log("Banner Received");
 }
 ```
-If `didFailToReceiveBanner` callback method is called investigate `error` to adress the problem.
+If `didFailToReceiveBanner` callback method is called investigate `error` to address the problem.
 ```c#
 public void didFailtoReceiveBanner(string error)
 {
@@ -95,75 +94,78 @@ Banner.hideBanner();
 
 + <a name="usage3"></a>Interstitial Ads  
 
-To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewController` file;  
-```objectivec
-#import <AMRSDK/AMRSDK.h>
+To create and show an Interstitial ad first create a `AMRInterstitialView` object
+```c#
+InterstitialView = new AMR.AMRInterstitialView();
 ```
-and create an `AMRInterstitial` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRInterstitialDelegate>` protocol.  
-```objectivec
-AMRInterstitial *fullScreen;
-fullScreen = [AMRInterstitial interstitialForZoneId:@"<zoneId>"];
-fullScreen.delegate = self;
+and call `loadInterstitialForZoneId` method with your iOS and Android Zone Ids and callback handler who implements `AMRInterstitialViewDelegate` interface;  
+```c#
+InterstitialView.loadInterstitialForZoneId( <Your iOS Zone Id>,
+                                            <Your Android Zone Id>, 
+                                            this);
 ```
-There are 3 callback methods in `<AMRInterstitialDelegate>` protocol.  
-When `didReceiveInterstitial` callback method is called just call the `showFromViewController` method to present interstitial from a viewController.
-```objectivec
-- (void)didReceiveInterstitial:(AMRInterstitial *)interstitial {
-    [interstitial showFromViewController:self];
+There are 3 callback methods in `<AMRInterstitialDelegate>` interface.  
+When `didReceiveInterstitial` callback method is called just call the `showInterstitial` method to present interstitial;
+```c#
+public void didReceiveInterstitial()
+{
+    InterstitialView.showInterstitial();
 }
 ```
 `didDismissInterstitial` callback method is called to inform the application that the interstitial is no longer present. You can use this callback to resume paused tasks during interstitial presentation.
-```objectivec
-- (void)didDismissInterstitial:(AMRInterstitial *)interstitial {
-    [animation resume];
+```c#
+public void didDismissInterstitial()
+{
+    Debug.Log("Interstitial Dismissed");
 }
 ```
 If `didFailToReceiveInterstitial` callback method is called investigate `error` to adress the problem.
-```objectivec
-- (void)didFailToReceiveInterstitial:(AMRInterstitial *)interstitial error:(AMRError *)error {
-    NSLog(error.errorDescription);
+```c#
+public void didFailtoReceiveInterstitial(string error)
+{
+	Debug.Log("ERROR: " + error);
 }
 ```
 + <a name="usage4"></a>Rewarded Video Ads  
 
 Rewarded video ads' implementation is pretty similar to Interstitial ads with 1 additional callback `didCompleteRewardedVideo` to reward the user.
-To create and show a rewarded video ad first import `AMRSDK.h` to your `UIViewController` file;  
-```objectivec
-#import <AMRSDK/AMRSDK.h>
+
+To create and show an Rewarded Video ad first create a `AMRRewardedVideoView` object
+```c#
+RewardedVideoView = new AMR.AMRRewardedVideoView();
 ```
-and create an `AMRRewardedVideo` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRRewardedVideoDelegate>` protocol.  
-```objectivec
-AMRRewardedVideo *rewardedVideo;
-rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"<zoneId>"];
-rewardedVideo.delegate = self;
+and call `loadRewardedVideoForZoneId` method with your iOS and Android Zone Ids and callback handler who implements `AMRRewardedVideoViewDelegate` interface;  
+```c#
+RewardedVideoView.loadRewardedVideoForZoneId(   <Your iOS Zone Id>,
+                                                <Your Android Zone Id>, 
+                                                this);
 ```
 There are 4 callback methods in `<AMRRewardedVideoDelegate>` protocol.  
-When `didReceiveRewardedVideo` callback method is called just call the `showFromViewController` method to present rewarded video from a viewController.
-```objectivec
-- (void)didReceiveRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
-    [rewardedVideo showFromViewController:self];
+When `didReceiveRewardedVideo` callback method is called just call the `showRewardedVideo` method to present Rewarded Video ad.
+```c#
+public void didReceiveRewardedVideo()
+{
+    RewardedVideoView.showRewardedVideo();
 }
 ```
 `didCompleteRewardedVideo` callback method is called to inform the application that the user finished watching the video and can be rewarded. Use this callback to reward the user.
-```objectivec
-- (void)didCompleteRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
-    [player reward];
+```c#
+public void didCompleteRewardedVideo()
+{
+    Debug.Log("Complete");
 }
 ```
 `didDismissRewardedVideo` callback method is called to inform the application that the rewarded video is no longer present. You can use this callback to resume paused tasks during rewarded video presentation.
-```objectivec
-- (void)didDismissRewardedVideo:(AMRRewardedVideo *)rewardedVideo {
-    [animation resume];
+```c#
+public void didDismissRewardedVideo()
+{
+    Debug.Log("Rewarded Video Dismissed");
 }
 ```
 If `didFailToReceiveRewardedVideo` callback method is called investigate `error` to adress the problem.
-```objectivec
-- (void)didFailToReceiveRewardedVideo:(AMRRewardedVideo *)rewardedVideo error:(AMRError *)error {
-    NSLog(error.errorDescription);
+```c#
+public void didFailtoReceiveRewardedVideo(string error)
+{
+    Debug.Log("ERROR: " + error);
 }
 ```
-
-
-
-
-
