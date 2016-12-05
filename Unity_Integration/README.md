@@ -68,7 +68,7 @@ and call `loadBannerForZoneId` method with your iOS and Android Zone Ids, banner
 ```c#
 BannerView.loadBannerForZoneId( <Your iOS Zone Id>,
                                 <Your Android Zone Id>, 
-                                pos,
+                                BannerPositionTop,
                                 this);
 ```
 
@@ -87,6 +87,12 @@ public void didFailtoReceiveBanner(string error)
 	Debug.Log("ERROR: "+error);
 }
 ```
+
+Call `hideBanner` method to hide the banner;
+```c#
+Banner.hideBanner();
+```
+
 + <a name="usage3"></a>Interstitial Ads  
 
 To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewController` file;  
