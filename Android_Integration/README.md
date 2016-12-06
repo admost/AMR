@@ -218,7 +218,7 @@ public void onBackPressed() {
 
 @Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
+       AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 
@@ -227,22 +227,20 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```java
 OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
 	@Override
-	public void onAction(int value) {  
-                if (value == AdMostAdListener.CLOSED) {
-		    
-		    OFFERWALL.spendVirtualCurrency(OFFERWALL.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
-                        @Override
-                        public void onSuccess(String network, String currency, double balance) {
-                            AdMostLog.log(network + " " + currency + " " + balance);
-                        }
-
-                        @Override
-                        public void onError(String network, String error) {
-                            AdMostLog.log(network + " " + error);
-                        }
-                    });
-		    
-                }
+	public void onAction(int value) {
+		if (value == AdMostAdListener.CLOSED) {
+			OFFERWALL.spendVirtualCurrency(OFFERWALL.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
+				@Override
+				public void onSuccess(String network, String currency, double balance) {
+				AdMostLog.log(network + " " + currency + " " + balance);
+				}
+			
+				@Override
+				public void onError(String network, String error) {
+				AdMostLog.log(network + " " + error);
+				}
+			});
+		}
 	}
 });
 ```
