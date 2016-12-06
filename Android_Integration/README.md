@@ -218,7 +218,7 @@ public void onBackPressed() {
 
 @Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
-       AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
+	AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 
@@ -309,7 +309,7 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 			// Failed
 		} else {
 			// if it is auto loaded then no need to call show. Show will be triggered automatically.
-                       // Otherwise, you have to use show method like below
+			// Otherwise, you have to use show method like below
 			// AD_INTERSTITIAL.show();
 		}
 	}
@@ -333,21 +333,21 @@ AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new 
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.LOADED) {
-                    AdMostLog.log("LOADED");
-                } else if (value == AdMostAdListener.COMPLETED) {
-                    AdMostLog.log("COMPLETED");
-                } else if (value == AdMostAdListener.FAILED) {
-                    AdMostLog.log("FAILED");
-                } else if (value == AdMostAdListener.CLOSED) {
-                    AdMostLog.log("CLOSED");
-                }
+			AdMostLog.log("LOADED");
+		} else if (value == AdMostAdListener.COMPLETED) {
+			AdMostLog.log("COMPLETED");
+		} else if (value == AdMostAdListener.FAILED) {
+			AdMostLog.log("FAILED");
+		} else if (value == AdMostAdListener.CLOSED) {
+			AdMostLog.log("CLOSED");
+		}
 	}
 	
 	//OPTIONAL
 	@Override
-            public void onRewarded(int value) {
-                AdMostLog.log("REWARDED " + value);
-            }
+	public void onRewarded(int value) {
+		AdMostLog.log("REWARDED " + value);
+	}
 });
 
 AD_VIDEO.refreshAd(AUTO_LOAD);
