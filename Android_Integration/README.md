@@ -212,6 +212,7 @@ public void onDestroy() {
 
 @Override
 public void onBackPressed() {
+	super.onBackPressed();
         AdMost.getInstance().onBackPressed(this);
 }
 
