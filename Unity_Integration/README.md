@@ -25,7 +25,7 @@ AMRUnity.unitypackage
 ```
 + <a name="install2"></a>Mediation Adapters
 
-All mediation adapters are included in target platform's plugins folder. At least one mediation adapter is required for AMRSDK to show banners. You can keep all adapters listed below (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
+All mediation adapters are included in target platform's plugins folder. At least one mediation adapter is required for AMRSDK to show banners. You can keep all adapters (recommended for maximized revenue) or start with a subset of adapters. For android platform you have to keep files which have 'amr_' prefix. Consult your AMR agent for further details.
 
 ## Start Coding
 + <a name="usage1"></a>Initialization   
