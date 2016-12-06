@@ -19,7 +19,7 @@
 ## Setup
   + <a name="install1"></a>AMR Unity Package  
 
-Extract following package in your Unity Project;
+[Download](http://www.kokteyl.com/unity/AMRUnity.unitypackage) and extract following package in your Unity Project;
 ```perl
 AMRUnity.unitypackage
 ```
