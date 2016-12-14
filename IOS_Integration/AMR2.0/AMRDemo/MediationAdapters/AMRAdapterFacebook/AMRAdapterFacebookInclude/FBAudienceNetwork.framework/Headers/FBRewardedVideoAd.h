@@ -76,6 +76,21 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
  @param placementID The id of the ad placement. You can create your placement id from Facebook developers page.
  @param userID the id of the user
  @param currency reward currency type
+ */
+- (instancetype)initWithPlacementID:(NSString *)placementID
+                         withUserID:(nullable NSString *)userID
+                       withCurrency:(nullable NSString *)currency;
+
+/*!
+ @method
+
+ @abstract
+ This is a method to initialize an FBRewardedVideoAd matching the given placement id and allows the publisher to set
+ the reward to give to a user.
+
+ @param placementID The id of the ad placement. You can create your placement id from Facebook developers page.
+ @param userID the id of the user
+ @param currency reward currency type
  @param amount reward amount
  */
 - (instancetype)initWithPlacementID:(NSString *)placementID

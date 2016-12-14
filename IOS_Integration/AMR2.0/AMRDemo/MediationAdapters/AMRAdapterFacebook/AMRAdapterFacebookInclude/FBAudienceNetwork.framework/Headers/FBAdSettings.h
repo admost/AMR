@@ -46,6 +46,14 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
  @method
 
  @abstract
+ Returns test mode on/off.
+ */
++ (BOOL)isTestMode;
+
+/*!
+ @method
+
+ @abstract
  Returns the hashid of the device to use test mode on.
  */
 + (NSString *)testDeviceHash;
