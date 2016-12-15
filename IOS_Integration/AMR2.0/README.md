@@ -3,10 +3,13 @@
 
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
-  + [AMR Framework files](#install1)
-  + [Other Frameworks and Libraries](#install2)
-  + [Mediation Adapters](#install3)
-  + [Xcode setup](#install4)
+  + Installation With CocoaPods
+    + [Create your podfile and install](#install0)
+  + Manual Installation
+    + [AMR Framework Files](#install1)
+    + [Other Frameworks and Libraries](#install2)
+    + [Mediation Adapters](#install3)
+  + [Xcode Setup](#install4)
 * [Start Coding](#start-coding)
   + [Initialization](#usage1)
   + [Banner Ads](#usage2)
@@ -19,7 +22,59 @@
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 
 ## Setup
-  + <a name="install1"></a>**AMR Framework files**  
+You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.
+### Installation With CocoaPods
+<a name="install0"></a>**Create your podfile and install**  
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.
+
+At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
+To integrate AMR SDK and mediation adapters into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+
+target 'MyTarget' do
+#core SDK
+  pod 'AMRSDK', '~> 1.0'
+#mediation adapters  
+  pod 'AMRAdapterAdcolony', '~> 2.6'
+  pod 'AMRAdapterAdfalcon', '~> 3.2'
+  pod 'AMRAdapterAdmob', '~> 7.8'
+  pod 'AMRAdapterAmazon', '~> 2.2'
+  pod 'AMRAdapterApplovin', '~> 3.4'
+  pod 'AMRAdapterAppnext', '~> 1.7'
+  pod 'AMRAdapterChartboost', '~> 6.5'
+  pod 'AMRAdapterConversant', '~> 4.5'
+  pod 'AMRAdapterFacebook', '~> 4.15'
+  pod 'AMRAdapterFlurry', '~> 7.6'
+  pod 'AMRAdapterFyber', '~> 8.6'
+  pod 'AMRAdapterInloco', '~> 2.2'
+  pod 'AMRAdapterInmobi', '~> 6.0'
+  pod 'AMRAdapterLoopme', '~> 6.0'
+  pod 'AMRAdapterMobfox', '~> 2.4'
+  pod 'AMRAdapterMopub', '~> 4.11'
+  pod 'AMRAdapterNativex', '~> 5.5'
+  pod 'AMRAdapterNexage', '~> 6.3'
+  pod 'AMRAdapterRevmob', '~> 9.2'
+  pod 'AMRAdapterSmaato', '~> 8.0'
+  pod 'AMRAdapterSupersonic', '~> 6.4'
+  pod 'AMRAdapterTapjoy', '~> 11.8'
+  pod 'AMRAdapterUnity', '~> 2.0'
+  pod 'AMRAdapterVungle', '~> 4.0'
+end
+```
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+After you complete pod installation you can skip to [Xcode Setup](#install4) step.
+
+### Manual Installation
+<a name="install1"></a>**AMR Framework Files**  
 
 Drag and drop following files in [AMRDemo/AMRSDK](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/AMRSDK) folder to your project.
 ```perl
@@ -27,7 +82,7 @@ AMRSDK.framework
 AMRResources.bundle
 KKLog.framework
 ```
-  + <a name="install2"></a>**Other Frameworks and Libraries**  
+<a name="install2"></a>**Other Frameworks and Libraries**  
 
 Add following frameworks and libraries to your project
 ```perl
@@ -56,7 +111,7 @@ SystemConfiguration.framework
 UIKit.framework
 WebKit.framework
 ```
-+ <a name="install3"></a>**Mediation Adapters**  
+<a name="install3"></a>**Mediation Adapters**  
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
@@ -84,7 +139,7 @@ AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
 ```
-+ <a name="install4"></a>**Xcode Setup**  
+<a name="install4"></a>**Xcode Setup**  
 
 Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
 Add `-ObjC` flag in your target's `Other Linker Flags` in `Build Settings`.  
@@ -100,7 +155,6 @@ Add following lines to your `plist` file.
 <key>NSCalendarsUsageDescription</key>
 <string>Some ad content may access calendar</string>
 ```  
-
 
 ## Start Coding
 + <a name="usage1"></a>**Initialization**   
