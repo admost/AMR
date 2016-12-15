@@ -24,9 +24,8 @@
 ## Setup
 You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.  
 ### <a name="install00"></a>Installation With CocoaPods  
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.  
 + <a name="install0"></a>**Create your podfile and install**  
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 To integrate AMR SDK and mediation adapters into your Xcode project using CocoaPods, specify it in your `Podfile`:
