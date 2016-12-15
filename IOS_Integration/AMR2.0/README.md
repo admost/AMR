@@ -3,9 +3,9 @@
 
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
-  + Installation With CocoaPods
+  + [Installation With CocoaPods](#install00)
     + [Create your podfile and install](#install0)
-  + Manual Installation
+  + [Manual Installation](#install11)
     + [AMR Framework Files](#install1)
     + [Other Frameworks and Libraries](#install2)
     + [Mediation Adapters](#install3)
@@ -22,8 +22,8 @@
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 
 ## Setup
-You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.
-### Installation With CocoaPods  
+You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.  
+### <a name="install00"></a>Installation With CocoaPods  
 + <a name="install0"></a>**Create your podfile and install**  
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.
@@ -73,7 +73,7 @@ $ pod install
 
 After you complete pod installation you can skip to [Xcode Setup](#install4) step.
 
-### Manual Installation  
+### <a name="install11"></a>Manual Installation  
 + <a name="install1"></a>**AMR Framework Files**  
 
 Drag and drop following files in [AMRDemo/AMRSDK](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/AMRSDK) folder to your project.
