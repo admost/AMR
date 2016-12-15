@@ -23,8 +23,8 @@
 
 ## Setup
 You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.
-### Installation With CocoaPods
-<a name="install0"></a>**Create your podfile and install**  
+### Installation With CocoaPods  
++ <a name="install0"></a>**Create your podfile and install**  
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.
 
@@ -73,8 +73,8 @@ $ pod install
 
 After you complete pod installation you can skip to [Xcode Setup](#install4) step.
 
-### Manual Installation
-<a name="install1"></a>**AMR Framework Files**  
+### Manual Installation  
++ <a name="install1"></a>**AMR Framework Files**  
 
 Drag and drop following files in [AMRDemo/AMRSDK](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/AMRSDK) folder to your project.
 ```perl
@@ -82,7 +82,7 @@ AMRSDK.framework
 AMRResources.bundle
 KKLog.framework
 ```
-<a name="install2"></a>**Other Frameworks and Libraries**  
++ <a name="install2"></a>**Other Frameworks and Libraries**  
 
 Add following frameworks and libraries to your project
 ```perl
@@ -111,7 +111,7 @@ SystemConfiguration.framework
 UIKit.framework
 WebKit.framework
 ```
-<a name="install3"></a>**Mediation Adapters**  
++ <a name="install3"></a>**Mediation Adapters**  
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
@@ -139,7 +139,7 @@ AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
 ```
-<a name="install4"></a>**Xcode Setup**  
++ <a name="install4"></a>**Xcode Setup**  
 
 Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
 Add `-ObjC` flag in your target's `Other Linker Flags` in `Build Settings`.  
