@@ -71,7 +71,7 @@ compile 'com.google.code.gson:gson:2.6.2'
 compile 'com.amazon.android:mobile-ads:5.8.1.1’
 
 // FACEBOOK
-compile 'com.facebook.android:audience-network-sdk:4.17.0’
+compile 'com.facebook.android:audience-network-sdk:4.18.0’
 
 // FLURRY
 compile 'com.flurry.android:ads:6.2.0'
@@ -85,11 +85,11 @@ compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
 // SUPERSONIC
-compile 'com.supersonic.sdk:mediationsdk:6.4.17@jar'
+compile 'com.supersonic.sdk:mediationsdk:6.4.20@jar'
 
 // APPNEXT
-compile('com.appnext.sdk:appnext-sdk:1.7.2')
-compile 'com.appnext.sdk:native-ads-sdk:1.7.2'
+compile('com.appnext.sdk:appnext-sdk:1.7.5')
+compile 'com.appnext.sdk:native-ads-sdk:1.7.5'
 
 // PUBNATIVE
 compile 'net.pubnative:library:2.3.6’
@@ -104,8 +104,11 @@ compile 'com.inlocomedia.android:android-sdk:2.4.0’
 compile('tv.teads.sdk:androidsdk:2.2.16:fullRelease@aar') { transitive = true; }
 
 //ADCOLONY
-compile 'com.adcolony:sdk:3.0.5'
+compile 'com.adcolony:sdk:3.0.6'
 compile 'com.android.support:support-annotations:24.2.1'
+
+// LOOPME
+compile 'com.loopme:loopme-sdk:5.1.0@aar'
 ```
 
 And Repositories as follows;
@@ -135,21 +138,20 @@ mm-ad-sdk.aar
 unity-ads.aar
 
 AdFalconAndroidSDK3.2.0.jar
-applovin-sdk-6.3.0.jar
+applovin-sdk-6.4.0.jar
 chartboost.jar
 conversant-android-sdk-2.4.2.jar
 FlyMobSdk-1.7.0.jar
 heyzap-unified-platform-10.2.0.jar
-io.display.sdk-1.0.1
-loopme-sdk-4.8.0.jar
+io.display.sdk-1.2.1
 mediabrix-sdk-FBless.jar
 MobFox-Android-SDK-Core-3.0.0b.jar
 NativeXMonetizationSDK_v5.5.7.1.jar
 revmob.jar
 RFMSDK.jar
 SOMAAndroidSDK5.0.8.jar
-StartAppInApp-3.5.1.jar
-tapjoy-11.8.1.jar
+StartAppInApp-3.5.2.jar
+tapjoy-11.9.1.jar
 vungle-publisher-adaptive-id-4.0.2.jar
 
 ////// Vungle ////////
@@ -397,7 +399,7 @@ If you are using Proguard, add these lines to your Proguard file
 -dontwarn android.security.NetworkSecurityPolicy
 -dontwarn android.app.Notification
 
-# MILLENNIAL
+# MILLENNIAL & NEXAGE
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
 
@@ -536,6 +538,52 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.inlocomedia.** { *; }
 -dontwarn com.inlocomedia.**
 
+# TEADS
+# For WebView JavascriptInterface
+-keepattributes JavascriptInterface
+-keep public class tv.teads.sdk.adContainer.layout.webview.** { *; }
+
+# Jackson
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-keepnames class com.fasterxml.jackson.** { *; }
+-keep public class tv.teads.sdk.adServer.parser.json.** {
+    public protected *;
+    public void set*(***);
+    public *** get*();
+}
+-keepattributes *Annotation*,EnclosingMethod,Signature
+-keep class com.fasterxml.jackson.databind.ObjectMapper {
+    public <methods>;
+    protected <methods>;
+}
+-keep class com.fasterxml.jackson.databind.ObjectWriter {
+    public ** writeValueAsString(**);
+}
+
+# Okio
+-dontwarn okio.**
+
+# Enums
+-keepattributes InnerClasses
+-keep public enum  tv.teads.sdk.adContent.AdContent$** {
+    **[] $VALUES;
+    public *;
+}
+-keep public enum  tv.teads.sdk.publisher.TeadsLog$** {
+    **[] $VALUES;
+    public *;
+}
+
+# Google Play Services (used by reflection)
+-keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient {
+    **[] $VALUES;
+    public *;
+}
+
+-keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient$* {
+   *;
+}
+
 # RUBICON
 -keep public class com.rfm.** { *; }
 -dontwarn com.rfm.**
@@ -566,5 +614,4 @@ If you are using Proguard, add these lines to your Proguard file
 -dontwarn android.webkit.JavascriptInterface
 -keep class com.startapp.** { *; }
 -dontwarn com.startapp.**
-
 ```
