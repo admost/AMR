@@ -23,7 +23,7 @@
  * [AMRInterstitial interstitialForZoneId:@"<zoneId>"];
  * @endcode
  * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
- * @param ZoneId Your interstitial's zone ID displayed on AMR Dashboard.
+ * @param zoneId Your interstitial's zone ID displayed on AMR Dashboard.
  * @return An instance of AMRInterstitial created by zoneId provided.
  */
 + (instancetype)interstitialForZoneId:(NSString *)zoneId;

@@ -23,7 +23,7 @@
  * [AMROfferWall offerWallForZoneId:@"<zoneId>"];
  * @endcode
  * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
- * @param ZoneId Your offerwall's zone ID displayed on AMR Dashboard.
+ * @param zoneId Your offerwall's zone ID displayed on AMR Dashboard.
  * @return An instance of AMROfferWall created by zoneId provided.
  */
 + (instancetype)offerWallForZoneId:(NSString *)zoneId;

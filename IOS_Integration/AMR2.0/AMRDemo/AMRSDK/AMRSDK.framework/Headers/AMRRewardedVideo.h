@@ -23,7 +23,7 @@
  * [AMRRewardedVideo rewardedVideoForZoneId:@"<zoneId>"];
  * @endcode
  * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
- * @param ZoneId Your rewardedvideo's zone ID displayed on AMR Dashboard.
+ * @param zoneId Your rewardedvideo's zone ID displayed on AMR Dashboard.
  * @return An instance of AMRRewardedVideo created by zoneId provided.
  */
 + (instancetype)rewardedVideoForZoneId:(NSString *)zoneId;

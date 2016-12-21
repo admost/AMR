@@ -28,7 +28,7 @@
  * [AMRBanner bannerForZoneId:@"<zoneId>"];
  * @endcode
  * @see https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/README.md for more information.
- * @param ZoneId Your banner's zone ID displayed on AMR Dashboard.
+ * @param zoneId Your banner's zone ID displayed on AMR Dashboard.
  * @return An instance of AMRBanner created by zoneId provided.
  */
 + (instancetype)bannerForZoneId:(NSString *)zoneId;
