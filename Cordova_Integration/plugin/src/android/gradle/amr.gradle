@@ -1,0 +1,77 @@
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://jitpack.io" }
+    maven { url "https://dl.bintray.com/supersonic/android-sdk" }
+    maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
+    maven { url "http://repo.appnext.com/" }
+    maven { url "https://fyber.bintray.com/maven" }
+    maven { url "https://adcolony.bintray.com/AdColony" }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.volley:volley:1.0.0'
+    compile(name: 'admost-sdk', ext: 'aar')
+    compile(name: 'AudienceNetwork', ext: 'aar')
+    compile(name: 'unity-ads', ext: 'aar')
+    compile(name: 'mm-ad-sdk', ext: 'aar')
+
+    // GOOGLE
+    compile 'com.google.android.gms:play-services-ads:10.0.1'
+
+    // NATIVEX
+    compile 'com.google.code.gson:gson:2.6.2'
+
+    // AMAZON
+    compile 'com.amazon.android:mobile-ads:5.8.1.1'
+
+    // FLURRY
+    compile 'com.flurry.android:ads:6.2.0'
+
+    // INMOBI
+    compile 'com.inmobi.monetization:inmobi-ads:6.0.3'
+
+    // MOPUB
+    compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
+    compile 'com.mopub.volley:mopub-volley:1.1.0'
+
+    // SUPERSONIC
+    compile 'com.supersonic.sdk:mediationsdk:6.4.20@jar'
+
+    // APPNEXT
+    compile('com.appnext.sdk:appnext-sdk:1.7.5')
+    compile 'com.appnext.sdk:native-ads-sdk:1.7.5'
+
+    // PUBNATIVE
+    compile 'net.pubnative:library:2.3.6'
+    compile 'net.pubnative:library.interstitial:2.3.6'
+    compile 'net.pubnative:library.feed.banner:2.3.6'
+    compile 'net.pubnative:library.video:2.3.6'
+
+    // INLOCOMEDIA
+    compile 'com.inlocomedia.android:android-sdk:2.4.0'
+
+    // TEADS
+    compile('tv.teads.sdk:androidsdk:2.2.16:fullRelease@aar') { transitive = true; }
+
+    // ADCOLONY
+    compile 'com.adcolony:sdk:3.0.6'
+    compile 'com.android.support:support-annotations:24.2.1'
+
+    // LOOPME
+    compile 'com.loopme:loopme-sdk:5.1.0@aar'
+
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+    exclude 'assets/*.png'
+    exclude 'values/*.xml'
+  }
+}
