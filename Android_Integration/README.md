@@ -62,16 +62,16 @@ compile(name: 'mm-ad-sdk', ext: 'aar')
 compile 'com.android.volley:volley:1.0.0'
 
 // GOOGLE
-compile 'com.google.android.gms:play-services-ads:10.0.1’
+compile 'com.google.android.gms:play-services-ads:10.0.1'
 
 // NATIVEX
 compile 'com.google.code.gson:gson:2.6.2'
 
 // AMAZON
-compile 'com.amazon.android:mobile-ads:5.8.1.1’
+compile 'com.amazon.android:mobile-ads:5.8.1.1'
 
 // FACEBOOK
-compile 'com.facebook.android:audience-network-sdk:4.18.0’
+compile 'com.facebook.android:audience-network-sdk:4.18.0'
 
 // FLURRY
 compile 'com.flurry.android:ads:6.2.0'
@@ -92,13 +92,13 @@ compile('com.appnext.sdk:appnext-sdk:1.7.5')
 compile 'com.appnext.sdk:native-ads-sdk:1.7.5'
 
 // PUBNATIVE
-compile 'net.pubnative:library:2.3.6’
-compile 'net.pubnative:library.interstitial:2.3.6’
-compile 'net.pubnative:library.feed.banner:2.3.6’
-compile 'net.pubnative:library.video:2.3.6’
+compile 'net.pubnative:library:2.3.6'
+compile 'net.pubnative:library.interstitial:2.3.6'
+compile 'net.pubnative:library.feed.banner:2.3.6'
+compile 'net.pubnative:library.video:2.3.6'
 
 // INLOCOMEDIA
-compile 'com.inlocomedia.android:android-sdk:2.4.0’
+compile 'com.inlocomedia.android:android-sdk:2.4.0'
 
 // TEADS
 compile('tv.teads.sdk:androidsdk:2.2.16:fullRelease@aar') { transitive = true; }
