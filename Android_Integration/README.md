@@ -308,19 +308,19 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.FAILED) {
-			// Failed
-		} else {
-			// if it is auto loaded then no need to call show. Show will be triggered automatically.
+			// Failed to load
+		} else if (value == AdMostAdListener.LOADED){
+			// if AUTO_SHOW value is true then no need to call show method again.
 			// Otherwise, you have to use show method like below
 			// AD_INTERSTITIAL.show();
 		}
 	}
 });
 
-AD_INTERSTITIAL.refreshAd(AUTO_LOAD);
+AD_INTERSTITIAL.refreshAd(AUTO_SHOW);
 ```
 
-AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
+AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
 
 You have to call destroy method on ondestroy() method of the activity.
 
