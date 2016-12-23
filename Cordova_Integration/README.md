@@ -30,7 +30,7 @@ All mediation adapters are included in the plugin. At least one mediation adapte
 
 ## Start Coding
 + <a name="usage1"></a>Configuration   
-To configure AMR Plugin, replace the necessary keys with your own keys. amrAppId and at least one zoneId is necessary;   
+To configure AMR Plugin, replace the necessary keys with your own keys. `amrAppId` and at least one `zoneId` is necessary;   
 ```javascript
 var ad_units = {
             ios : {
