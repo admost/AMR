@@ -12,7 +12,7 @@
   + [Interstitial Ads](#usage4)
   + [Video Ads](#usage5)
 * [Notes](#notes)
-  + [Remove Unsused Adaptors](#notes1)
+  + [Remove Unsused Adapters](#notes1)
 
 ## Prerequisites
 * [Cocoapods](https://cocoapods.org) for iOS. 
@@ -26,7 +26,7 @@ $ cordova plugin add https://github.com/admost/AMR-CORDOVA-PLUGIN
 ```
 + <a name="install2"></a>Mediation Adapters
 
-All mediation adapters are included in the plugin. At least one mediation adapter is required for AMRSDK to show ads. You can keep all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.
+All mediation adapters are included in the plugin. At least one mediation adapter is required for AMR Plugin to show ads. You can keep all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.
 
 ## Start Coding
 + <a name="usage1"></a>Configuration   
@@ -81,7 +81,7 @@ Otherwise you have to call `showBannerAd` method to show banner manually;
 ```javascript
 window.plugins.Amr.showBannerAd(true);
 ```
-Call `showBannerAd` method with a false boolean parameter to hide banner;
+Call `showBannerAd` method with a `false` boolean parameter to hide banner;
 ```javascript
 window.plugins.Amr.showBannerAd(false);
 ```
@@ -96,11 +96,11 @@ document.addEventListener('onFailedToReceiveBannerAd', function(error){});
 ```
 + <a name="usage4"></a>Interstitial Ads 
 
-Call `createInterstitialAd` method to create interstitial;
+Call `createInterstitialAd` method to create interstitial. If you set `autoShowInterstitial` as `true` interstitial will be shown automaticly;
 ```javascript
 window.plugins.Amr.createInterstitialAd();
 ```
-Call `showInterstitialAd` method to show interstitial manually;
+Otherwise you have to call `showInterstitialAd` method to show interstitial manually;
 ```javascript
 window.plugins.Amr.showInterstitialAd();
 ```
@@ -113,11 +113,11 @@ document.addEventListener('onDismissInterstitialAd', function(){ });
 
 + <a name="usage5"></a>Video Ads 
 
-Call `createVideoAd` method to create video;
+Call `createVideoAd` method to create video. If you set `autoShowVideo` as `true` video will be shown automaticly;
 ```javascript
 window.plugins.Amr.createVideoAd();
 ```
-Call `showVideoAd` method to show video manually;
+Otherwise you have to call `showVideoAd` method to show video manually;
 ```javascript
 window.plugins.Amr.showVideoAd();
 ```
@@ -131,10 +131,10 @@ document.addEventListener('onCompleteVideoAd', function(){ });
 
 ## Notes
 
-+ <a name="notes1"></a>Remove Unsused Adaptors
++ <a name="notes1"></a>Remove Unsused Adapters
 
-To remove unsused AMR adaptors from your project;
-  * Find 'Podfile' file in your project and delete unused AMR adaptor lines.
+To remove unsused AMR adapters from your project;
+  * Find 'Podfile' file in your project and delete unused AMR adapter lines.
   * On terminal, navigate your iOS project folder, then execute following code;
 ```perl
 $ pod install
