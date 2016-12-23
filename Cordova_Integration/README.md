@@ -11,6 +11,8 @@
   + [Banner Ads](#usage3)
   + [Interstitial Ads](#usage4)
   + [Video Ads](#usage5)
+* [Notes](#notes)
+  + [Remove Unsused Adaptors](#notes1)
 
 ## Prerequisites
 * [Cocoapods](https://cocoapods.org) for iOS. 
@@ -126,4 +128,15 @@ document.addEventListener('onFailedToReceiveVideoAd', function(error){});
 document.addEventListener('onDismissVideoAd', function(){ });
 document.addEventListener('onCompleteVideoAd', function(){ });
 document.addEventListener('onRewardedVideoAd', function(amount){});
+```
+
+## Notes
+
++ <a name="notes1"></a>Remove Unsused Adaptors
+
+To remove unsused AMR adaptors from your project;
+  * Find 'Podfile' file in your project and delete unused AMR adaptor lines.
+  * On terminal, navigate your iOS project folder, then execute following code;
+```perl
+$ pod install
 ```
