@@ -127,7 +127,6 @@ document.addEventListener('onReceiveVideoAd', function(){ });
 document.addEventListener('onFailedToReceiveVideoAd', function(error){});
 document.addEventListener('onDismissVideoAd', function(){ });
 document.addEventListener('onCompleteVideoAd', function(){ });
-document.addEventListener('onRewardedVideoAd', function(amount){});
 ```
 
 ## Notes
