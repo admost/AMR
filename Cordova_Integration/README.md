@@ -12,7 +12,8 @@
   + [Interstitial Ads](#usage4)
   + [Video Ads](#usage5)
 * [Notes](#notes)
-  + [Remove Unsused Adapters](#notes1)
+  + [Remove Unsused Adapters for IOS](#notes1)
+  + [Remove Unsused Adapters for Android](#notes2)
 * [Sample Code](#sample-code)
 
 ## Prerequisites
@@ -132,14 +133,17 @@ document.addEventListener('onCompleteVideoAd', function(){ });
 
 ## Notes
 
-+ <a name="notes1"></a>Remove Unsused Adapters
++ <a name="notes1"></a>Remove Unsused Adapters for IOS
 
-To remove unsused AMR adapters from your project;
+To remove unsused AMR adapters from your iOS project;
   * Find 'Podfile' file in your project and delete unused AMR adapter lines.
   * On terminal, navigate your iOS project folder, then execute following code;
 ```perl
 $ pod install
 ```
++ <a name="notes2"></a>Remove Unsused Adapters for Android
+
+To remove unsused AMR adapters from your android project;
 
 ## Sample Code
 
