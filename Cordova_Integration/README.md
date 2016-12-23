@@ -67,25 +67,25 @@ window.plugins.Amr.setOptions( {
 ```  
 + <a name="usage2"></a>Initialize AMR Plugin  
 
-Call initAMR method to initialize AMR Plugin;
+Call `initAMR` method to initialize AMR Plugin;
 ```javascript
 window.plugins.Amr.initAMR();
 ```
 + <a name="usage3"></a>Banner Ads 
 
-Call createBannerAd method to create banner;
+Call `createBannerAd` method to create banner. If you set `autoShowBanner` as `true` banner will be shown automaticly;
 ```javascript
 window.plugins.Amr.createBannerAd();
 ```
-Call showBannerAd method to show banner manually;
+Otherwise you have to call `showBannerAd` method to show banner manually;
 ```javascript
 window.plugins.Amr.showBannerAd(true);
 ```
-Call showBannerAd method with a false boolean parameter to hide banner;
+Call `showBannerAd` method with a false boolean parameter to hide banner;
 ```javascript
 window.plugins.Amr.showBannerAd(false);
 ```
-Call destroyBannerAd method to close banner;
+Call `destroyBannerAd` method to close banner;
 ```javascript
 window.plugins.Amr.destroyBannerAd();
 ```
@@ -96,11 +96,11 @@ document.addEventListener('onFailedToReceiveBannerAd', function(error){});
 ```
 + <a name="usage4"></a>Interstitial Ads 
 
-Call createInterstitialAd method to create interstitial;
+Call `createInterstitialAd` method to create interstitial;
 ```javascript
 window.plugins.Amr.createInterstitialAd();
 ```
-Call showInterstitialAd method to show interstitial manually;
+Call `showInterstitialAd` method to show interstitial manually;
 ```javascript
 window.plugins.Amr.showInterstitialAd();
 ```
@@ -113,11 +113,11 @@ document.addEventListener('onDismissInterstitialAd', function(){ });
 
 + <a name="usage5"></a>Video Ads 
 
-Call createVideoAd method to create video;
+Call `createVideoAd` method to create video;
 ```javascript
 window.plugins.Amr.createVideoAd();
 ```
-Call showVideoAd method to show video manually;
+Call `showVideoAd` method to show video manually;
 ```javascript
 window.plugins.Amr.showVideoAd();
 ```
