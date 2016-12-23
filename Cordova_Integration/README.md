@@ -13,6 +13,7 @@
   + [Video Ads](#usage5)
 * [Notes](#notes)
   + [Remove Unsused Adapters](#notes1)
+* [Sample Code](#sample-code)
 
 ## Prerequisites
 * [Cocoapods](https://cocoapods.org) for iOS. 
@@ -59,7 +60,7 @@ window.plugins.Amr.setOptions( {
                                 bannerWidth: 300, //iOS only
                                 bannerAtTop: true, // set to true, to put banner at top
                                 overlap: true, // banner will overlap webview
-                                offsetTopBar: true, // set to true to avoid ios7 status bar overlap
+                                offsetTopBar: false, // set to true to avoid ios7 status bar overlap
                                 autoShowBanner: true, // auto show banner ad when loaded
                                 autoShowInterstitial: true, // auto show interstitial ad when loaded
                                 autoShowVideo: true // auto show video ad when loaded
@@ -138,4 +139,106 @@ To remove unsused AMR adapters from your project;
   * On terminal, navigate your iOS project folder, then execute following code;
 ```perl
 $ pod install
+```
+
+## Sample Code
+
+```javascript
+var app = {
+// Application Constructor
+initialize: function() {
+    document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+},
+    
+onDeviceReady: function() {
+    this.receivedEvent('deviceready');
+    initAd();
+    document.getElementById("videoBtn").addEventListener("click", showVideoFunc);
+    document.getElementById("intBtn").addEventListener("click", showInterstitialFunc);
+    document.getElementById("bannerBtn").addEventListener("click", showBannerFunc);
+},
+    
+// Update DOM on a Received Event
+receivedEvent: function(id) {
+    var parentElement = document.getElementById(id);
+    var listeningElement = parentElement.querySelector('.listening');
+    var receivedElement = parentElement.querySelector('.received');
+    
+    listeningElement.setAttribute('style', 'display:none;');
+    receivedElement.setAttribute('style', 'display:block;');
+    
+    console.log('Received Event: ' + id);
+}
+};
+
+// Initialize AMR Plugin
+function initAd(){
+    if ( window.plugins && window.plugins.Amr ) {
+        var ad_units = {
+            ios : {
+            amrAppId: '15066ddc-9c18-492c-8185-bea7e4c7f88c',
+            amrBannerZoneId: '8b72580f-c8ed-4080-aac0-004ecab65030',
+            amrInterstitialZoneId: '39f74377-5682-436a-9338-9d1c4df410bd',
+            amrVideoZoneId: 'c111d8cc-6441-4bd8-825a-b6d13a2cd957'
+            },
+            android : {
+            amrAppId: '6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe',
+            amrBannerZoneId: '86644357-21d0-45a4-906a-37262461df65',
+            amrInterstitialZoneId: 'f99e409b-f9ab-4a2e-aa9a-4d143e6809ae',
+            amrVideoZoneId: '88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140'
+            }
+        };
+        var amrIds = ( /(android)/i.test(navigator.userAgent) ) ? ad_units.android : ad_units.ios;
+        
+        window.plugins.Amr.setOptions( {
+                                      amrAppId: amrIds.amrAppId,
+                                      amrBannerZoneId: amrIds.amrBannerZoneId,
+                                      amrInterstitialZoneId: amrIds.amrInterstitialZoneId,
+                                      amrVideoZoneId: amrIds.amrVideoZoneId,
+                                      //optional parameters
+                                      adSize: window.plugins.Amr.AD_SIZE.LEADERBOARD,  //android only. Use BANNER, LEADERBOARD, MEDIUM_RECTANGLE
+                                      //bannerWidth: 300, //iOS only
+                                      bannerAtTop: true, // set to true, to put banner at top
+                                      overlap: true, // banner will overlap webview
+                                      offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+                                      autoShowBanner: true, // auto show banner ad when loaded
+                                      autoShowInterstitial: true, // auto show interstitial ad when loaded
+                                      autoShowVideo: true // auto show video ad when loaded
+                                      });
+        
+        registerAdEvents();
+        
+        window.plugins.Amr.initAMR();
+    }
+}
+
+// Functions to allow you to know when ads are shown, etc.
+function registerAdEvents() {
+    document.addEventListener('onReceiveBannerAd', function(){});
+    document.addEventListener('onFailedToReceiveBannerAd', function(error){});
+    
+    document.addEventListener('onReceiveInterstitialAd', function(){});
+    document.addEventListener('onFailedToReceiveInterstitialAd', function(){error});
+    document.addEventListener('onDismissInterstitialAd', function(){});
+    
+    document.addEventListener('onReceiveVideoAd', function(){});
+    document.addEventListener('onFailedToReceiveVideoAd', function(error){});
+    document.addEventListener('onDismissVideoAd', function(){});
+    document.addEventListener('onCompleteVideoAd', function(){});
+}
+// Show banner ad
+function showBannerFunc(){
+    window.plugins.Amr.createBannerAd();
+}
+
+// Show interstitial ad
+function showInterstitialFunc(){
+    window.plugins.Amr.createInterstitialAd();
+}
+// Show video ad
+function showVideoFunc(){
+    window.plugins.Amr.createVideoAd();
+}
+
+app.initialize();
 ```
