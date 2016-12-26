@@ -143,7 +143,65 @@ $ pod install
 ```
 + <a name="notes2"></a>Remove Unsused Adapters for Android
 
-To remove unsused AMR adapters from your android project;
+AMR network sdks are added as jar file or gradle dependency. To remove an unused network sdk from the app, it would be sufficient to remove related jar files from libs folder or dependency section of amr.gradle file. AMR plugin gradle file is located in cordova-plugin-amr folder of the project. 
+
++ <a name="notes2"></a>Adding activity lifecycle methods for Android
+
+For better resource usage, we recommend you to add the following activity life cycle methods in your main activity.
+
+```java
+@Override
+public void onStart() {
+    super.onStart();
+    if (AdMost.getInstance().isInited())
+	    AdMost.getInstance().onStart(this);
+}
+@Override
+public void onResume() {
+    super.onResume();
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onResume(this);
+}
+@Override
+public void onPause() {
+    super.onPause();
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onPause(this);
+}
+@Override
+public void onStop() {
+    super.onStop();
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onStop(this);
+}
+@Override
+public void onDestroy() {
+    super.onDestroy();
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onDestroy(this);
+}
+
+@Override
+public void onBackPressed() {
+    super.onBackPressed();
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onBackPressed(this);
+}
+
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (AdMost.getInstance().isInited())
+        AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
+}
+```
+
++ <a name="notes2"></a>Solving 65K limit for Android
+
+Adding adnetwork sdks into your app may cause build errors that indicate your app has reached a limit of the Android app build architecture. To solve this issue you can use multidex solution of Google referenced in the link below;
+
+https://developer.android.com/studio/build/multidex.html
+
+Please consult your AMR agent for further details.
 
 ## Sample Code
 
