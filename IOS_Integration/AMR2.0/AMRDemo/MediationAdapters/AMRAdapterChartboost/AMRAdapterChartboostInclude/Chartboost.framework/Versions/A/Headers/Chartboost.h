@@ -1,7 +1,7 @@
 /*
  * Chartboost.h
  * Chartboost
- * 6.5.1
+ * 6.5.2
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */

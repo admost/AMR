@@ -27,7 +27,7 @@
     // offerwall 1cadca08-33f9-4da7-969e-ef116d4e7d0e
     // rewarded video c111d8cc-6441-4bd8-825a-b6d13a2cd957
 
-    _rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"c111d8cc-6441-4bd8-825a-b6d13a2cd957"];
+    _rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"2bdefd44-5269-4cbc-b93a-373b74a2f067"];
     _rewardedVideo.delegate = self;
     [_rewardedVideo loadRewardedVideo];
 }
