@@ -38,15 +38,16 @@ target 'MyTarget' do
 #core SDK
   pod 'AMRSDK', '~> 1.0'
 #mediation adapters  
-  pod 'AMRAdapterAdcolony', '~> 2.6'
+  pod 'AMRAdapterAdcolony', '~> 3.0'
   pod 'AMRAdapterAdfalcon', '~> 3.2'
-  pod 'AMRAdapterAdmob', '~> 7.8'
+  pod 'AMRAdapterAdmob', '~> 7.16'
+  pod 'AMRAdapterAdmost', '~> 1.0'
   pod 'AMRAdapterAmazon', '~> 2.2'
   pod 'AMRAdapterApplovin', '~> 3.4'
   pod 'AMRAdapterAppnext', '~> 1.7'
   pod 'AMRAdapterChartboost', '~> 6.5'
   pod 'AMRAdapterConversant', '~> 4.5'
-  pod 'AMRAdapterFacebook', '~> 4.15'
+  pod 'AMRAdapterFacebook', '~> 4.18'
   pod 'AMRAdapterFlurry', '~> 7.6'
   pod 'AMRAdapterFyber', '~> 8.6'
   pod 'AMRAdapterInloco', '~> 2.2'
@@ -69,7 +70,10 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
+Additionally if you want to install Admost Adserver SDK add following line to your podfile  
+```ruby
+  pod 'AMRAdmostSDK', '~> 1.0'
+```
 After you complete pod installation you can skip to [Xcode Setup](#install4) step.
 
 ### <a name="install11"></a>Manual Installation  
