@@ -59,6 +59,7 @@ target 'MyTarget' do
   pod 'AMRAdapterNexage', '~> 6.3'
   pod 'AMRAdapterRevmob', '~> 9.2'
   pod 'AMRAdapterSmaato', '~> 8.0'
+  pod 'AMRAdapterStartapp', '~> 3.4'
   pod 'AMRAdapterSupersonic', '~> 6.4'
   pod 'AMRAdapterTapjoy', '~> 11.8'
   pod 'AMRAdapterUnity', '~> 2.0'
