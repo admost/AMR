@@ -34,42 +34,53 @@ To integrate AMR SDK and mediation adapters into your Xcode project using CocoaP
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
-target 'MyTarget' do
-#core SDK
-  pod 'AMRSDK', '~> 1.0'
-#mediation adapters  
-  pod 'AMRAdapterAdcolony', '~> 2.6'
-  pod 'AMRAdapterAdfalcon', '~> 3.2'
-  pod 'AMRAdapterAdmob', '~> 7.8'
-  pod 'AMRAdapterAmazon', '~> 2.2'
-  pod 'AMRAdapterApplovin', '~> 3.4'
-  pod 'AMRAdapterAppnext', '~> 1.7'
-  pod 'AMRAdapterChartboost', '~> 6.5'
-  pod 'AMRAdapterConversant', '~> 4.5'
-  pod 'AMRAdapterFacebook', '~> 4.15'
-  pod 'AMRAdapterFlurry', '~> 7.6'
-  pod 'AMRAdapterFyber', '~> 8.6'
-  pod 'AMRAdapterInloco', '~> 2.2'
-  pod 'AMRAdapterInmobi', '~> 6.0'
-  pod 'AMRAdapterLoopme', '~> 6.0'
-  pod 'AMRAdapterMobfox', '~> 2.4'
-  pod 'AMRAdapterMopub', '~> 4.11'
-  pod 'AMRAdapterNativex', '~> 5.5'
-  pod 'AMRAdapterNexage', '~> 6.3'
-  pod 'AMRAdapterRevmob', '~> 9.2'
-  pod 'AMRAdapterSmaato', '~> 8.0'
-  pod 'AMRAdapterSupersonic', '~> 6.4'
-  pod 'AMRAdapterTapjoy', '~> 11.8'
-  pod 'AMRAdapterUnity', '~> 2.0'
-  pod 'AMRAdapterVungle', '~> 4.0'
+use_frameworks!
+
+target 'podtest' do
+    #core SDK
+   pod 'AMRSDK', '~> 1.0'
+    #mediation adapters
+   pod 'AMRAdapterAdcolony', '~> 3.0'
+   pod 'AMRAdapterAdfalcon', '~> 3.2'
+   pod 'AMRAdapterAdmob', '~> 7.16'
+   pod 'AMRAdapterAdmost', '~> 1.0'
+   pod 'AMRAdapterAmazon', '~> 2.2'
+   pod 'AMRAdapterApplovin', '~> 3.4'
+   pod 'AMRAdapterAppnext', '~> 1.7'
+   pod 'AMRAdapterAvocarrot', '~> 4.2' #ios 8+
+   pod 'AMRAdapterChartboost', '~> 6.5'
+   pod 'AMRAdapterConversant', '~> 4.5'
+   pod 'AMRAdapterFacebook', '~> 4.18'
+   pod 'AMRAdapterFlurry', '~> 7.6'
+   pod 'AMRAdapterFyber', '~> 8.6'
+   pod 'AMRAdapterInloco', '~> 2.2'
+   pod 'AMRAdapterInmobi', '~> 6.0'
+   pod 'AMRAdapterLoopme', '~> 6.0'
+   pod 'AMRAdapterMobfox', '~> 2.4'
+   pod 'AMRAdapterMopub', '~> 4.11'
+   pod 'AMRAdapterNativex', '~> 5.5'
+   pod 'AMRAdapterNexage', '~> 6.3'
+   pod 'AMRAdapterPubnative', '~> 1.4' #ios 8+
+   pod 'AMRAdapterRevmob', '~> 9.2'
+   pod 'AMRAdapterSmaato', '~> 8.0'
+   pod 'AMRAdapterStartapp', '~> 3.4'
+   pod 'AMRAdapterSupersonic', '~> 6.4'
+   pod 'AMRAdapterTapjoy', '~> 11.8'
+   pod 'AMRAdapterUnity', '~> 2.0'
+   pod 'AMRAdapterVungle', '~> 4.0'
+
 end
+
 ```
 Then, run the following command:
 
 ```bash
 $ pod install
 ```
-
+Additionally if you want to install Admost Adserver SDK add following line to your podfile  
+```ruby
+  pod 'AMRAdmostSDK', '~> 1.0'
+```
 After you complete pod installation you can skip to [Xcode Setup](#install4) step.
 
 ### <a name="install11"></a>Manual Installation  
