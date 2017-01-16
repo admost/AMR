@@ -17,6 +17,9 @@
 		2F0878801D9481E6003A208A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F08787F1D9481E6003A208A /* QuartzCore.framework */; };
 		2F0878821D9481F7003A208A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0878811D9481F7003A208A /* UIKit.framework */; };
 		2F0878841D9481FD003A208A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0878831D9481FD003A208A /* WebKit.framework */; };
+		2F155B9A1E1F960300B40C63 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F155B971E1F960300B40C63 /* StartApp.bundle */; };
+		2F155B9B1E1F960300B40C63 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F155B981E1F960300B40C63 /* StartApp.framework */; };
+		2F155B9C1E1F960300B40C63 /* libAMRAdapterStartapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F155B991E1F960300B40C63 /* libAMRAdapterStartapp.a */; };
 		2F23EFD91D6749BA00CAC0FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F23EFD81D6749BA00CAC0FF /* main.m */; };
 		2F23EFDC1D6749BA00CAC0FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F23EFDB1D6749BA00CAC0FF /* AppDelegate.m */; };
 		2F23EFDF1D6749BA00CAC0FF /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F23EFDE1D6749BA00CAC0FF /* BannerViewController.m */; };
@@ -130,15 +133,28 @@
 		2FE935EC1DED63DA003664C7 /* FYBBackIconiPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE935E81DED63DA003664C7 /* FYBBackIconiPhone@2x.png */; };
 		2FE935ED1DED63DA003664C7 /* libFyberSDK-8.6.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE935E91DED63DA003664C7 /* libFyberSDK-8.6.0.a */; };
 		2FFD45081D9C8FB60089824D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD45071D9C8FB60089824D /* AVKit.framework */; };
+		9E15D4801E28F8A20087AA26 /* PubNativeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E06BAA31E28F829000CD130 /* PubNativeLibrary.framework */; };
+		9E15D4881E28FC270087AA26 /* PubNativeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E15D4861E28FC270087AA26 /* PubNativeLibrary.framework */; };
+		9E1741671E29003000D01AA4 /* PubNativeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC7A1311E28FFAE003E3E9F /* PubNativeLibrary.framework */; };
+		9E1741681E29003000D01AA4 /* PubNativeLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC7A1311E28FFAE003E3E9F /* PubNativeLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E50B80C1E2504CF009212F2 /* AvocarrotSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50B80A1E2504CF009212F2 /* AvocarrotSDK.framework */; };
+		9E50B80D1E2504CF009212F2 /* libAMRAdapterAvocarrot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50B80B1E2504CF009212F2 /* libAMRAdapterAvocarrot.a */; };
+		9E50B80E1E2504E6009212F2 /* AvocarrotSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50B80A1E2504CF009212F2 /* AvocarrotSDK.framework */; };
+		9E50B80F1E2504E6009212F2 /* AvocarrotSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50B80A1E2504CF009212F2 /* AvocarrotSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EC7A1331E28FFAE003E3E9F /* PubNativeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC7A1311E28FFAE003E3E9F /* PubNativeLibrary.framework */; };
+		9EC7A1341E28FFAE003E3E9F /* libAMRAdapterPubNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC7A1321E28FFAE003E3E9F /* libAMRAdapterPubNative.a */; };
+		9EFAF2621E24D45B00A8DBF0 /* PubNativeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFAF25E1E24D43300A8DBF0 /* PubNativeLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2F456D291DD0C76600C916DC /* Embed Frameworks */ = {
+		9EFAF2641E24D45C00A8DBF0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9E50B80F1E2504E6009212F2 /* AvocarrotSDK.framework in Embed Frameworks */,
+				9E1741681E29003000D01AA4 /* PubNativeLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +172,9 @@
 		2F08787F1D9481E6003A208A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F0878811D9481F7003A208A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2F0878831D9481FD003A208A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2F155B971E1F960300B40C63 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		2F155B981E1F960300B40C63 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		2F155B991E1F960300B40C63 /* libAMRAdapterStartapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterStartapp.a; sourceTree = "<group>"; };
 		2F23EFD41D6749BA00CAC0FF /* AMRDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMRDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F23EFD81D6749BA00CAC0FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F23EFDA1D6749BA00CAC0FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,6 +297,13 @@
 		2FE935E81DED63DA003664C7 /* FYBBackIconiPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FYBBackIconiPhone@2x.png"; sourceTree = "<group>"; };
 		2FE935E91DED63DA003664C7 /* libFyberSDK-8.6.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libFyberSDK-8.6.0.a"; sourceTree = "<group>"; };
 		2FFD45071D9C8FB60089824D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		9E06BAA31E28F829000CD130 /* PubNativeLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNativeLibrary.framework; path = "/Users/mhmtkrgz/dev/kokteyl/Mediation.iOSSDK2.0/objective-c/AMR/AMRDemo/MediationAdapters/AMRAdapterPubNative/AMRAdapterPubNativeInclude/PubNativeLibrary.framework"; sourceTree = "<absolute>"; };
+		9E15D4861E28FC270087AA26 /* PubNativeLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNativeLibrary.framework; path = "/Users/mhmtkrgz/dev/kokteyl/Mediation.iOSSDK2.0/objective-c/AMR/AMRDemo/MediationAdapters/AMRAdapterPubNative/AMRAdapterPubNativeInclude/PubNativeLibrary.framework"; sourceTree = "<absolute>"; };
+		9E50B80A1E2504CF009212F2 /* AvocarrotSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AvocarrotSDK.framework; sourceTree = "<group>"; };
+		9E50B80B1E2504CF009212F2 /* libAMRAdapterAvocarrot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterAvocarrot.a; sourceTree = "<group>"; };
+		9EC7A1311E28FFAE003E3E9F /* PubNativeLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PubNativeLibrary.framework; sourceTree = "<group>"; };
+		9EC7A1321E28FFAE003E3E9F /* libAMRAdapterPubNative.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMRAdapterPubNative.a; sourceTree = "<group>"; };
+		9EFAF25E1E24D43300A8DBF0 /* PubNativeLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNativeLibrary.framework; path = "/Users/mhmtkrgz/dev/kokteyl/Mediation.iOSSDK2.0/objective-c/AMR/AMRDemo/MediationAdapters/AMRAdapterPubNative/AMRAdapterPubNativeInclude/PubNativeLibrary.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,15 +318,20 @@
 				2F2ADE901DB6AEDA002120D2 /* libAMRAdapterRevmob.a in Frameworks */,
 				2FFD45081D9C8FB60089824D /* AVKit.framework in Frameworks */,
 				2F2ADE6A1DB6AEDA002120D2 /* Chartboost.framework in Frameworks */,
+				9E1741671E29003000D01AA4 /* PubNativeLibrary.framework in Frameworks */,
 				2F2ADE911DB6AEDA002120D2 /* iSoma.framework in Frameworks */,
 				2FDE73801D99B784004E9EA1 /* SafariServices.framework in Frameworks */,
+				9E50B80C1E2504CF009212F2 /* AvocarrotSDK.framework in Frameworks */,
 				2F2ADE581DB6AEDA002120D2 /* libAMRAdapterAdcolony.a in Frameworks */,
 				2FDE737E1D99B77E004E9EA1 /* JavaScriptCore.framework in Frameworks */,
+				9E50B80D1E2504CF009212F2 /* libAMRAdapterAvocarrot.a in Frameworks */,
 				2F0878801D9481E6003A208A /* QuartzCore.framework in Frameworks */,
 				2F456D151DD0A1DB00C916DC /* libAMRAdapterFyber.a in Frameworks */,
 				2F2ADE931DB6AEDA002120D2 /* Supersonic.framework in Frameworks */,
 				2FC525201D927B5E0095306E /* StoreKit.framework in Frameworks */,
+				9EFAF2621E24D45B00A8DBF0 /* PubNativeLibrary.framework in Frameworks */,
 				2F6E42BF1DA657B6003572E4 /* AMRAdmostSDK.framework in Frameworks */,
+				9E15D4881E28FC270087AA26 /* PubNativeLibrary.framework in Frameworks */,
 				2F2ADE6B1DB6AEDA002120D2 /* libAMRAdapterChartboost.a in Frameworks */,
 				2F2ADE8C1DB6AEDA002120D2 /* libAMRAdapterNativex.a in Frameworks */,
 				2FDE737C1D99B76B004E9EA1 /* EventKitUI.framework in Frameworks */,
@@ -308,12 +339,16 @@
 				2FDE73781D99B757004E9EA1 /* CoreTelephony.framework in Frameworks */,
 				2F2ADE971DB6AEDA002120D2 /* libAMRAdapterTapjoy.a in Frameworks */,
 				2F2ADE941DB6AEDA002120D2 /* libAMRAdapterSupersonic.a in Frameworks */,
+				9EC7A1331E28FFAE003E3E9F /* PubNativeLibrary.framework in Frameworks */,
 				2FC525281D927B730095306E /* AdSupport.framework in Frameworks */,
+				9EC7A1341E28FFAE003E3E9F /* libAMRAdapterPubNative.a in Frameworks */,
+				9E15D4801E28F8A20087AA26 /* PubNativeLibrary.framework in Frameworks */,
 				2F2ADE681DB6AEDA002120D2 /* libAppnextLib.a in Frameworks */,
 				2F0878841D9481FD003A208A /* WebKit.framework in Frameworks */,
 				2F2ADE671DB6AEDA002120D2 /* libAMRAdapterApplovin.a in Frameworks */,
 				2F2ADE8F1DB6AEDA002120D2 /* RevMobAds.framework in Frameworks */,
 				2F2ADEA01DB6AEDA002120D2 /* VungleSDK.framework in Frameworks */,
+				2F155B9C1E1F960300B40C63 /* libAMRAdapterStartapp.a in Frameworks */,
 				2F2ADE921DB6AEDA002120D2 /* libAMRAdapterSmaato.a in Frameworks */,
 				2F2ADE661DB6AEDA002120D2 /* libAppLovinSdk.a in Frameworks */,
 				2F2ADE641DB6AEDA002120D2 /* AmazonAd.framework in Frameworks */,
@@ -343,10 +378,12 @@
 				2F2ADE5A1DB6AEDA002120D2 /* libAMRAdapterAdFalcon.a in Frameworks */,
 				2F2ADE6C1DB6AEDA002120D2 /* libFlurry_7.6.6.a in Frameworks */,
 				2F2ADE8D1DB6AEDA002120D2 /* MMAdSDK.framework in Frameworks */,
+				9E50B80E1E2504E6009212F2 /* AvocarrotSDK.framework in Frameworks */,
 				2FC525261D927B6F0095306E /* AVFoundation.framework in Frameworks */,
 				2F2ADE951DB6AEDA002120D2 /* Tapjoy.framework in Frameworks */,
 				2F2ADE8B1DB6AEDA002120D2 /* libNativeXSDK.a in Frameworks */,
 				2F2ADE8A1DB6AEDA002120D2 /* libAMRAdapterMopub.a in Frameworks */,
+				2F155B9B1E1F960300B40C63 /* StartApp.framework in Frameworks */,
 				2F2ADE6D1DB6AEDA002120D2 /* libFlurryAds_7.6.6.a in Frameworks */,
 				2F0878721D948192003A208A /* AudioToolbox.framework in Frameworks */,
 				2FC526251D93BFCA0095306E /* CoreMotion.framework in Frameworks */,
@@ -369,6 +406,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F155B951E1F960300B40C63 /* AMRAdapterStartapp */ = {
+			isa = PBXGroup;
+			children = (
+				2F155B961E1F960300B40C63 /* AMRAdapterStartappInclude */,
+				2F155B991E1F960300B40C63 /* libAMRAdapterStartapp.a */,
+			);
+			path = AMRAdapterStartapp;
+			sourceTree = "<group>";
+		};
+		2F155B961E1F960300B40C63 /* AMRAdapterStartappInclude */ = {
+			isa = PBXGroup;
+			children = (
+				2F155B971E1F960300B40C63 /* StartApp.bundle */,
+				2F155B981E1F960300B40C63 /* StartApp.framework */,
+			);
+			path = AMRAdapterStartappInclude;
+			sourceTree = "<group>";
+		};
 		2F23EFCB1D6749BA00CAC0FF = {
 			isa = PBXGroup;
 			children = (
@@ -918,9 +973,12 @@
 		2FCCDB861D6B55C000E4414A /* MediationAdapters */ = {
 			isa = PBXGroup;
 			children = (
+				9EC7A12F1E28FFAE003E3E9F /* AMRAdapterPubNative */,
+				9E50B8081E2504CF009212F2 /* AMRAdapterAvocarrot */,
+				2F155B951E1F960300B40C63 /* AMRAdapterStartapp */,
+				2F95652C1DD35677006C6F42 /* AMRAdapterConversant */,
 				2F696C931DF19FB100810E2C /* AMRAdapterAdmob */,
 				2F5DC72C1DD9D99E0011A35F /* AMRAdapterInloco */,
-				2F95652C1DD35677006C6F42 /* AMRAdapterConversant */,
 				2F456D101DD0A1DB00C916DC /* AMRAdapterFyber */,
 				2F2ADDE31DB6AEDA002120D2 /* AMRAdapterAdcolony */,
 				2F2ADDE71DB6AEDA002120D2 /* AMRAdapterAdFalcon */,
@@ -947,6 +1005,40 @@
 			path = MediationAdapters;
 			sourceTree = "<group>";
 		};
+		9E50B8081E2504CF009212F2 /* AMRAdapterAvocarrot */ = {
+			isa = PBXGroup;
+			children = (
+				9E50B8091E2504CF009212F2 /* AMRAdapterAvocarrotInclude */,
+				9E50B80B1E2504CF009212F2 /* libAMRAdapterAvocarrot.a */,
+			);
+			path = AMRAdapterAvocarrot;
+			sourceTree = "<group>";
+		};
+		9E50B8091E2504CF009212F2 /* AMRAdapterAvocarrotInclude */ = {
+			isa = PBXGroup;
+			children = (
+				9E50B80A1E2504CF009212F2 /* AvocarrotSDK.framework */,
+			);
+			path = AMRAdapterAvocarrotInclude;
+			sourceTree = "<group>";
+		};
+		9EC7A12F1E28FFAE003E3E9F /* AMRAdapterPubNative */ = {
+			isa = PBXGroup;
+			children = (
+				9EC7A1301E28FFAE003E3E9F /* AMRAdapterPubNativeInclude */,
+				9EC7A1321E28FFAE003E3E9F /* libAMRAdapterPubNative.a */,
+			);
+			path = AMRAdapterPubNative;
+			sourceTree = "<group>";
+		};
+		9EC7A1301E28FFAE003E3E9F /* AMRAdapterPubNativeInclude */ = {
+			isa = PBXGroup;
+			children = (
+				9EC7A1311E28FFAE003E3E9F /* PubNativeLibrary.framework */,
+			);
+			path = AMRAdapterPubNativeInclude;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -957,7 +1049,7 @@
 				2F23EFD01D6749BA00CAC0FF /* Sources */,
 				2F23EFD11D6749BA00CAC0FF /* Frameworks */,
 				2F23EFD21D6749BA00CAC0FF /* Resources */,
-				2F456D291DD0C76600C916DC /* Embed Frameworks */,
+				9EFAF2641E24D45C00A8DBF0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -980,6 +1072,7 @@
 					2F23EFD31D6749BA00CAC0FF = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 6AUH76QNW9;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1011,6 +1104,7 @@
 				2FE935EA1DED63DA003664C7 /* FYBBackIcon@2x.png in Resources */,
 				2F2ADE7C1DB6AEDA002120D2 /* MPCloseButtonX@3x.png in Resources */,
 				2F2ADE761DB6AEDA002120D2 /* MPAdBrowserController.xib in Resources */,
+				2F155B9A1E1F960300B40C63 /* StartApp.bundle in Resources */,
 				2F2ADE9B1DB6AEDA002120D2 /* vg_close.png in Resources */,
 				2F2ADE9A1DB6AEDA002120D2 /* __vungle.db in Resources */,
 				2F23EFE71D6749BA00CAC0FF /* LaunchScreen.storyboard in Resources */,
@@ -1169,6 +1263,7 @@
 		2F23EFEC1D6749BA00CAC0FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1195,10 +1290,13 @@
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterNexage/AMRAdapterNexageInclude",
 					"$(PROJECT_DIR)/AMRSDK",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterInloco/AMRAdapterInlocoInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterStartapp/AMRAdapterStartappInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterPubNative/AMRAdapterPubNativeInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterAvocarrot/AMRAdapterAvocarrotInclude",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AMRDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1237,6 +1335,9 @@
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterConversant/AMRAdapterConversantInclude",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterConversant",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterInloco",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterStartapp",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterPubNative",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterAvocarrot",
 				);
 				OTHER_LDFLAGS = "'-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokteyl.amr.amrdemo;
@@ -1248,6 +1349,7 @@
 		2F23EFED1D6749BA00CAC0FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1274,10 +1376,13 @@
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterNexage/AMRAdapterNexageInclude",
 					"$(PROJECT_DIR)/AMRSDK",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterInloco/AMRAdapterInlocoInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterStartapp/AMRAdapterStartappInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterPubNative/AMRAdapterPubNativeInclude",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterAvocarrot/AMRAdapterAvocarrotInclude",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AMRDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1316,6 +1421,9 @@
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterConversant/AMRAdapterConversantInclude",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterConversant",
 					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterInloco",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterStartapp",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterPubNative",
+					"$(PROJECT_DIR)/MediationAdapters/AMRAdapterAvocarrot",
 				);
 				OTHER_LDFLAGS = "'-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokteyl.amr.amrdemo;

@@ -75,6 +75,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
 
     /// APPNEXT
     AMRNetworkTypeAppnext,
+    
+    /// AVOCARROT
+    AMRNetworkTypeAvocarrot,
 
     /// CHARTBOOST
     AMRNetworkTypeChartboost,
@@ -120,12 +123,18 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
     
     /// NEXTAGE
     AMRNetworkTypeNexAge,
+    
+    /// PUBNATIVE
+    AMRNetworkTypePubNative,
 
     /// REVMOB
     AMRNetworkTypeRevMob,
 
     /// SMAATO
     AMRNetworkTypeSmaato,
+
+    /// STARTAPP
+    AMRNetworkTypeStartApp, 
 
     /// SUPERSONIC
     AMRNetworkTypeSupersonic,
