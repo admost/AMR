@@ -126,28 +126,35 @@ WebKit.framework
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
 Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
 ```perl
-AMRAdapterAdFalcon
 AMRAdapterAdcolony
+AMRAdapterAdFalcon
 AMRAdapterAdmob
 AMRAdapterAdmost
 AMRAdapterAmazon
 AMRAdapterApplovin
 AMRAdapterAppnext
+AMRAdapterAvocarrot -iOS 8+
 AMRAdapterChartboost
+AMRAdapterConversant
 AMRAdapterFacebook
 AMRAdapterFlurry
+AMRAdapterFyber
+AMRAdapterInloco
 AMRAdapterInmobi
 AMRAdapterLoopme
 AMRAdapterMobfox
 AMRAdapterMopub
 AMRAdapterNativex
 AMRAdapterNexage
+AMRAdapterPubNative -iOS 8+
 AMRAdapterRevmob
 AMRAdapterSmaato
+AMRAdapterStartapp
 AMRAdapterSupersonic
 AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
+
 ```
 + <a name="install4"></a>**Xcode Setup**  
 
