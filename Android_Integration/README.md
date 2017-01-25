@@ -57,6 +57,9 @@ compile fileTree(include: ['*.jar'], dir: 'libs')
 compile(name: 'admost-sdk', ext: 'aar')
 compile(name: 'unity-ads', ext: 'aar')
 compile(name: 'mm-ad-sdk', ext: 'aar')
+compile(name: 'loopme-sdk-5.1.0', ext: 'aar')
+compile(name: 'aoc-release', ext: 'aar')
+compile(name: 'youappi-android-sdk', ext: 'aar')
 
 // AMR
 compile 'com.android.volley:volley:1.0.0'
@@ -67,48 +70,29 @@ compile 'com.google.android.gms:play-services-ads:10.0.1'
 // NATIVEX
 compile 'com.google.code.gson:gson:2.6.2'
 
-// AMAZON
-compile 'com.amazon.android:mobile-ads:5.8.1.1'
-
 // FACEBOOK
 compile 'com.facebook.android:audience-network-sdk:4.18.0'
-
-// FLURRY
-compile 'com.flurry.android:ads:6.2.0'
-compile 'com.flurry.android:analytics:6.2.0'
-
-// INMOBI
-compile 'com.inmobi.monetization:inmobi-ads:6.0.3’
 
 // MOPUB
 compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
 compile('com.mopub.volley:mopub-volley:1.1.0')
 
-// SUPERSONIC
-compile 'com.supersonic.sdk:mediationsdk:6.4.20@jar'
-
 // APPNEXT
-compile('com.appnext.sdk:appnext-sdk:1.7.5')
-compile 'com.appnext.sdk:native-ads-sdk:1.7.5'
+compile('com.appnext.sdk:appnext-sdk:1.7.6')
+compile 'com.appnext.sdk:native-ads-sdk:1.7.6'
 
 // PUBNATIVE
-compile 'net.pubnative:library:2.3.6'
-compile 'net.pubnative:library.interstitial:2.3.6'
-compile 'net.pubnative:library.feed.banner:2.3.6'
-compile 'net.pubnative:library.video:2.3.6'
+compile 'net.pubnative:library:2.3.8'
+compile 'net.pubnative:library.interstitial:2.3.8'
+compile 'net.pubnative:library.feed.banner:2.3.8'
+compile 'net.pubnative:library.video:2.3.8'
 
 // INLOCOMEDIA
 compile 'com.inlocomedia.android:android-sdk:2.4.0'
 
 // TEADS
-compile('tv.teads.sdk:androidsdk:2.2.16:fullRelease@aar') { transitive = true; }
+compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
 
-//ADCOLONY
-compile 'com.adcolony:sdk:3.0.6'
-compile 'com.android.support:support-annotations:24.2.1'
-
-// LOOPME
-compile 'com.loopme:loopme-sdk:5.1.0@aar'
 ```
 
 And Repositories as follows;
@@ -136,28 +120,40 @@ Copy the following libraries to the libs folder of your app.
 admost-sdk.aar
 mm-ad-sdk.aar
 unity-ads.aar
+aoc-publisher-sdk-release-1.2.1.aar
+loopme-sdk-5.1.0.aar
+youappi-android-sdk.aar
 
-AdFalconAndroidSDK3.2.0.jar
+adcolony.jar
+AdFalconAndroidSDK3.3.0.jar
 applovin-sdk-6.4.0.jar
+amazon-ads-5.8.1.1.jar
+applovin-sdk-6.4.0.jar
+avocarrot-sdk-v.3.7.5.jar
 chartboost.jar
 conversant-android-sdk-2.4.2.jar
-FlyMobSdk-1.7.0.jar
-heyzap-unified-platform-10.2.0.jar
-io.display.sdk-1.2.1
+flurryAds_6.7.0.jar
+flurryAnalytics_6.7.0.jar
+FlyMobSdk-1.9.1.jar
+heyzap-unified-platform-10.2.2.jar
+InMobi-6.0.4.jar
+instal-publisher-sdk-1.0.24.jar
+io.display.sdk-1.3.0.jar
 mediabrix-sdk-FBless.jar
-MobFox-Android-SDK-Core-3.0.0b.jar
-NativeXMonetizationSDK_v5.5.7.1.jar
+MobFox-Android-SDK-Core-3.1.6.jar
+NativeXMonetizationSDK_v5.5.9.jar
+nativex-gson-2.6.2.jar
 revmob.jar
 RFMSDK.jar
-SOMAAndroidSDK5.0.8.jar
-StartAppInApp-3.5.2.jar
+SOMAAndroidSDK5.1.0.jar
+StartAppInApp-3.5.4.jar
+supersonic-6.4.21.jar
 tapjoy-11.9.1.jar
-vungle-publisher-adaptive-id-4.0.2.jar
+vungle-publisher-adaptive-id-4.0.3.jar
 
 ////// Vungle ////////
-Dagger-1.2.2.jar
-Javax.inject-1.jar
-nineoldandroids-2.4.0.jar
+vungle-dagger-2.7.jar
+vungle-javax.inject-1.jar
 ```
 
 Only admost-sdk.aar and volley library are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
