@@ -90,7 +90,7 @@ compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
 
 ####Libs
 
-Copy the following libraries to the libs folder of your app.
+Copy the following libraries to the libs folder of your app from [this link](https://github.com/admost/AMR/tree/master/Android_Integration/libs). 
 
 ```sh
 admost-sdk.aar
