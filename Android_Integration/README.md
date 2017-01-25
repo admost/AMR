@@ -462,6 +462,10 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.facebook.** { *; }
 -keepattributes Signature
 
+# HEYZAP
+-keep public class com.heyzap.** { *; }
+-dontwarn com.heyzap.**
+
 # FLURRY
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
@@ -473,6 +477,16 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.supersonicads.** { *; }
 -dontwarn com.supersonic.**
 -keep class com.supersonic.** { *; }
+
+# STARTAPP
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
+-dontwarn android.webkit.JavascriptInterface
+-keep class com.startapp.** { *; }
+-dontwarn com.startapp.**
+
+# AVOCARROT
+-keep class com.avocarrot.** { *; }
+-dontwarn com.avocarrot.**
 
 # APPLOVIN
 -dontwarn com.applovin.**
@@ -487,10 +501,12 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class com.noqoush.** { *; }
 
 # MEDIABRIX
--dontwarn com.mediabrix.**
 -keep class com.mediabrix.** { *; }
--dontwarn com.moat.analytics.**
--keep class com.moat.analytics.** { *; }
+-keep class com.moat.** { *; }
+-keep class mdos.** { *; }
+-dontwarn com.mediabrix.**
+-dontwarn com.moat.**
+-dontwarn mdos.**
 
 # NATIVEX
 -dontwarn com.nativex.**
@@ -584,10 +600,6 @@ If you are using Proguard, add these lines to your Proguard file
 -keep public class com.rfm.** { *; }
 -dontwarn com.rfm.**
 
-# HEYZAP
--keep public class com.heyzap.** { *; }
--dontwarn com.heyzap.**
-
 # FYBER
 -keep public class com.fyber.** { *; }
 -dontwarn com.fyber.**
@@ -605,9 +617,28 @@ If you are using Proguard, add these lines to your Proguard file
 # CONVERSANT
 -keep class com.greystripe.** { *; }
 
-# STARTAPP
--keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
+# ARTOFCLICK
+-keep class com.artofclick.publisher_sdk.** { *; }
+-dontwarn com.artofclick.publisher_sdk.**
+
+# INSTAL
+-keep class com.instal.** { *; }
+-dontwarn com.instal.**
+
+#YouAppi
+-keep class com.youappi.ai.sdk.** { *; }
+-dontwarn com.youappi.ai.sdk.**
+
+#AppBrain
+-keep public class com.appbrain.KeepClass
+-keep public class * implements com.appbrain.KeepClass
+-keepclassmembers class * implements com.appbrain.KeepClass {
+    <methods>;
+}
+-keep class android.webkit.JavascriptInterface
 -dontwarn android.webkit.JavascriptInterface
--keep class com.startapp.** { *; }
--dontwarn com.startapp.**
+
+# This is only needed when you don't include the Google Play services:
+-dontwarn com.google.android.gms.**
+
 ```

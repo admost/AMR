@@ -3,7 +3,6 @@
 ###New
 * Avocarrot (**3.7.5**)
 * ArtOfClick (**1.2.1**)
-* YouApi (**1.2.1**)
 
 ###Updated
 * AdColony (**3.0.6**)
