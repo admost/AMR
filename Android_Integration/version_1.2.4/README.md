@@ -1,4 +1,4 @@
-#Release Notes v1.2.3
+#Release Notes v1.2.4
 
 ###New
 * Avocarrot (**3.7.5**)
@@ -6,7 +6,6 @@
 
 ###Updated
 * AdColony (**3.0.6**)
-* Facebook Audience Network (**v.4.18**)
 * Supersonic (**v.6.4.21**)
 * UnityAds (**v.2.0.7**)
 * AppNext (**v.1.7.6**)
