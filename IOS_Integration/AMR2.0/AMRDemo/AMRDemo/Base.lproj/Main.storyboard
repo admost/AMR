@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,13 @@
                             <constraint firstItem="Mt7-WB-kLX" firstAttribute="top" secondItem="NaH-5J-Iw2" secondAttribute="bottom" constant="20" id="zO5-cp-Efd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Banner" id="vIP-t4-Sg2"/>
+                    <navigationItem key="navigationItem" title="Banner" id="vIP-t4-Sg2">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" style="plain" id="Wef-bf-Dhv">
+                            <connections>
+                                <action selector="reloadBanners" destination="BYZ-38-t0r" id="8D2-jv-UzS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="AILoading" destination="Iyl-8A-QR4" id="nIo-iw-xM7"/>
                         <outlet property="VBannerContainer250" destination="HYF-ix-BQw" id="1eF-Pj-QF6"/>
