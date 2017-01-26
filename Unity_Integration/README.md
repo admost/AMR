@@ -28,121 +28,89 @@ AMRUnity.unitypackage
 All mediation adapters are included in target platform's plugins folder. At least one mediation adapter is required for AMRSDK to show banners. You can keep all adapters (recommended for maximized revenue) or start with a subset of adapters. For android platform you have to keep files which have 'amr_' prefix. Consult your AMR agent for further details.
 
 ## Start Coding
-+ <a name="usage1"></a>Initialization   
+**<a name="usage1"></a>Initialization**   
 
-To initialize Admost Mediation SDK, create an instance of AMRSDK and start the SDK with your iOS and Android application Ids;  
+To initialize Admost Mediation SDK, create and configure instance of an AMRSdkConfig and start the SDK with your config object.  
 ```c#
-AMRSdk = new AMR.AMRSDK();
-AMRSdk.startWithAppId(<Your iOS App Id>, <Your Android App Id>);
+AMR.AMRSdkConfig config = new AMR.AMRSdkConfig();
+config.ApplicationIdAndroid = "<Your Android App Id>";
+config.ApplicationIdIOS = "<Your IOS App Id>";
+
+config.BannerIdAndroid = "<Your Android Banner Zone Id>";
+config.BannerIdIOS = "<Your IOS Banner Zone Id>";
+
+config.InterstitialIdAndroid = "<Your Android Interstitial Zone Id>";
+config.InterstitialIdIOS = "<Your IOS Interstitial Zone Id>";
+
+config.RewardedVideoIdAndroid = "<Your Android Video Zone Id>";
+config.RewardedVideoIdIOS = "<Your IOS Video Zone Id>";
+                                            
+AMR.AMRSDK.startWithConfig(config);
 ```  
-+ <a name="usage2"></a>Banner Ads  
+**<a name="usage2"></a>Banner Ads**  
 
-To create and show a banner ad first create a `AMRBannerView` object
+To create and show a banner ad run the following code
 ```c#
-BannerView = new AMR.AMRBannerView();
-```
-and call `loadBannerForZoneId` method with your iOS and Android Zone Ids, banner placement and callback handler who implements `AMRBannerViewDelegate` interface;  
-```c#
-BannerView.loadBannerForZoneId( <Your iOS Zone Id>,
-                                <Your Android Zone Id>, 
-                                BannerPositionTop,
-                                this);
-```
-There are 2 callback methods in `<AMRBannerViewDelegate>` interface.  
-`didReceiveBanner` callback method is called to inform the app that the banner is loaded.
-```c#
-public void didReceiveBanner()
-{
-    Debug.Log("Banner Received");
-}
-```
-If `didFailToReceiveBanner` callback method is called investigate `error` to address the problem.
-```c#
-public void didFailtoReceiveBanner(string error)
-{
-	Debug.Log("ERROR: "+error);
-}
+AMR.AMRSDK.showBanner(AMR.Enums.AMRSDKBannerPosition.BannerPositionTop);
 ```
 
 Call `hideBanner` method to hide the banner;
 ```c#
-Banner.hideBanner();
+AMR.AMRSDK.hideBanner();
 ```
 
-+ <a name="usage3"></a>Interstitial Ads  
+**<a name="usage3"></a>Interstitial Ads**  
 
-To create and show an Interstitial ad first create a `AMRInterstitialView` object
+To load an Interstitial ad run the following code;
 ```c#
-InterstitialView = new AMR.AMRInterstitialView();
+AMR.AMRSDK.loadInterstitial();
 ```
-and call `loadInterstitialForZoneId` method with your iOS and Android Zone Ids and callback handler who implements `AMRInterstitialViewDelegate` interface;  
+To show a loaded interstitial run the following code;
 ```c#
-InterstitialView.loadInterstitialForZoneId( <Your iOS Zone Id>,
-                                            <Your Android Zone Id>, 
-                                            this);
+if (AMR.AMRSDK.isInterstitialReady())
+	AMR.AMRSDK.showInterstitial();
 ```
-There are 3 callback methods in `<AMRInterstitialDelegate>` interface.  
-When `didReceiveInterstitial` callback method is called just call the `showInterstitial` method to present interstitial;
+You can subscribe to 2 callback functions `onInterstitialReady` and `onInterstitialDismiss` to catch interstitial events.  
 ```c#
-public void didReceiveInterstitial()
+// Interstitial Callbacks - Optional
+AMR.AMRSDK.setOnInterstitialReady(onInterstitialReady);
+AMR.AMRSDK.setOnInterstitialDismiss(onInterstitialDismiss);
+public void onInterstitialReady()
 {
-    InterstitialView.showInterstitial();
+}
+public void onInterstitialDismiss()
+{
 }
 ```
-`didDismissInterstitial` callback method is called to inform the application that the interstitial is no longer present. You can use this callback to resume paused tasks during interstitial presentation.
-```c#
-public void didDismissInterstitial()
-{
-    Debug.Log("Interstitial Dismissed");
-}
-```
-If `didFailToReceiveInterstitial` callback method is called investigate `error` to adress the problem.
-```c#
-public void didFailtoReceiveInterstitial(string error)
-{
-	Debug.Log("ERROR: " + error);
-}
-```
-+ <a name="usage4"></a>Rewarded Video Ads  
+**<a name="usage4"></a>Rewarded Video Ads**  
 
-Rewarded video ads' implementation is pretty similar to Interstitial ads with 1 additional callback `didCompleteRewardedVideo` to reward the user.
+Rewarded video ads' implementation is pretty similar to Interstitial ads with 1 additional event `rewardedVideoComplete` to reward the user.
 
-To create and show an Rewarded Video ad first create a `AMRRewardedVideoView` object
+To load an rewarded video ad, run the following code;
 ```c#
-RewardedVideoView = new AMR.AMRRewardedVideoView();
+AMR.AMRSDK.loadRewardedVideo();
 ```
-and call `loadRewardedVideoForZoneId` method with your iOS and Android Zone Ids and callback handler who implements `AMRRewardedVideoViewDelegate` interface;  
+To show a loaded rewarded video ad, run the following code;
 ```c#
-RewardedVideoView.loadRewardedVideoForZoneId(   <Your iOS Zone Id>,
-                                                <Your Android Zone Id>, 
-                                                this);
+if (AMR.AMRSDK.isRewardedVideoReady())
+	AMR.AMRSDK.showRewardedVideo();
 ```
-There are 4 callback methods in `<AMRRewardedVideoDelegate>` protocol.  
-When `didReceiveRewardedVideo` callback method is called just call the `showRewardedVideo` method to present Rewarded Video ad.
+You can subscribe to 3 callback functions `OnVideoReady`,`OnVideoDismiss` and `OnVideoComplete` to catch rewarded video events.   
 ```c#
-public void didReceiveRewardedVideo()
+// Rewarded Video Callbacks - Optional
+AMR.AMRSDK.setOnRewardedVideoReady(OnVideoReady);
+AMR.AMRSDK.setOnRewardedVideoDismiss(OnVideoDismiss);
+AMR.AMRSDK.setOnRewardedVideoComplete(OnVideoComplete);
+
+public void OnVideoReady()
 {
-    RewardedVideoView.showRewardedVideo();
 }
-```
-`didCompleteRewardedVideo` callback method is called to inform the application that the user finished watching the video and can be rewarded. Use this callback to reward the user.
-```c#
-public void didCompleteRewardedVideo()
+
+public void OnVideoDismiss()
 {
-    Debug.Log("Complete");
 }
-```
-`didDismissRewardedVideo` callback method is called to inform the application that the rewarded video is no longer present. You can use this callback to resume paused tasks during rewarded video presentation.
-```c#
-public void didDismissRewardedVideo()
+
+public void OnVideoComplete()
 {
-    Debug.Log("Rewarded Video Dismissed");
-}
-```
-If `didFailToReceiveRewardedVideo` callback method is called investigate `error` to adress the problem.
-```c#
-public void didFailtoReceiveRewardedVideo(string error)
-{
-    Debug.Log("ERROR: " + error);
 }
 ```
