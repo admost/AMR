@@ -30,7 +30,7 @@ All mediation adapters are included in target platform's plugins folder. At leas
 ## Start Coding
 **<a name="usage1"></a>Initialization**   
 
-To initialize Admost Mediation SDK, create and configure instance of an AMRSdkConfig and start the SDK with your config object.  
+To initialize Admost Mediation SDK, create and configure instance of an `AMRSdkConfig` and start the SDK with your config object.  
 ```c#
 AMR.AMRSdkConfig config = new AMR.AMRSdkConfig();
 config.ApplicationIdAndroid = "<Your Android App Id>";
