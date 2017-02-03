@@ -5,7 +5,7 @@
 * ArtOfClick (**1.2.1**)
 
 ###Updated
-* AdColony (**3.0.6**)
+* AdColony (**3.0.7**)
 * Supersonic (**v.6.4.21**)
 * UnityAds (**v.2.0.7**)
 * AppNext (**v.1.7.6**)
@@ -86,6 +86,9 @@ compile 'com.inlocomedia.android:android-sdk:2.4.0'
 // TEADS
 compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
 
+// ADCOLONY
+compile 'com.adcolony:sdk:3.0.7'
+
 ```
 
 ####Libs
@@ -100,7 +103,6 @@ aoc-publisher-sdk-release-1.2.1.aar
 loopme-sdk-5.1.0.aar
 youappi-android-sdk.aar
 
-adcolony.jar
 AdFalconAndroidSDK3.3.0.jar
 applovin-sdk-6.4.0.jar
 amazon-ads-5.8.1.1.jar
