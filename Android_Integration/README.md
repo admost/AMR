@@ -93,6 +93,9 @@ compile 'com.inlocomedia.android:android-sdk:2.4.0'
 // TEADS
 compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
 
+// ADCOLONY
+compile 'com.adcolony:sdk:3.0.7'
+
 ```
 
 And Repositories as follows;
@@ -124,7 +127,6 @@ aoc-publisher-sdk-release-1.2.1.aar
 loopme-sdk-5.1.0.aar
 youappi-android-sdk.aar
 
-adcolony.jar
 AdFalconAndroidSDK3.3.0.jar
 applovin-sdk-6.4.0.jar
 amazon-ads-5.8.1.1.jar
