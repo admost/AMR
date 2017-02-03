@@ -42,53 +42,67 @@
 
 ####Gradle
 
+```gradle
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://jitpack.io" }
+    maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
+    maven { url "http://repo.appnext.com/" }
+    maven { url "https://adcolony.bintray.com/AdColony" }
+    maven { url "https://s3.amazonaws.com/avocarrot-android-builds/dist" }
+}
+```
+
 Add the following lines to your module dependencies
 
 ```gradle
-compile fileTree(include: ['*.jar'], dir: 'libs')
+dependencies {
+	compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-sdk', ext: 'aar')
-compile(name: 'unity-ads', ext: 'aar')
-compile(name: 'mm-ad-sdk', ext: 'aar')
-compile(name: 'loopme-sdk-5.1.0', ext: 'aar')
-compile(name: 'aoc-release', ext: 'aar')
-compile(name: 'youappi-android-sdk', ext: 'aar')
+	compile(name: 'admost-sdk', ext: 'aar')
+	compile(name: 'unity-ads', ext: 'aar')
+	compile(name: 'mm-ad-sdk', ext: 'aar')
+	compile(name: 'loopme-sdk-5.1.0', ext: 'aar')
+	compile(name: 'aoc-release', ext: 'aar')
+	compile(name: 'youappi-android-sdk', ext: 'aar')
 
-// AMR
-compile 'com.android.volley:volley:1.0.0'
+	// AMR
+	compile 'com.android.volley:volley:1.0.0'
 
-// GOOGLE
-compile 'com.google.android.gms:play-services-ads:10.0.1'
+	// GOOGLE
+	compile 'com.google.android.gms:play-services-ads:10.0.1'
 
-// NATIVEX
-compile 'com.google.code.gson:gson:2.6.2'
+	// NATIVEX
+	compile 'com.google.code.gson:gson:2.6.2'
 
-// FACEBOOK
-compile 'com.facebook.android:audience-network-sdk:4.18.0'
+	// FACEBOOK
+	compile 'com.facebook.android:audience-network-sdk:4.18.0'
 
-// MOPUB
-compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
-compile('com.mopub.volley:mopub-volley:1.1.0')
+	// MOPUB
+	compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
+	compile('com.mopub.volley:mopub-volley:1.1.0')
 
-// APPNEXT
-compile('com.appnext.sdk:appnext-sdk:1.7.6')
-compile 'com.appnext.sdk:native-ads-sdk:1.7.6'
+	// APPNEXT
+	compile('com.appnext.sdk:appnext-sdk:1.7.6')
+	compile 'com.appnext.sdk:native-ads-sdk:1.7.6'
 
-// PUBNATIVE
-compile 'net.pubnative:library:2.3.8'
-compile 'net.pubnative:library.interstitial:2.3.8'
-compile 'net.pubnative:library.feed.banner:2.3.8'
-compile 'net.pubnative:library.video:2.3.8'
+	// PUBNATIVE
+	compile 'net.pubnative:library:2.3.8'
+	compile 'net.pubnative:library.interstitial:2.3.8'
+	compile 'net.pubnative:library.feed.banner:2.3.8'
+	compile 'net.pubnative:library.video:2.3.8'
 
-// INLOCOMEDIA
-compile 'com.inlocomedia.android:android-sdk:2.4.0'
+	// INLOCOMEDIA
+	compile 'com.inlocomedia.android:android-sdk:2.4.0'
 
-// TEADS
-compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
+	// TEADS
+	compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
 
-// ADCOLONY
-compile 'com.adcolony:sdk:3.0.7'
-
+	// ADCOLONY
+	compile 'com.adcolony:sdk:3.0.7'
+}
 ```
 
 ####Libs
