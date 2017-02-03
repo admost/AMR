@@ -20,11 +20,18 @@
 * iOS 7 or later. 
 * Application Id provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
+* For testing you can use following IDs;
+```
+Application Id: @"15066ddc-9c18-492c-8185-bea7e4c7f88c"
+Banner Zone Id: @"b4009772-de04-42c4-bbaa-c18da9e4a1ab"
+Interstitial Zone Id: @"39f74377-5682-436a-9338-9d1c4df410bd"
+RewardedVideo Zone Id: @"2bdefd44-5269-4cbc-b93a-373b74a2f067"
+```
 
 ## Setup
 You can install AMR SDK and mediation adapters using CocoaPods (recommended) or add AMR SDK framework files and mediation adapters files manually to your project.  
 ### <a name="install00"></a>Installation With CocoaPods  
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.  
+[CocoaPods](http://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects which automates and simplifies the process of using 3rd-party libraries like AMR in your projects. See [getting started](https://guides.cocoapods.org/using/getting-started.html) guide for more information on installing cocoapods.  
 + <a name="install0"></a>**Create your podfile and install**  
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
@@ -187,18 +194,26 @@ and initialize AMRSDK with your Application Id in `didFinishLaunchingWithOptions
   [AMRSDK startWithAppId:@"<appId>"];
   return YES;
 }
-```  
+```
+For testing you can use following Application Id;
+```
+Application Id: @"15066ddc-9c18-492c-8185-bea7e4c7f88c"
+```
 + <a name="usage2"></a>**Banner Ads**  
 
 To create and show a banner ad first import `AMRSDK.h` to your `UIViewController` file;  
 ```objectivec
 #import <AMRSDK/AMRSDK.h>
 ```
-and create an `AMRBanner` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRBannerDelegate>` protocol.  
+and create an `AMRBanner` object, initialize it with your Banner Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRBannerDelegate>` protocol.  
 ```objectivec
 AMRBanner *mpuBanner;
 mpuBanner = [AMRBanner bannerForZoneId:@"<zoneId>"];
 mpuBanner.delegate = self;
+```  
+For testing you can use following Banner Zone Id;
+```
+Banner Zone Id: @"b4009772-de04-42c4-bbaa-c18da9e4a1ab"
 ```
 Optionally you can set the width of the banner, default value is screen width.
 ```objectivec
@@ -227,12 +242,16 @@ To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewCon
 ```objectivec
 #import <AMRSDK/AMRSDK.h>
 ```
-and create an `AMRInterstitial` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRInterstitialDelegate>` protocol.  
+and create an `AMRInterstitial` object, initialize it with your Interstitial Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRInterstitialDelegate>` protocol.  
 ```objectivec
 AMRInterstitial *fullScreen;
 fullScreen = [AMRInterstitial interstitialForZoneId:@"<zoneId>"];
 fullScreen.delegate = self;
 [fullScreen loadInterstitial];
+```  
+For testing you can use following Interstitial Zone Id;
+```
+Interstitial Zone Id: @"39f74377-5682-436a-9338-9d1c4df410bd"
 ```
 There are 3 callback methods in `<AMRInterstitialDelegate>` protocol.  
 When `didReceiveInterstitial` callback method is called just call the `showFromViewController` method to present interstitial from a viewController.
@@ -260,12 +279,16 @@ To create and show a rewarded video ad first import `AMRSDK.h` to your `UIViewCo
 ```objectivec
 #import <AMRSDK/AMRSDK.h>
 ```
-and create an `AMRRewardedVideo` object, initialize it with your Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRRewardedVideoDelegate>` protocol.  
+and create an `AMRRewardedVideo` object, initialize it with your RewardedVideo Zone Id and set it's `delegate` to an object (generally your viewController) which conforms to `<AMRRewardedVideoDelegate>` protocol.  
 ```objectivec
 AMRRewardedVideo *rewardedVideo;
 rewardedVideo = [AMRRewardedVideo rewardedVideoForZoneId:@"<zoneId>"];
 rewardedVideo.delegate = self;
 [rewardedVideo loadRewardedVideo];
+```  
+For testing you can use following RewardedVideo Zone Id;
+```
+RewardedVideo Zone Id: @"2bdefd44-5269-4cbc-b93a-373b74a2f067"
 ```
 There are 4 callback methods in `<AMRRewardedVideoDelegate>` protocol.  
 When `didReceiveRewardedVideo` callback method is called just call the `showFromViewController` method to present rewarded video from a viewController.
