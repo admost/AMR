@@ -1,6 +1,0 @@
-framework module FlyMobSDK {
-  umbrella header "FlyMobSDK.h"
-
-  export *
-  module * { export * }
-}
