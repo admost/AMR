@@ -1,0 +1,10 @@
+framework module AvocarrotSDK {
+  umbrella header "AvocarrotSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module AvocarrotSDK.Swift {
+    header "AvocarrotSDK-Swift.h"
+}

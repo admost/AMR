@@ -104,7 +104,7 @@
  * @param currency Currency of virtual currency.
  * @param network Network type of cirtual currency ad network.
  */
-- (void)didSpendVirtualCurrenct:(NSString *)currency
+- (void)didSpendVirtualCurrency:(NSString *)currency
                           amout:(NSNumber *)amount
                         network:(AMRNetworkType)network;
 

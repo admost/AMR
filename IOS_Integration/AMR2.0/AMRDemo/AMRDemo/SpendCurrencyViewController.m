@@ -36,7 +36,7 @@
 
 #pragma mark - <AMRVirtualCurrencyDelegate>
 
-- (void)didSpendVirtualCurrenct:(NSString *)currency
+- (void)didSpendVirtualCurrency:(NSString *)currency
                           amout:(NSNumber *)amount
                         network:(AMRNetworkType)network {
     NSLog(@"Virtual Currency Spent: %@ - %@", amount, currency);
