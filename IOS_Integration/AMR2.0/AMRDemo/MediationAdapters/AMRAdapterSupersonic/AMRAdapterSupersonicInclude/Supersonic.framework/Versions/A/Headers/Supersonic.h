@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setMediationSegment:(NSString *)segment;
 
+- (BOOL)setDynamicUserId:(NSString *)dynamicUserId;
+
 /*-----------------------------------------------*/
 // Rewarded Video
 /*-----------------------------------------------*/

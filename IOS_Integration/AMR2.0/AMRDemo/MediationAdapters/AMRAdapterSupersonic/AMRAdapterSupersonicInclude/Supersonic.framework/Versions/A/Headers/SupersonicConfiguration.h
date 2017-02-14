@@ -26,7 +26,7 @@
 @property (nonatomic, assign)   int                 userAge;
 @property (nonatomic, assign)   SupersonicGender    userGender;
 @property (nonatomic, assign)   BOOL                trackReachability;
-
+@property (nonatomic, strong)   NSString            *dynamicUserId;
 + (SupersonicConfiguration *)getConfiguration;
 
 @end

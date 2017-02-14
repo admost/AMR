@@ -80,7 +80,7 @@
 /*!
  * @discussion Invoked when the video ad finishes playing.
  *
- *             Available for: AdColony, Flurry, Vungle, AppLovin, UnityAds.
+ *             Available for: AdColony, Vungle, AppLovin, UnityAds.
  */
 - (void)supersonicRVAdEnded;
 
