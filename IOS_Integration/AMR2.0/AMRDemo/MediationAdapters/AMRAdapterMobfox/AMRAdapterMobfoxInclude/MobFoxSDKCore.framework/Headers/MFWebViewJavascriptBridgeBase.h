@@ -22,10 +22,10 @@ typedef NSDictionary WVJBMessage;
 @interface WebViewJavascriptBridgeBase : NSObject
 
 
-@property (assign) id <WebViewJavascriptBridgeBaseDelegate> delegate;
-@property (strong, nonatomic) NSMutableArray *startupMessageQueue;
-@property (strong, nonatomic) NSMutableDictionary *responseCallbacks;
-@property (strong, nonatomic) NSMutableDictionary *messageHandlers;
+@property (weak, nonatomic) id <WebViewJavascriptBridgeBaseDelegate> delegate;
+@property (strong, nonatomic) NSMutableArray* startupMessageQueue;
+@property (strong, nonatomic) NSMutableDictionary* responseCallbacks;
+@property (strong, nonatomic) NSMutableDictionary* messageHandlers;
 @property (strong, nonatomic) WVJBHandler messageHandler;
 
 + (void)enableLogging;
@@ -40,5 +40,6 @@ typedef NSDictionary WVJBMessage;
 - (void)logUnkownMessage:(NSURL*)url;
 - (NSString *)webViewJavascriptCheckCommand;
 - (NSString *)webViewJavascriptFetchQueyCommand;
+- (void)disableJavscriptAlertBoxSafetyTimeout;
 
 @end

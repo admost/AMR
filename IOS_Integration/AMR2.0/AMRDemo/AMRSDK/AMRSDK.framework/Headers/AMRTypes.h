@@ -105,6 +105,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
 
     /// INMOBI
     AMRNetworkTypeInMobi,
+    
+    /// IRONSOURCE
+    AMRNetworkTypeIronsource,
 
     /// LOOPME
     AMRNetworkTypeLoopme,

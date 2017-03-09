@@ -7,193 +7,93 @@
 //
 
 #import "BannerTableViewController.h"
+#import "AMRBannerDataSource.h"
 #import "BannerTableViewDataCell.h"
 #import "BannerTableViewAdCell.h"
 #import <AMRSDK/AMRSDK.h>
 
-static NSString *const kAMRInitedBannerPlaceholderText = @"kAMRInitedBannerPlaceholderText";
-static NSString *const kAMRFailedBannerPlaceholderText = @"kAMRFailedBannerPlaceholderText";
 static NSString *const kAMRBannerZoneId = @"1b65e016-5b26-4ba0-aff5-b500a96d5157";
 
 @interface BannerTableViewController () <
 UITableViewDelegate,
-UITableViewDataSource,
-AMRBannerDelegate
+UITableViewDataSource
 >
 @end
 
 @implementation BannerTableViewController {
-    NSMutableArray *_newsWithAds;
     IBOutlet UITableView *tbMain;
+    AMRBannerDataSource *_bannerDataSource;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // prepare data
-    _newsWithAds = [self prepareData];
-    // optionally you can preload banners
-    [self preloadBanners];
+    
+    // initialize banner data source
+    _bannerDataSource = [AMRBannerDataSource bannerDataSourceWithTableView:tbMain
+                                                                    zoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"
+                                                                bannerSize:AMRBannerSizeHeight250];
+    
+    // fetch raw data
+    NSArray *news = [[self dictionaryWithJSONFile:@"news"] objectForKey:@"news"];
+    
+    // add banners to raw data
+    [_bannerDataSource addBannersToRawData:news];
+    
+    // reload tableView with added banners
+    [tbMain reloadData];
 }
 
-#pragma mark - Data methods
+#pragma mark - Action
 
-- (NSMutableArray *)prepareData {
-
-    NSDictionary* newsDict = [self dictionaryWithJSONFile:@"news"];
-    NSArray *news = [newsDict objectForKey:@"news"];
-    NSMutableArray *newsWithAdPlaceholders = [NSMutableArray new];
-
-    // add banner placeholder after each 5 items.
-
-    for (int i =0 ; i < news.count; i++) {
-        if (i%5 == 0 && i >0) {
-            [newsWithAdPlaceholders addObject:kAMRInitedBannerPlaceholderText];
-        }
-        [newsWithAdPlaceholders addObject:news[i]];
-    }
-
-    return newsWithAdPlaceholders;
-}
-
-- (void)preloadBanners {
-
-    for (int i = 0; i < _newsWithAds.count; i++) {
-        id object = _newsWithAds[i];
-
-        if ([object isKindOfClass:[NSString class]] &&
-            [object isEqualToString:kAMRInitedBannerPlaceholderText]) {
-            AMRBanner* banner = [AMRBanner bannerForZoneId:kAMRBannerZoneId];
-            banner.delegate = self;
-            [_newsWithAds replaceObjectAtIndex:[_newsWithAds indexOfObject:object] withObject:banner];
-            [banner loadBanner];
-        }
-    }
-}
-
-- (void)configureDataCell:(BannerTableViewDataCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary* newsItem = _newsWithAds[indexPath.row];
-    cell.LBLHeader.text = newsItem[@"header"];
-    cell.LBLBody.text = newsItem[@"body"];
-    cell.IMGImage.image = [UIImage imageNamed:newsItem[@"image"]];
-}
-
-- (void)configureAdCell:(BannerTableViewAdCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    // load banner for placeholder object
-    if ([[_newsWithAds objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
-        if ([[_newsWithAds objectAtIndex:indexPath.row] isEqualToString:kAMRInitedBannerPlaceholderText]) {
-            // load an ad to placeHolder if its not failed
-            AMRBanner* banner = [AMRBanner bannerForZoneId:kAMRBannerZoneId];
-            banner.delegate = self;
-            [_newsWithAds replaceObjectAtIndex:indexPath.row withObject:banner];
-            [banner loadBanner];
-        }
-    } else if ([[_newsWithAds objectAtIndex:indexPath.row] isKindOfClass:[AMRBanner class]]) {
-        AMRBanner* banner = [_newsWithAds objectAtIndex:indexPath.row];
-        // if banner is loaded use its bannerview
-        if (banner.bannerView != nil) {
-            cell.bannerView = banner.bannerView;
-        }
-    }
-}
-
-- (BOOL)isAd:(NSIndexPath *)indexPath {
-    if (![[_newsWithAds objectAtIndex:indexPath.row] isKindOfClass:[NSDictionary class]]) {
-        return YES;
-    }
-    return NO;
-}
-
-- (BOOL)isAdLoaded:(NSIndexPath *)indexPath {
-    if ([[_newsWithAds objectAtIndex:indexPath.row] isKindOfClass:[AMRBanner class]]) {
-        AMRBanner* banner = [_newsWithAds objectAtIndex:indexPath.row];
-        // if banner is loaded use its bannerview
-        if (banner.bannerView != nil) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-- (BOOL)isAdFailed:(NSIndexPath *)indexPath {
-    if ([[_newsWithAds objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&
-        [[_newsWithAds objectAtIndex:indexPath.row] isEqualToString:kAMRFailedBannerPlaceholderText]) {
-        return YES;
-    }
-    return NO;
-}
-
-- (NSIndexPath *)indexPathForBanner:(AMRBanner *)banner {
-    NSInteger index = [_newsWithAds indexOfObject:banner];
-    if (index != NSNotFound) {
-        return [NSIndexPath indexPathForRow:index inSection:0];
-    }
-    return nil;
+- (IBAction)AddMoreData:(id)sender {
+    NSArray *news = [[self dictionaryWithJSONFile:@"news"] objectForKey:@"news"];
+    [_bannerDataSource addBannersToRawData:news];
+    
+    [tbMain reloadData];
 }
 
 #pragma mark - <UITableViewDelegate>
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [_bannerDataSource tableViewDidScroll];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self isAd:indexPath]) {
-        if ([self isAdLoaded:indexPath]) {
-            return 250; // Loaded, return zone banner height; 50, 90 or 250.
-        }
-        if ([self isAdFailed:indexPath]) {
-            return 0; // Failed to load, return 0, hide cell.
-        }
-        return 20; // Not loaded, return a placeholder height, 0 or content height.
+    if ([_bannerDataSource isAd:indexPath]) {
+        return [_bannerDataSource heightForRowAtIndexPath:indexPath];
+    } else {
+        return 90; // Not ad, return content height.
     }
-    return 90; // Not ad, return content height.
 }
 
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 71;
+    return [_bannerDataSource numberOfRows];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    if ([self isAd:indexPath]) {
-        BannerTableViewAdCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BannerTableViewAdCell"];
-        if (cell == nil) {
-            cell = [[BannerTableViewAdCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                reuseIdentifier:@"BannerTableViewAdCell"];
-        }
-        [self configureAdCell:cell forIndexPath:indexPath];
-        return cell;
+    
+    if ([_bannerDataSource isAd:indexPath]) {
+        return [_bannerDataSource cellForRowAtIndexPath:indexPath];
     } else {
         BannerTableViewDataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BannerTableViewDataCell"];
         if (cell == nil) {
             cell = [[BannerTableViewDataCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                   reuseIdentifier:@"BannerTableViewDataCell"];
         }
-        [self configureDataCell:cell forIndexPath:indexPath];
         return cell;
     }
 }
 
-#pragma mark - <AMRBannerDelegate>
-
-- (void)didReceiveBanner:(AMRBanner *)banner {
-    // reload cell if visible;
-    NSIndexPath *indexPath = [self indexPathForBanner:banner];
-    if ([tbMain.indexPathsForVisibleRows containsObject:indexPath]) {
-        [tbMain reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                      withRowAnimation:UITableViewRowAnimationNone];
-    }
-}
-
-- (void)didFailToReceiveBanner:(AMRBanner *)banner error:(AMRError *)error {
-
-    // mark banner is failed
-    NSIndexPath *indexPath = [self indexPathForBanner:banner];
-     [_newsWithAds replaceObjectAtIndex:indexPath.row withObject:kAMRFailedBannerPlaceholderText];
-
-    // reload cell if visible
-    if ([tbMain.indexPathsForVisibleRows containsObject:indexPath]) {
-        [tbMain reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                      withRowAnimation:UITableViewRowAnimationNone];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([_bannerDataSource isAd:indexPath]) {
+        [_bannerDataSource willDisplayCell:cell forRowAtIndexPath:indexPath];
+    } else {
+        NSDictionary* newsItem = [_bannerDataSource dataForIndexPath:indexPath];
+        ((BannerTableViewDataCell *)cell).LBLHeader.text = newsItem[@"header"];
+        ((BannerTableViewDataCell *)cell).LBLBody.text = newsItem[@"body"];
+        ((BannerTableViewDataCell *)cell).IMGImage.image = [UIImage imageNamed:newsItem[@"image"]];
     }
 }
 

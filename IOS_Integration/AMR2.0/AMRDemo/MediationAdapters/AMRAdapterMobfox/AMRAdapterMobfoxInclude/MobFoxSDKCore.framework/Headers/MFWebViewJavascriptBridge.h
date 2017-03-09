@@ -25,8 +25,6 @@
 
 @interface MFWebViewJavascriptBridge : WVJB_WEBVIEW_DELEGATE_INTERFACE
 
-@property(strong) WebViewJavascriptBridgeBase *base;
-
 + (instancetype)bridgeForWebView:(WVJB_WEBVIEW_TYPE*)webView;
 + (void)enableLogging;
 + (void)setLogMaxLength:(int)length;
@@ -36,4 +34,6 @@
 - (void)callHandler:(NSString*)handlerName data:(id)data;
 - (void)callHandler:(NSString*)handlerName data:(id)data responseCallback:(WVJBResponseCallback)responseCallback;
 - (void)setWebViewDelegate:(WVJB_WEBVIEW_DELEGATE_TYPE*)webViewDelegate;
+- (void)disableJavscriptAlertBoxSafetyTimeout;
+
 @end

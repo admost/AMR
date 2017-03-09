@@ -29,7 +29,7 @@
      1.0 Interstitial 8dc73abb-fc83-4354-b7b5-20bdcbd98984
      */
 
-    _interstitial = [AMRInterstitial interstitialForZoneId:@"8dc73abb-fc83-4354-b7b5-20bdcbd98984"];
+    _interstitial = [AMRInterstitial interstitialForZoneId:@"aa559d63-6f02-46a9-aa21-c33a04204ad8"];
     
     _interstitial.delegate = self;
     [_interstitial loadInterstitial];
