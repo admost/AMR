@@ -311,6 +311,8 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 			// if AUTO_SHOW value is true then no need to call show method again.
 			// Otherwise, you have to use show method like below
 			// AD_INTERSTITIAL.show();
+		} else if (value == AdMostAdListener.CLOSED) {
+			// Interstitial dismissed
 		}
 	}
 });
@@ -414,6 +416,7 @@ If you are using Proguard, add these lines to your Proguard file
 -keep class * extends com.mopub.mobileads.CustomEventBanner {}
 -keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
 -keep class * extends com.mopub.nativeads.CustomEventNative {}
+-keep class com.mopub.mobileads.** {*;}
 
 # REVMOB
 -dontwarn com.revmob.**
