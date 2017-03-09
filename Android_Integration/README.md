@@ -215,11 +215,6 @@ public void onBackPressed() {
 	super.onBackPressed();
 	AdMost.getInstance().onBackPressed(this);
 }
-
-@Override
-public void onActivityResult(int requestCode, int resultCode, Intent data) {
-	AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
-}
 ```
 
 ### Spending Virtual Currencies with AdMostInterstitial
