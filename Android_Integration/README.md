@@ -219,6 +219,8 @@ public void onBackPressed() {
 
 ### Spending Virtual Currencies with AdMostInterstitial
 
+Following code part is only needed for Offerwall ads
+
 ```java
 OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
 	@Override
