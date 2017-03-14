@@ -180,6 +180,12 @@ Add following lines to your `plist` file.
 <string>Some ad content may access calendar</string>
 ```  
 
+If you are using Applovin add the following lines to your `plist` file.
+```plist
+<key>AppLovinSdkKey</key>
+<string>YOUR_KEY</string>
+```  
+
 ## Start Coding
 + <a name="usage1"></a>**Initialization**   
 
