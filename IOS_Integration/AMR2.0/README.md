@@ -55,15 +55,15 @@ target 'podtest' do
    pod 'AMRAdapterApplovin', '~> 3.4'
    pod 'AMRAdapterAppnext', '~> 1.7'
    pod 'AMRAdapterAvocarrot', '~> 4.2' #ios 8+
-   pod 'AMRAdapterChartboost', '~> 6.5'
+   pod 'AMRAdapterChartboost', '~> 6.6'
    pod 'AMRAdapterConversant', '~> 4.5'
    pod 'AMRAdapterFacebook', '~> 4.18'
-   pod 'AMRAdapterFlurry', '~> 7.6'
-   pod 'AMRAdapterFyber', '~> 8.6'
+   pod 'AMRAdapterFlurry', '~> 7.10'
+   pod 'AMRAdapterFyber', '~> 8.9'
    pod 'AMRAdapterInloco', '~> 2.2'
    pod 'AMRAdapterInmobi', '~> 6.0'
    pod 'AMRAdapterLoopme', '~> 6.0'
-   pod 'AMRAdapterMobfox', '~> 2.4'
+   pod 'AMRAdapterMobfox', '~> 3.1'
    pod 'AMRAdapterMobusi', '~> 2.3'
    pod 'AMRAdapterMopub', '~> 4.11'
    pod 'AMRAdapterNativex', '~> 5.5'
@@ -151,10 +151,11 @@ AMRAdapterInloco
 AMRAdapterInmobi
 AMRAdapterLoopme
 AMRAdapterMobfox
+AMRAdapterMobusi
 AMRAdapterMopub
 AMRAdapterNativex
 AMRAdapterNexage
-AMRAdapterPubNative -iOS 8+
+AMRAdapterPubNative
 AMRAdapterRevmob
 AMRAdapterSmaato
 AMRAdapterStartapp
