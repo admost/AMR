@@ -215,14 +215,11 @@ public void onBackPressed() {
 	super.onBackPressed();
 	AdMost.getInstance().onBackPressed(this);
 }
-
-@Override
-public void onActivityResult(int requestCode, int resultCode, Intent data) {
-	AdMost.getInstance().onActivityResult(requestCode, resultCode, data);
-}
 ```
 
 ### Spending Virtual Currencies with AdMostInterstitial
+
+Following code part is only needed for Offerwall ads
 
 ```java
 OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
