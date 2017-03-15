@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PNVideoBannerViewController">
+            <connections>
+                <outlet property="bannerView" destination="zne-fb-YdP" id="gJv-Xc-UdO"/>
+                <outlet property="playButton" destination="zXd-OL-vr4" id="Oqd-9M-qjF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zne-fb-YdP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azh-mc-oBl">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="installButtonPressed:" destination="-1" eventType="touchUpInside" id="eDb-dd-Hlg"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXd-OL-vr4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                    <state key="normal" title="▶︎">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="-1" eventType="touchUpInside" id="1eQ-Ec-Qx4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zXd-OL-vr4" secondAttribute="trailing" id="BBq-J2-RsA"/>
+                <constraint firstAttribute="bottom" secondItem="zXd-OL-vr4" secondAttribute="bottom" id="CCw-0m-Wbi"/>
+                <constraint firstAttribute="trailing" secondItem="zne-fb-YdP" secondAttribute="trailing" id="KjS-aH-DfL"/>
+                <constraint firstAttribute="trailing" secondItem="azh-mc-oBl" secondAttribute="trailing" id="LFn-QB-EHD"/>
+                <constraint firstAttribute="bottom" secondItem="azh-mc-oBl" secondAttribute="bottom" id="MI6-kv-SgQ"/>
+                <constraint firstAttribute="bottom" secondItem="zne-fb-YdP" secondAttribute="bottom" id="OqM-h2-EEY"/>
+                <constraint firstItem="zne-fb-YdP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RLI-CO-7vi"/>
+                <constraint firstItem="azh-mc-oBl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SwY-Gl-JeD"/>
+                <constraint firstItem="zne-fb-YdP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wd0-69-yAS"/>
+                <constraint firstItem="azh-mc-oBl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bTt-7L-vK2"/>
+                <constraint firstItem="zXd-OL-vr4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m98-4g-oFr"/>
+                <constraint firstItem="zXd-OL-vr4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pot-Bf-RfU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="407" y="447"/>
+        </view>
+    </objects>
+</document>

@@ -18,6 +18,7 @@
 #import "AMRRewardedVideo.h"
 #import "AMROfferWallDelegate.h"
 #import "AMROfferWall.h"
+#import "AMRNativeAdBaseView.h"
 
 @protocol AMRVirtualCurrencyDelegate;
 

@@ -118,6 +118,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
     /// MOBFOX
     AMRNetworkTypeMobfox,
 
+    /// MOBUSI
+    AMRNetworkTypeMobusi,
+
     /// MOPUB
     AMRNetworkTypeMopub,
 
