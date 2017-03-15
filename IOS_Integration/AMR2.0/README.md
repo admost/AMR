@@ -62,6 +62,7 @@ target 'podtest' do
    pod 'AMRAdapterFyber', '~> 8.9'
    pod 'AMRAdapterInloco', '~> 2.2'
    pod 'AMRAdapterInmobi', '~> 6.0'
+   pod 'AMRAdapterIronsource', '~> 6.5'
    pod 'AMRAdapterLoopme', '~> 6.0'
    pod 'AMRAdapterMobfox', '~> 3.1'
    pod 'AMRAdapterMobusi', '~> 2.3'
@@ -72,7 +73,6 @@ target 'podtest' do
    pod 'AMRAdapterRevmob', '~> 9.2'
    pod 'AMRAdapterSmaato', '~> 8.0'
    pod 'AMRAdapterStartapp', '~> 3.4'
-   pod 'AMRAdapterSupersonic', '~> 6.4'
    pod 'AMRAdapterTapjoy', '~> 11.8'
    pod 'AMRAdapterUnity', '~> 2.0'
    pod 'AMRAdapterVungle', '~> 4.0'
@@ -149,6 +149,7 @@ AMRAdapterFlurry
 AMRAdapterFyber
 AMRAdapterInloco
 AMRAdapterInmobi
+AMRAdapterIronsource
 AMRAdapterLoopme
 AMRAdapterMobfox
 AMRAdapterMobusi
@@ -159,7 +160,6 @@ AMRAdapterPubNative
 AMRAdapterRevmob
 AMRAdapterSmaato
 AMRAdapterStartapp
-AMRAdapterSupersonic
 AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
