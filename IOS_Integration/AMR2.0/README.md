@@ -13,6 +13,7 @@
 * [Start Coding](#start-coding)
   + [Initialization](#usage1)
   + [Banner Ads](#usage2)
+  + [Customize Native Ad Appearance (Optional)](#usage2.2)
   + [Interstitial Ads](#usage3)
   + [Rewarded Video Ads](#usage4)
 
@@ -244,6 +245,13 @@ If `didFailToReceiveBanner` callback method is called investigate `error` to adr
     NSLog(error.errorDescription);
 }
 ```
+
++ <a name="usage2.2"></a>**Customize Native Ad Appearance (Optional)**  
+
+You can change the appearance of native ads to suit your app's design. 
+If you are integration AMR with Cocoapods extract CustomXibs.zip in AMRSDK pod to your project. If you are manually integrating AMR add [AMRDemo/Assets/Natives/](https://github.com/admost/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/Assets/Natives) folder to your project. 
+
+
 + <a name="usage3"></a>**Interstitial Ads**  
 
 To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewController` file;  
