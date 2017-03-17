@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="skip_ad_font_color">#FF717171</color>       
+    <color name="background_dark_default">#FF201F1F</color>  
+    <color name="background_black">#FF000000</color>  
+</resources>
