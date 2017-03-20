@@ -43,7 +43,7 @@ platform :ios, '7.0'
 
 use_frameworks!
 
-target 'podtest' do
+target 'MyAwesomeTarget' do
     #core SDK
    pod 'AMRSDK', '~> 1.0'
     #mediation adapters
