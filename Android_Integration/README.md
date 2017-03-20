@@ -1,19 +1,18 @@
-#AMR Android Integration
+# AMR Android Integration
 
 * [Requirements](#requirements)  
 * [Install](#install)
- * [Gradle](#gradle)
- * [Libs](#libs)
+* [Gradle](#gradle)
+* [Libs](#libs)
 * [Usage](#usage)
- * [Initialization](#initialization)
- * [Requesting Native Ads](#requesting-native-ads)
- * [Requesting FullScreen Ads](#requesting-fullscreen-ads)
- * [Requesting Video Ads](#requesting-video-ads)
+* [Initialization](#initialization)
+* [Requesting Native Ads](#requesting-native-ads)
+* [Requesting FullScreen Ads](#requesting-fullscreen-ads)
+* [Requesting Video Ads](#requesting-video-ads)
 * [Misc](#misc)
- * [Proguard](#proguard)
+* [Proguard](#proguard)
 
-
-#Requirements
+### Requirements
 
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * Zone Ids provided in Admost Mediation Dashboard.
@@ -26,14 +25,14 @@ Add the following permissions optionally for improve user targeting into your An
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
-
-###AppLovin Publishers
 Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
+
+### AppLovin Publishers
 ```sh
 <meta-data android:name="applovin.sdk.key" android:value="<SDK_KEY>" />
+
 ```
-###Inmobi Publishers
-Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
+### Inmobi Publishers
 ```sh
 <receiver
     android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
@@ -45,9 +44,17 @@ Add the following line into your AndroidManifest.xml (This needs to go inside th
     </intent-filter>
 </receiver>
 ```
-#Install
+### Videmob Publishers
+```sh
+<provider
+    android:name="com.cydersoft.core.database.CydersoftContentProvider"
+    android:authorities="<PACKAGE_NAME>"
+    android:exported="false" />
+```
 
-###Gradle
+# Install
+
+### Gradle
 
 Add the following lines to your module dependencies
 
@@ -55,46 +62,37 @@ Add the following lines to your module dependencies
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
 compile(name: 'admost-sdk', ext: 'aar')
-compile(name: 'unity-ads', ext: 'aar')
-compile(name: 'mm-ad-sdk', ext: 'aar')
-compile(name: 'loopme-sdk-5.1.0', ext: 'aar')
-compile(name: 'aoc-release', ext: 'aar')
-compile(name: 'youappi-android-sdk', ext: 'aar')
 
-// AMR
+compile(name: 'artofclick-1.2.3', ext: 'aar')
+
+compile(name: 'appnext-2.0.0', ext: 'aar')
+
+compile(name: 'facebook-4.18', ext: 'aar')
+
+compile(name: 'loopme-5.1.0', ext: 'aar')
+
+compile(name: 'millenialmedia-6.3.1', ext: 'aar')
+
+compile(name: 'unityads-2.0.8', ext: 'aar')
+
+compile project(':lib-videmob')
+
+compile(name: 'youappi-0.73', ext: 'aar')
+
 compile 'com.android.volley:volley:1.0.0'
 
-// GOOGLE
 compile 'com.google.android.gms:play-services-ads:10.0.1'
 
-// NATIVEX
-compile 'com.google.code.gson:gson:2.6.2'
+compile('com.mopub:mopub-sdk:4.12.0@aar') { transitive = true }
 
-// FACEBOOK
-compile 'com.facebook.android:audience-network-sdk:4.18.0'
+compile 'net.pubnative:library:2.3.13',
+        'net.pubnative:library.interstitial:2.3.13',
+        'net.pubnative:library.feed.banner:2.3.13',
+        'net.pubnative:library.video:2.3.13'
 
-// MOPUB
-compile('com.mopub:mopub-sdk:4.11.0@aar') { transitive = true }
-compile('com.mopub.volley:mopub-volley:1.1.0')
+compile 'com.inlocomedia.android:android-sdk:2.4.7'
 
-// APPNEXT
-compile('com.appnext.sdk:appnext-sdk:1.7.6')
-compile 'com.appnext.sdk:native-ads-sdk:1.7.6'
-
-// PUBNATIVE
-compile 'net.pubnative:library:2.3.8'
-compile 'net.pubnative:library.interstitial:2.3.8'
-compile 'net.pubnative:library.feed.banner:2.3.8'
-compile 'net.pubnative:library.video:2.3.8'
-
-// INLOCOMEDIA
-compile 'com.inlocomedia.android:android-sdk:2.4.0'
-
-// TEADS
-compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true; }
-
-// ADCOLONY
-compile 'com.adcolony:sdk:3.0.7'
+compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true }
 
 ```
 
@@ -105,62 +103,18 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    mavenCentral()
-    maven { url "https://jitpack.io" }
-    maven { url "https://dl.bintray.com/supersonic/android-sdk" }
+    jcenter()
     maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
-    maven { url "http://repo.appnext.com/" }
-    maven { url "https://fyber.bintray.com/maven" }
-    maven { url "https://adcolony.bintray.com/AdColony" }
 }
 ```
 
-###Libs
+### Libs
 
-Copy the following libraries to the libs folder of your app.
+Copy the following libraries to the libs folder of your app from [this link](https://github.com/admost/AMR/tree/master/Android_Integration/libs).
 
-```sh
-admost-sdk.aar
-mm-ad-sdk.aar
-unity-ads.aar
-aoc-publisher-sdk-release-1.2.1.aar
-loopme-sdk-5.1.0.aar
-youappi-android-sdk.aar
+Only Admost, Volley and Google Play Services Ads libraries are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
 
-AdFalconAndroidSDK3.3.0.jar
-applovin-sdk-6.4.0.jar
-amazon-ads-5.8.1.1.jar
-applovin-sdk-6.4.0.jar
-avocarrot-sdk-v.3.7.5.jar
-chartboost.jar
-conversant-android-sdk-2.4.2.jar
-flurryAds_6.7.0.jar
-flurryAnalytics_6.7.0.jar
-FlyMobSdk-1.9.1.jar
-heyzap-unified-platform-10.2.2.jar
-InMobi-6.0.4.jar
-instal-publisher-sdk-1.0.24.jar
-io.display.sdk-1.3.0.jar
-mediabrix-sdk-FBless.jar
-MobFox-Android-SDK-Core-3.1.6.jar
-NativeXMonetizationSDK_v5.5.9.jar
-nativex-gson-2.6.2.jar
-revmob.jar
-RFMSDK.jar
-SOMAAndroidSDK5.1.0.jar
-StartAppInApp-3.5.4.jar
-supersonic-6.4.21.jar
-tapjoy-11.9.1.jar
-vungle-publisher-adaptive-id-4.0.3.jar
-
-////// Vungle ////////
-vungle-dagger-2.7.jar
-vungle-javax.inject-1.jar
-```
-
-Only admost-sdk.aar and volley library are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
-
-#Usage
+# Usage
 
 Admost Mediation library is a lean yet complete library that allows you to request and show ads.
 
@@ -189,21 +143,25 @@ public void onStart() {
 	super.onStart();
 	AdMost.getInstance().onStart(this);
 }
+
 @Override
 public void onResume() {
 	super.onResume();
 	AdMost.getInstance().onResume(this);
 }
+
 @Override
 public void onPause() {
 	super.onPause();
 	AdMost.getInstance().onPause(this);
 }
+
 @Override
 public void onStop() {
 	super.onStop();
 	AdMost.getInstance().onStop(this);
 }
+
 @Override
 public void onDestroy() {
 	super.onDestroy();
@@ -215,11 +173,16 @@ public void onBackPressed() {
 	super.onBackPressed();
 	AdMost.getInstance().onBackPressed(this);
 }
+
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	//Only for Fyber Publishers
+	if (requestCode == AdMost.FYBER_REQUEST_CODE)
+		offerwall.setFyberResult(resultCode, data);
+}
 ```
 
 ### Spending Virtual Currencies with AdMostInterstitial
-
-Following code part is only needed for Offerwall ads
 
 ```java
 OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
@@ -229,12 +192,12 @@ OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener()
 			OFFERWALL.spendVirtualCurrency(OFFERWALL.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
 				@Override
 				public void onSuccess(String network, String currency, double balance) {
-				AdMostLog.log(network + " " + currency + " " + balance);
+					AdMostLog.log(network + " " + currency + " " + balance);
 				}
 			
 				@Override
 				public void onError(String network, String error) {
-				AdMostLog.log(network + " " + error);
+					AdMostLog.log(network + " " + error);
 				}
 			});
 		}
@@ -308,8 +271,6 @@ AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>
 			// if AUTO_SHOW value is true then no need to call show method again.
 			// Otherwise, you have to use show method like below
 			// AD_INTERSTITIAL.show();
-		} else if (value == AdMostAdListener.CLOSED) {
-			// Interstitial dismissed
 		}
 	}
 });
@@ -354,293 +315,9 @@ AD_VIDEO.refreshAd(AUTO_LOAD);
 
 AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
 
-#Misc
+# Misc
 
-###Proguard
+### Proguard
 
-If you are using Proguard, add these lines to your Proguard file
+If you are using Proguard, add [these lines](https://github.com/admost/AMR/tree/master/Android_Integration/sdk/proguard-rules.pro) to your Proguard file
 
-```proguard
-# ADMOST
--keepattributes Exceptions, InnerClasses
--dontwarn admost.sdk.**
--keep class admost.sdk.** { *; }
-
-# VOLLEY
--keep class com.android.volley.** { *; }
--keep interface com.android.volley.** { *; }
--keep class org.apache.commons.logging.**
-
-# GOOGLE
--keep class com.android.vending.billing.**
--keep public class com.google.android.gms.ads.** { public *; }
--keep public class com.google.ads.** { public *; }
--keep class com.google.android.gms.** { *; }
--dontwarn com.google.android.gms.**
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
--keepnames class * implements android.os.Parcelable
--keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
--keep @interface android.support.annotation.Keep
--keep @android.support.annotation.Keep class *
--keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
--keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
--keep @interface com.google.android.gms.common.annotation.KeepName
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
--keep @interface com.google.android.gms.common.util.DynamiteApi
--keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
--keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
--keep class com.google.android.apps.common.proguard.UsedBy*
--keep @com.google.android.apps.common.proguard.UsedBy* class *
--keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
--dontwarn android.security.NetworkSecurityPolicy
--dontwarn android.app.Notification
-
-# MILLENNIAL & NEXAGE
--keep class com.millennialmedia.** { *; }
--dontwarn com.millennialmedia.**
-
-# MOBFOX
--dontwarn com.mobfox.**
--keep class com.mobfox.** { *; }
-
-# MOPUB
--keepclassmembers class com.mopub.** { public *; }
--dontnote com.mopub.**
--dontwarn com.mopub.**
--keep public class com.mopub.**
--keep public class android.webkit.JavascriptInterface {}
--keep class * extends com.mopub.mobileads.CustomEventBanner {}
--keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
--keep class * extends com.mopub.nativeads.CustomEventNative {}
--keep class com.mopub.mobileads.** {*;}
-
-# REVMOB
--dontwarn com.revmob.**
--keep class com.revmob.** { public *; }
-
-# INMOBI
--keep class com.inmobi.** {*;}
--dontwarn com.inmobi.**
-
-# CHARTBOOST
--dontwarn org.apache.http.**
--dontwarn com.chartboost.sdk.impl.**
--keep class com.chartboost.sdk.** { *; }
--keepattributes *Annotation*
-
-# SMAATO
--dontwarn com.smaato.**
--keep class com.smaato.** { public *; }
--assumenosideeffects class android.util.Log {
-    public static *** d(...);
-    public static *** v(...);
-    public static *** i(...);
-}
--keep public class com.smaato.soma.internal.connector.OrmmaBridge { public *; }
--keepattributes *Annotation*
-
-# ADCOLONY
--dontwarn com.jirbo.adcolony.**
--keep class com.jirbo.adcolony.** { *; }
-
-# VUNGLE
--dontwarn com.vungle.**
--keep class com.vungle.** { public *; }
--keep class javax.inject.*
--keepattributes *Annotation*
--keepattributes Signature
--keep class dagger.*
-
-# AMAZON
--dontwarn com.amazon.**
--keep class com.amazon.** { *; }
--dontwarn org.apache.http.**
--keepattributes *Annotation*
-
-# FACEBOOK
--dontwarn com.facebook.ads.**
--dontnote com.facebook.ads.**
--keep class com.facebook.** { *; }
--keepattributes Signature
-
-# HEYZAP
--keep public class com.heyzap.** { *; }
--dontwarn com.heyzap.**
-
-# FLURRY
--keep class com.flurry.** { *; }
--dontwarn com.flurry.**
--keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
-
-# SUPERSONICADS
--dontwarn com.supersonicads.**
--keep class com.supersonicads.** { *; }
--dontwarn com.supersonic.**
--keep class com.supersonic.** { *; }
-
-# STARTAPP
--keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
--dontwarn android.webkit.JavascriptInterface
--keep class com.startapp.** { *; }
--dontwarn com.startapp.**
-
-# AVOCARROT
--keep class com.avocarrot.** { *; }
--dontwarn com.avocarrot.**
-
-# APPLOVIN
--dontwarn com.applovin.**
--keep class com.applovin.** { *; }
-
-# LOOPME
--dontwarn com.loopme.**
--keep class com.loopme.** { *; }
-
-# ADFALCON
--dontwarn com.noqoush.**
--keep class com.noqoush.** { *; }
-
-# MEDIABRIX
--keep class com.mediabrix.** { *; }
--keep class com.moat.** { *; }
--keep class mdos.** { *; }
--dontwarn com.mediabrix.**
--dontwarn com.moat.**
--dontwarn mdos.**
-
-# NATIVEX
--dontwarn com.nativex.**
--keep class com.nativex.** { *; }
-
-# UNITY
--dontwarn com.unity3d.**
--keep class com.unity3d.ads.android.** { *; }
-
-# FLYMOB
--dontwarn com.flymob.sdk.**
--keep public class com.flymob.sdk.common.** { public *; }
-
-# TAPJOY
--keep class com.tapjoy.** { *; }
--keepattributes JavascriptInterface
--keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
--keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
--keep class com.google.android.gms.ads.identifier.** { *; }
--dontwarn com.tapjoy.internal.**
-
-# PUBNATIVE
--keepattributes Signature
--keep class net.pubnative.** { *; }
--dontwarn net.pubnative.**
--keep class com.squareup.picasso.** { *; }
--dontwarn com.squareup.picasso.**
-
-# APPNEXT
--keep class com.appnext.** { *; }
--dontwarn com.appnext.**
-
-# DISPLAYIO
--keep class io.display.sdk.Controller.** { *; }
--dontwarn io.display.sdk.Controller.**
-
-# INLOCOMEDIA
--keep class com.inlocomedia.** { *; }
--dontwarn com.inlocomedia.**
-
-# TEADS
-# For WebView JavascriptInterface
--keepattributes JavascriptInterface
--keep public class tv.teads.sdk.adContainer.layout.webview.** { *; }
-
-# Jackson
--dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
--keepnames class com.fasterxml.jackson.** { *; }
--keep public class tv.teads.sdk.adServer.parser.json.** {
-    public protected *;
-    public void set*(***);
-    public *** get*();
-}
--keepattributes *Annotation*,EnclosingMethod,Signature
--keep class com.fasterxml.jackson.databind.ObjectMapper {
-    public <methods>;
-    protected <methods>;
-}
--keep class com.fasterxml.jackson.databind.ObjectWriter {
-    public ** writeValueAsString(**);
-}
-
-# Okio
--dontwarn okio.**
-
-# Enums
--keepattributes InnerClasses
--keep public enum  tv.teads.sdk.adContent.AdContent$** {
-    **[] $VALUES;
-    public *;
-}
--keep public enum  tv.teads.sdk.publisher.TeadsLog$** {
-    **[] $VALUES;
-    public *;
-}
-
-# Google Play Services (used by reflection)
--keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient {
-    **[] $VALUES;
-    public *;
-}
-
--keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient$* {
-   *;
-}
-
-# RUBICON
--keep public class com.rfm.** { *; }
--dontwarn com.rfm.**
-
-# FYBER
--keep public class com.fyber.** { *; }
--dontwarn com.fyber.**
-
--keep class com.fyber.mediation.MediationConfigProvider {
-    public static *;
-}
--keep class com.fyber.mediation.MediationAdapterStarter {
-    public static *;
-}
--keepclassmembers class com.fyber.ads.videos.mediation.** {
-    void setValue(java.lang.String);
-}
-
-# CONVERSANT
--keep class com.greystripe.** { *; }
-
-# ARTOFCLICK
--keep class com.artofclick.publisher_sdk.** { *; }
--dontwarn com.artofclick.publisher_sdk.**
-
-# INSTAL
--keep class com.instal.** { *; }
--dontwarn com.instal.**
-
-#YouAppi
--keep class com.youappi.ai.sdk.** { *; }
--dontwarn com.youappi.ai.sdk.**
-
-#AppBrain
--keep public class com.appbrain.KeepClass
--keep public class * implements com.appbrain.KeepClass
--keepclassmembers class * implements com.appbrain.KeepClass {
-    <methods>;
-}
--keep class android.webkit.JavascriptInterface
--dontwarn android.webkit.JavascriptInterface
-
-# This is only needed when you don't include the Google Play services:
--dontwarn com.google.android.gms.**
-
-```

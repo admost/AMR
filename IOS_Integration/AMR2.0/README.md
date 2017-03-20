@@ -44,7 +44,7 @@ platform :ios, '7.0'
 
 use_frameworks!
 
-target 'podtest' do
+target 'MyAwesomeTarget' do
     #core SDK
    pod 'AMRSDK', '~> 1.0'
     #mediation adapters
@@ -183,7 +183,11 @@ Add following lines to your `plist` file.
 <string>Some ad content may access calendar</string>
 ```  
 
+<<<<<<< HEAD
 If you are using Applovin add the following lines to your `plist` file.
+=======
+If you are using Applovin, you have to add following lines to your `plist` file.
+>>>>>>> c9c05320e86ebb9f466a1328b9795f02e1bb7e12
 ```plist
 <key>AppLovinSdkKey</key>
 <string>YOUR_KEY</string>

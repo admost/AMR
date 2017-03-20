@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply from: 'dependencies.gradle'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        enforceUniquePackageName = false
+        versionCode 315
+        versionName "3.1.5"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/videmob-3.1.5.jar')
+    def dependencies = this.ext.dependencies
+    compile(dependencies.playServices) {
+        exclude group: 'com.google.guava'
+    }
+    compile dependencies.rxJava
+    compile dependencies.rxAndroid
+    compile dependencies.retrofit
+    compile dependencies.retrofitAdapter
+    compile dependencies.retrofitGson
+    compile dependencies.okHttp
+    compile dependencies.okHttpLogging
+    compile dependencies.gson
+    compile(dependencies.simpleXml) {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+    compile dependencies.timber
+    compile dependencies.multidex
+}
