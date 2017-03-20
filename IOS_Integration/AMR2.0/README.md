@@ -182,17 +182,11 @@ Add following lines to your `plist` file.
 <key>NSCalendarsUsageDescription</key>
 <string>Some ad content may access calendar</string>
 ```  
-
-<<<<<<< HEAD
 If you are using Applovin add the following lines to your `plist` file.
-=======
-If you are using Applovin, you have to add following lines to your `plist` file.
->>>>>>> c9c05320e86ebb9f466a1328b9795f02e1bb7e12
 ```plist
 <key>AppLovinSdkKey</key>
 <string>YOUR_KEY</string>
 ```  
-
 ## Start Coding
 + <a name="usage1"></a>**Initialization**   
 
