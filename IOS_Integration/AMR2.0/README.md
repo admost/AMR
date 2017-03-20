@@ -67,7 +67,7 @@ target 'MyAwesomeTarget' do
    pod 'AMRAdapterMopub', '~> 4.11'
    pod 'AMRAdapterNativex', '~> 5.5'
    pod 'AMRAdapterNexage', '~> 6.3'
-   pod 'AMRAdapterPubnative', '~> 1.4' #ios 8+
+   pod 'AMRAdapterPubnative', '~> 1.4'
    pod 'AMRAdapterRevmob', '~> 9.2'
    pod 'AMRAdapterSmaato', '~> 8.0'
    pod 'AMRAdapterStartapp', '~> 3.4'
