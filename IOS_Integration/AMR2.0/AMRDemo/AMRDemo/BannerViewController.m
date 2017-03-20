@@ -52,17 +52,17 @@
      1.0 Native 10217edf-9a99-4fd0-be0a-a0ef2252af15
      */
 
-    _banner50 = [AMRBanner bannerForZoneId:@"3b657ba6-a304-4c28-b419-a7fc55449bc9"];
+    _banner50 = [AMRBanner bannerForZoneId:@"b4009772-de04-42c4-bbaa-c18da9e4a1ab"];
     _banner50.delegate = self;
     [_banner50 loadBanner];
 
-//    _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
-//    _banner90.delegate = self;
-//    [_banner90 loadBanner];
-////
-//    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
-//    _banner250.delegate = self;
-//    [_banner250 loadBanner];
+    _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
+    _banner90.delegate = self;
+    [_banner90 loadBanner];
+//
+    _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
+    _banner250.delegate = self;
+    [_banner250 loadBanner];
 
     // AMRAdmostSDK
 //    _admostLoader = [AMRAdmostLoader admostLoaderWithPBK:@"47759" customParameters:@{@"screen_name": @"BannerViewController"}];
@@ -73,7 +73,9 @@
 #pragma mark - IBActions
 
 - (IBAction)reloadBanners {
-    [self loadBanners];
+    [_banner50 loadBanner];
+    [_banner90 loadBanner];
+    [_banner250 loadBanner];
 }
 
 #pragma mark - <AMRBannerDelegate>

@@ -30,7 +30,7 @@ UITableViewDataSource
     
     // initialize banner data source
     _bannerDataSource = [AMRBannerDataSource bannerDataSourceWithTableView:tbMain
-                                                                    zoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"
+                                                                    zoneId:kAMRBannerZoneId
                                                                 bannerSize:AMRBannerSizeHeight250];
     
     // fetch raw data
