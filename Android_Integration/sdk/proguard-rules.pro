@@ -180,8 +180,8 @@
 -dontwarn com.appnext.**
 
 # DISPLAYIO
--keep class io.display.sdk.Controller.** { *; }
--dontwarn io.display.sdk.Controller.**
+-keep class io.display.sdk.** { *; }
+-dontwarn io.display.sdk.**
 
 # INLOCOMEDIA
 -keep class com.inlocomedia.** { *; }
