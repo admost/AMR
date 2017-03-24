@@ -80,6 +80,8 @@
 # ADCOLONY
 -dontwarn com.jirbo.adcolony.**
 -keep class com.jirbo.adcolony.** { *; }
+-dontwarn com.adcolony.**
+-keep class com.adcolony.** { *; }
 
 # VUNGLE
 -dontwarn com.vungle.**
