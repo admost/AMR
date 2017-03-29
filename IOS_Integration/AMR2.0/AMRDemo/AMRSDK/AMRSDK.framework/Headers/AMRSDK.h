@@ -48,7 +48,7 @@
 + (void)setLogLevel:(AMRLogLevel)logLevel;
 
 /**
- * Set status bar hidden status of AMRSDK to set the status bar
+ * Set status bar hidden status of AMRSDK to set the status bar.
  * visible after a full screen ad is dismissed. Recommended for full screen games.
  * Default value is NO.
  * Example usage:
@@ -58,6 +58,20 @@
  * @param isHidden hidden status of status bar.
  */
 + (void)setStatusBarHidden:(BOOL)isHidden;
+
+
+/**
+ * Set this value to YES to clear cache on application termination.
+ * Default value is NO.
+ * Following file types will be deleted from application's cache folder.
+ * [@"mp4", @"m4v", @"jpg", @"jpeg", @"png", @"gif", @"svg", @"ttf", @"js", @"css", @"html", @"htm"].
+ * @code
+ * [AMRSDK setClearCacheOnTerminate:YES];
+ * @endcode
+ * @param shouldClear boolean value to clear cache on application termination.
+ */
+
++ (void)setClearCacheOnTerminate:(BOOL)shouldClear;
 
 /**
  * Warning: Only applies to non-fullscreen banners.

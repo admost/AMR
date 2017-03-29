@@ -20,12 +20,12 @@
 
     [AMRSDK setLogLevel:AMRLogLevelAll];
     [AMRSDK startWithAppId:@"15066ddc-9c18-492c-8185-bea7e4c7f88c"];
-
     [AMRSDK setStatusBarHidden:YES];
-//    [AMRSDK preloadBannersWithZoneIds:@[@"b4009772-de04-42c4-bbaa-c18da9e4a1ab",
-//                                        @"8b72580f-c8ed-4080-aac0-004ecab65030",
-//                                        @"1b65e016-5b26-4ba0-aff5-b500a96d5157" ]];
+//    [AMRSDK setClearCacheOnTerminate:YES];
 
+    //    [AMRSDK preloadBannersWithZoneIds:@[@"b4009772-de04-42c4-bbaa-c18da9e4a1ab",
+    //                                        @"8b72580f-c8ed-4080-aac0-004ecab65030",
+    //                                        @"1b65e016-5b26-4ba0-aff5-b500a96d5157" ]];
 
     [self startWithNavigationViewController];
 
