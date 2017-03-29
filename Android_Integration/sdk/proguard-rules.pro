@@ -80,6 +80,8 @@
 # ADCOLONY
 -dontwarn com.jirbo.adcolony.**
 -keep class com.jirbo.adcolony.** { *; }
+-dontwarn com.adcolony.**
+-keep class com.adcolony.** { *; }
 
 # VUNGLE
 -dontwarn com.vungle.**
@@ -180,8 +182,8 @@
 -dontwarn com.appnext.**
 
 # DISPLAYIO
--keep class io.display.sdk.Controller.** { *; }
--dontwarn io.display.sdk.Controller.**
+-keep class io.display.sdk.** { *; }
+-dontwarn io.display.sdk.**
 
 # INLOCOMEDIA
 -keep class com.inlocomedia.** { *; }
