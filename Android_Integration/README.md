@@ -30,7 +30,7 @@ Add the following line into your AndroidManifest.xml (This needs to go inside th
 
 ### AppLovin Publishers
 ```sh
-<meta-data android:name="applovin.sdk.key" android:value="<SDK_KEY>" />
+<meta-data android:name="applovin.sdk.key" android:value="< SDK_KEY >" />
 
 ```
 ### Inmobi Publishers
@@ -49,7 +49,7 @@ Add the following line into your AndroidManifest.xml (This needs to go inside th
 ```sh
 <provider
     android:name="com.cydersoft.core.database.CydersoftContentProvider"
-    android:authorities="<PACKAGE_NAME>"
+    android:authorities="< PACKAGE_NAME >"
     android:exported="false" />
 ```
 
@@ -195,7 +195,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	BINDER : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
 */
 
-ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >,  new AdMostViewListener() {
+ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
     @Override
     public void onLoad(String network, int position) {
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
@@ -207,7 +207,7 @@ ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >,  new AdM
             // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
         }
     }
-}, <BINDER>);
+}, < BINDER >);
 
 // Add the following line to load an ad.
 ADMOST_MEDIATION_VIEW.getView(0);
