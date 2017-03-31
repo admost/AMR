@@ -126,7 +126,7 @@ Basic integration steps are:
 Initialize the Admost Mediation SDK in your application’s first Activity. This starts pre-caching and prepares the SDK to display ads.
 
 ```java
-AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, <<ADMOST_APP_ID>>);
+AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 
 // OPTIONAL
 configuration.age(24);
@@ -195,7 +195,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	BINDER : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
 */
 
-ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, <<TYPE>>,  new AdMostViewListener() {
+ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >,  new AdMostViewListener() {
     @Override
     public void onLoad(String network, int position) {
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
@@ -207,7 +207,7 @@ ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, <<ZONE_ID>>, <<TYPE>>,  new AdM
             // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
         }
     }
-}, <<BINDER>>);
+}, <BINDER>);
 
 // Add the following line to load an ad.
 ADMOST_MEDIATION_VIEW.getView(0);
@@ -239,7 +239,7 @@ AdMostViewBinder binder = new AdMostViewBinder.Builder(layout)
 ### Requesting FullScreen Ads
 
 ```java
-AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
+AdMostInterstitial AD_INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.FAILED) {
@@ -266,7 +266,7 @@ AD_INTERSTITIAL.destroy();
 ### Requesting Video Ads
 
 ```java
-AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
+AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
 	@Override
 	public void onAction(int value) {
 		if (value == AdMostAdListener.LOADED) {
@@ -306,24 +306,24 @@ AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as
 
 ### Spending Virtual Currencies with AdMostInterstitial
 ```java
-OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
-	@Override
-	public void onAction(int value) {
-		if (value == AdMostAdListener.CLOSED) {
-			OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
-				@Override
-				public void onSuccess(String network, String currency, double balance) {
-					AdMostLog.log(network + " " + currency + " " + balance);
-				}
-			
-				@Override
-				public void onError(String network, String error) {
-					AdMostLog.log(network + " " + error);
-				}
-			});
-		}
-	}
-});
+OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+            @Override
+            public void onAction(int value) {
+                if (value == AdMostAdListener.CLOSED) {
+                    OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+                        @Override
+                        public void onSuccess(String network, String currency, double balance) {
+                            AdMostLog.log(network + " " + currency + " " + balance);
+                        }
+
+                        @Override
+                        public void onError(String network, String error) {
+                            AdMostLog.log(network + " " + error);
+                        }
+                    });
+                }
+            }
+        });
 ```
 
 # Misc
