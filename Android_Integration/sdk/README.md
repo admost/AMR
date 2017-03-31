@@ -1,23 +1,19 @@
-# Release Notes v.1.2.6
-
-### New
-* VideMob
-* YouAppi
-* Mobusi
-* Google Rewarded Video
-* Smaato Rewarded Video
-* DisplayIO Banner
+# Release Notes v.1.2.7
 
 ### Updated
-* Smaato v.5.1.2
-* AppNext v.2.0.0
-* MobFox v.3.2.5
-* PubNative v.2.3.13
-* DisplayIO v.1.3.8
-* AdColony v.3.1.0
-* Rubicon v.6.1.0
-* Mediabrix v.1.8.1
+* Applovin v.7.0.0
+* DisplayIO v.1.3.9
+* Facebook v.4.20
+* Flurry v.6.9.2
+* Flymob v.2.0.5
+* Fyber v.8.11.0
+* Heyzap v.9.8.0
+* Mobusi v.3.1.2
+* Mopub v.4.13.0
+* Unity v.3.1.0
+* YouAppi v.1.0
+* Teads v.2.3.17
 
 ### Fix
 * Various bug fixes
-* IronSource Initing
+* Internal ad-network checking for spendVirtualCurrency() method

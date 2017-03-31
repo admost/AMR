@@ -17,13 +17,15 @@
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * Zone Ids provided in Admost Mediation Dashboard.
 
-Add the following permissions optionally for improve user targeting into your AndroidManifest.xml 
-
+Add the following permissions optionally into your AndroidManifest.xml for improve user targeting and will result in higer performance.
 ```sh
-<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 ```
 Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
 
@@ -61,29 +63,29 @@ Add the following lines to your module dependencies
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-sdk', ext: 'aar')
+compile(name: 'admost-1.2.7', ext: 'aar')
 
 compile(name: 'artofclick-1.2.3', ext: 'aar')
 
 compile(name: 'appnext-2.0.0', ext: 'aar')
 
-compile(name: 'facebook-4.18', ext: 'aar')
+compile(name: 'facebook-4.20', ext: 'aar')
 
 compile(name: 'loopme-5.1.0', ext: 'aar')
 
 compile(name: 'millenialmedia-6.3.1', ext: 'aar')
 
-compile(name: 'unityads-2.0.8', ext: 'aar')
+compile(name: 'unityads-2.1.0', ext: 'aar')
+
+compile(name: 'youappi-1.0', ext: 'aar')
 
 compile project(':lib-videmob')
-
-compile(name: 'youappi-0.73', ext: 'aar')
 
 compile 'com.android.volley:volley:1.0.0'
 
 compile 'com.google.android.gms:play-services-ads:10.0.1'
 
-compile('com.mopub:mopub-sdk:4.12.0@aar') { transitive = true }
+compile('com.mopub:mopub-sdk:4.13.0@aar') { transitive = true }
 
 compile 'net.pubnative:library:2.3.13',
         'net.pubnative:library.interstitial:2.3.13',
@@ -127,7 +129,7 @@ Initialize the Admost Mediation SDK in your application’s first Activity. This
 ```java
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, <<ADMOST_APP_ID>>);
 
-//Optional
+// OPTIONAL
 configuration.age(24);
 configuration.gender(AdMost.GENDER_MALE);
 configuration.interests(“Games, Sports, News”);
@@ -182,33 +184,9 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-### Spending Virtual Currencies with AdMostInterstitial
-
-```java
-OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
-	@Override
-	public void onAction(int value) {
-		if (value == AdMostAdListener.CLOSED) {
-			OFFERWALL.spendVirtualCurrency(OFFERWALL.getCurrentNetwork(), new AdMostVirtualCurrencyListener() {
-				@Override
-				public void onSuccess(String network, String currency, double balance) {
-					AdMostLog.log(network + " " + currency + " " + balance);
-				}
-			
-				@Override
-				public void onError(String network, String error) {
-					AdMostLog.log(network + " " + error);
-				}
-			});
-		}
-	}
-});
-```
-
 ### Requesting Native Ads
 
 ```java
-
 /*
 	ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 	TYPE : The height of your banner, it may have 3 values;
@@ -280,7 +258,7 @@ AD_INTERSTITIAL.refreshAd(AUTO_SHOW);
 
 AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
 
-You have to call destroy method on ondestroy() method of the activity.
+You have to call destroy method on onDestroy() method of the activity.
 
 ```java
 AD_INTERSTITIAL.destroy();
@@ -303,11 +281,23 @@ AdMostInterstitial AD_VIDEO = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new 
 		}
 	}
 	
-	//OPTIONAL
+	// OPTIONAL
+
 	@Override
 	public void onRewarded(int value) {
 		AdMostLog.log("REWARDED " + value);
 	}
+
+	@Override
+	public void onShown(String value) {
+		AdMostLog.log("SHOWN " + value);
+	}
+
+	@Override
+	public void onClicked(String value) {
+		AdMostLog.log("CLICKED " + value);
+	}
+
 });
 
 AD_VIDEO.refreshAd(AUTO_LOAD);
@@ -315,9 +305,31 @@ AD_VIDEO.refreshAd(AUTO_LOAD);
 
 AUTO_LOAD (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
 
+### Spending Virtual Currencies with AdMostInterstitial
+```java
+OFFERWALL = new AdMostInterstitial(ACTIVITY, <<ZONE_ID>>, new AdMostAdListener() {
+	@Override
+	public void onAction(int value) {
+		if (value == AdMostAdListener.CLOSED) {
+			OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+				@Override
+				public void onSuccess(String network, String currency, double balance) {
+					AdMostLog.log(network + " " + currency + " " + balance);
+				}
+			
+				@Override
+				public void onError(String network, String error) {
+					AdMostLog.log(network + " " + error);
+				}
+			});
+		}
+	}
+});
+```
+
 # Misc
 
 ### Proguard
 
-If you are using Proguard, add [these lines](https://github.com/admost/AMR/tree/master/Android_Integration/sdk/proguard-rules.pro) to your Proguard file
+If you are using Proguard, add [these lines](https://github.com/admost/AMR/tree/master/Android_Integration/sdk/proguard-rules.pro) to your Proguard file.
 
