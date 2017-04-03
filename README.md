@@ -1,12 +1,12 @@
-##What is AMR?
+## What is AMR?
  
 AMR (Admost Mediation Router) is a solely mobile ad mediation tool which is used to optimise the ad networks, country and ad type based, to maximise the revenue of applications.
  
-##Which problem does AMR solve?
+## Which problem does AMR solve?
  
 The main revenue stream of most applications is based on mobile advertisement through ad networks. And it is almost impossible to indicate any network is the best for all variables. Each ad network may have comparative advantage due to their eCPM- fill rate, ad type, advertisers… and also the audience and type of the application, itself. AMR corroborates applications to serve the ads through various ad networks regarding all these variables to reach the most revenue.  
  
-##How does AMR solve this problem?
+## How does AMR solve this problem?
  
 AMR is a client-server tool; its client part is an SDK embedded into apps and its server part is a database which keeps all the statistics collected from ad networks and its own SDK.
 
@@ -16,18 +16,18 @@ Apps call only AMR SDK to get a list of ad networks in order of waterfall algori
 
 AMR SDK’s profession is just routing the app in order of calling ad networks to maximise the earnings.
  
-##Where the revenue goes?
+## Where the revenue goes?
  
 AMR system works just as a router to call ad networks. There is no cash flow through AMR. App owners get all their revenues from ad networks on own accounts as usual.
  
-##What does AMR dashboard show?
+## What does AMR dashboard show?
  
 Normally all app owners who cooperate with many ad networks have to log in each ad network’ s dashboard to view all the statistic separately. 
 
 By tracking all the networks data together on AMR dashboard, publishers have flexibility to view/ compare the performances of each network in various aspects; zone-placement-ad type breakdown, ad network-country breakdown and more…
 
  
-##What is the differences of AMR from other mediation systems?
+## What is the differences of AMR from other mediation systems?
  
 Most of the mediations systems are the extension or part of an ad network, where they try to serve their own inventory first and if they cannot serve their own, they call other ad networks based on a waterfall in some algorithms.
 
@@ -46,7 +46,7 @@ Most of mediation systems consider eCPM rates of ad networks to create a waterfa
 AMR calculates eCPM rates itself. The system counts each impression with same methodology and uses only revenue data of ad networks as base; compares apples to apples. So, the order of ad networks in the waterfall is very accurate.
 
  
-##What is the pricing model of AMR?     
+## What is the pricing model of AMR?     
  
 AMR is free of a charge for the first month. AMR charge commission fee for the total earning after first month. The commission rate is %10 of the total monthly revenue up to first $100.000 and 5% over $100.000. We assert app publishers increase their revenues till 50% to 300% by using AMR.
 
@@ -57,7 +57,7 @@ Scenario 1 (Worst Case): The revenue increased by 50% and reached to $75K. Your 
 Scenario 2 (Normal Case): The revenue increased by %200 and reached to $150K. Your net revenue is $137.5K with 10% for first $100K tier($10K) and 5% for second 50K tier($2.5K), totally $12.5K comission rate cut-off. Net revenue increased by 175%.
  
  
-##What is the termination period?
+## What is the termination period?
  
 App owners can terminate the contract anytime they want. 
 
