@@ -85,7 +85,7 @@
 
 # VUNGLE
 -dontwarn com.vungle.**
--keep class com.vungle.** { public *; }
+-keep class com.vungle.** { *; }
 -keep class javax.inject.*
 -keepattributes *Annotation*
 -keepattributes Signature
@@ -292,6 +292,6 @@
 -keep class com.apptracker.** { *; }
 -dontwarn com.apptracker.**
 -keepclassmembers class **.R$* {
-	public static <fields>;
+    public static <fields>;
 }
 -keep class **.R$*
