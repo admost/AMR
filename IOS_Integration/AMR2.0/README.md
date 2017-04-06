@@ -246,7 +246,7 @@ If `didFailToReceiveBanner` callback method is called investigate `error` to adr
 
 + <a name="usage2.2"></a>**Customize Native Ad Appearance (Optional)**  
 
-You can change the appearance of native ads to suit your app's design. 
+You can change the appearance of native ads to suit your application's design. 
 If you are integration AMR with Cocoapods extract CustomXibs.zip in AMRSDK pod to your project. If you are manually integrating AMR add [AMRDemo/Assets/Natives/](https://github.com/admost/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/Assets/Natives) folder to your project. 
 
 You can change the layout and design of following assets; 
