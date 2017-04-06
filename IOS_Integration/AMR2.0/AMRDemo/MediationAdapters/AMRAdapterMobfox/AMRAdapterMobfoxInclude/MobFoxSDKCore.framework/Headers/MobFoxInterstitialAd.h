@@ -15,6 +15,7 @@
 
 @class MobFoxInterstitialAd;
 
+
 @protocol MobFoxInterstitialAdDelegate <NSObject>
 
 
@@ -34,8 +35,6 @@
 
 - (void)MobFoxInterstitialAdFinished;
 
-
-
 @end
 
 
@@ -46,8 +45,9 @@
 @property (nonatomic, weak) UIViewController* rootViewController;
 
 @property BOOL ready;
-@property (strong, nonatomic) MobFoxAd* ad;
-@property (nonatomic, strong) LocationServicesManager *locationServicesManager;
+
+
+@property (nonatomic, strong) MFLocationServicesManager *locationServicesManager;
 
 
 -(id) init:(NSString*)invh;
@@ -55,8 +55,26 @@
 -(void) loadAd;
 -(void) show;
 + (void)locationServicesDisabled:(BOOL)disabled;
+- (void)dismissAd;
 
+@property (nonatomic, strong) NSString* invh;
 
+@property (nonatomic, copy) NSString* longitude;
+@property (nonatomic, copy) NSString* latitude;
+@property (nonatomic, copy) NSString* demo_gender; //"m/f"
+@property (nonatomic, copy) NSString* demo_age;
+@property (nonatomic, copy) NSString* s_subid;
+@property (nonatomic, copy) NSString* sub_name;
+@property (nonatomic, copy) NSString* sub_domain;
+@property (nonatomic, copy) NSString* sub_storeurl;
+@property (nonatomic, copy) NSString* r_floor;
+
+//set this (in seconds) to make the ad refresh
+@property (nonatomic, assign) NSNumber* refresh;
+@property (nonatomic, copy) NSNumber* v_dur_min;
+@property (nonatomic, copy) NSNumber* v_dur_max;
+
+@property (nonatomic, assign) BOOL autoplay;
 
 @end
 

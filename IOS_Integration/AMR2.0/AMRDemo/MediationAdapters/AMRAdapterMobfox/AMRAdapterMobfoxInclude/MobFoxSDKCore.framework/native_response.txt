@@ -1,0 +1,73 @@
+{
+"native": {
+"link": {
+"url": "http://mobfox.dev:50000/exchange.click.php?h=009830757c489d2cf7982155f3637fd6"
+},
+"assets": [
+{
+"id": 1,
+"required": 0,
+"type": "icon",
+"img": {
+"url": "http://cdn.admaxim.com/50_04014129782028373.png",
+"h": 128,
+"w": 128
+}
+},
+{
+"id": 2,
+"required": 1,
+"type": "main",
+"img": {
+"url": "http://cdn.admaxim.com/50_022759785729306437.png",
+"h": 627,
+"w": 1200
+}
+},
+{
+"id": 3,
+"required": 1,
+"type": "title",
+"title": {
+"text": "By Pratchett & Baxter"
+}
+},
+{
+"id": 4,
+"required": 1,
+"type": "desc",
+"data": {
+"value": "At last, the final book in The Long Earch series"
+}
+},
+{
+"id": 5,
+"required": 0,
+"type": "rating",
+"data": {
+"value": "4.5"
+}
+},
+{
+"id": 6,
+"required": 0,
+"type": "ctatext",
+"data": {
+"value": "READ IT NOW"
+}
+},
+{
+"id": 7,
+"required": 0,
+"type": "sponsored",
+"data": {
+"value": "Pratchett & Baxter"
+}
+}
+],
+"imptrackers": [
+"http://rtbstaging.admaxim.com/adtracker/track/track/imp?id=Z608Z61484Z-1Z18551_168282Z50Z0Z0ZZ1.0Z0.5Z0.0Z0.5ZatZviennaZviennaZ1100ZsamsungZandroid_4.4Zgt-i9505Za-0f1104a0-87dc-488b-822c-9905bd2b76a0Ziab1ZZagx4-gnx1Z0-0-Z-1Z1200x627Z227f3554f5a74061752f2cd90258c685ZZ1Z2ZZ18551Z-1Z2Z2ZZZ2Z1Z&ts=1475068457070&creative_id=61484:608&mobfoxBidPrice=0.204&auctionId=227F3554F5A74061752F2CD90258C685&ru=",
+"http://mobfox.dev:50000/exchange.pixel.php?h=009830757c489d2cf7982155f3637fd6"
+]
+}
+}

@@ -11,6 +11,8 @@
 #import <AMRSDK/AMRSDK.h>
 #import <AMRAdmostSDK/AMRAdmostSDK.h>
 
+#import <StoreKit/StoreKit.h>
+
 @interface BannerViewController () <AMRBannerDelegate, AMRAdmostLoaderDelegate> {
     AMRBanner* _banner50;
     AMRBanner* _banner90;
@@ -57,7 +59,7 @@
     _banner90 = [AMRBanner bannerForZoneId:@"8b72580f-c8ed-4080-aac0-004ecab65030"];
     _banner90.delegate = self;
     [_banner90 loadBanner];
-
+//
     _banner250 = [AMRBanner bannerForZoneId:@"1b65e016-5b26-4ba0-aff5-b500a96d5157"];
     _banner250.delegate = self;
     [_banner250 loadBanner];
@@ -71,7 +73,9 @@
 #pragma mark - IBActions
 
 - (IBAction)reloadBanners {
-    [self loadBanners];
+    [_banner50 loadBanner];
+    [_banner90 loadBanner];
+    [_banner250 loadBanner];
 }
 
 #pragma mark - <AMRBannerDelegate>
@@ -94,11 +98,8 @@
 
 #pragma mark - <AMRAdmostLoaderDelegate>
 
-- (void)didReceiveMediationZones:(NSArray *)zoneIds {
+- (void)didReceiveMediationZones:(NSArray *)zoneIds {}
 
-}
-
-- (void)didFailWithError:(NSError *)error {
-}
+- (void)didFailWithError:(NSError *)error {}
 
 @end

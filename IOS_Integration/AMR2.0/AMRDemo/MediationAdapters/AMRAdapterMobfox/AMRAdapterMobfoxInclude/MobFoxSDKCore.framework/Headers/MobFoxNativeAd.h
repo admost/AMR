@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "MobFoxNativeCustomEvent.h"
 #import "MobFoxNativeData.h"
+#import "MFExceptionHandler.h"
 
 
 @class MobFoxNativeAd;
@@ -47,8 +48,10 @@
     @property (nonatomic, copy) NSString* v_dur_max;
     @property (nonatomic, copy) NSString* r_floor;
     @property (nonatomic, strong) NSString* invh;
-    @property (nonatomic, strong) NSString* serverURL;;
+    @property (nonatomic, strong) NSString* serverURL;
 
+    // new properties (required for 1.1)
+    //@property (nonatomic, strong) NSString* i_ipaddress;
 
 
     - (id) init:(NSString*)invh;

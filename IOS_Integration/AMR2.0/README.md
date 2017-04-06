@@ -13,6 +13,7 @@
 * [Start Coding](#start-coding)
   + [Initialization](#usage1)
   + [Banner Ads](#usage2)
+  + [Customize Native Ad Appearance (Optional)](#usage2.2)
   + [Interstitial Ads](#usage3)
   + [Rewarded Video Ads](#usage4)
 
@@ -43,7 +44,7 @@ platform :ios, '7.0'
 
 use_frameworks!
 
-target 'podtest' do
+target 'MyAwesomeTarget' do
     #core SDK
    pod 'AMRSDK', '~> 1.0'
     #mediation adapters
@@ -55,23 +56,24 @@ target 'podtest' do
    pod 'AMRAdapterApplovin', '~> 3.4'
    pod 'AMRAdapterAppnext', '~> 1.7'
    pod 'AMRAdapterAvocarrot', '~> 4.2' #ios 8+
-   pod 'AMRAdapterChartboost', '~> 6.5'
+   pod 'AMRAdapterChartboost', '~> 6.6'
    pod 'AMRAdapterConversant', '~> 4.5'
    pod 'AMRAdapterFacebook', '~> 4.18'
-   pod 'AMRAdapterFlurry', '~> 7.6'
-   pod 'AMRAdapterFyber', '~> 8.6'
+   pod 'AMRAdapterFlurry', '~> 7.10'
+   pod 'AMRAdapterFyber', '~> 8.9'
    pod 'AMRAdapterInloco', '~> 2.2'
    pod 'AMRAdapterInmobi', '~> 6.0'
+   pod 'AMRAdapterIronsource', '~> 6.5'
    pod 'AMRAdapterLoopme', '~> 6.0'
-   pod 'AMRAdapterMobfox', '~> 2.4'
+   pod 'AMRAdapterMobfox', '~> 3.1'
+   pod 'AMRAdapterMobusi', '~> 2.3'
    pod 'AMRAdapterMopub', '~> 4.11'
    pod 'AMRAdapterNativex', '~> 5.5'
    pod 'AMRAdapterNexage', '~> 6.3'
-   pod 'AMRAdapterPubnative', '~> 1.4' #ios 8+
+   pod 'AMRAdapterPubnative', '~> 1.4'
    pod 'AMRAdapterRevmob', '~> 9.2'
    pod 'AMRAdapterSmaato', '~> 8.0'
    pod 'AMRAdapterStartapp', '~> 3.4'
-   pod 'AMRAdapterSupersonic', '~> 6.4'
    pod 'AMRAdapterTapjoy', '~> 11.8'
    pod 'AMRAdapterUnity', '~> 2.0'
    pod 'AMRAdapterVungle', '~> 4.0'
@@ -148,16 +150,17 @@ AMRAdapterFlurry
 AMRAdapterFyber
 AMRAdapterInloco
 AMRAdapterInmobi
+AMRAdapterIronsource
 AMRAdapterLoopme
 AMRAdapterMobfox
+AMRAdapterMobusi
 AMRAdapterMopub
 AMRAdapterNativex
 AMRAdapterNexage
-AMRAdapterPubNative -iOS 8+
+AMRAdapterPubNative
 AMRAdapterRevmob
 AMRAdapterSmaato
 AMRAdapterStartapp
-AMRAdapterSupersonic
 AMRAdapterTapjoy
 AMRAdapterUnity
 AMRAdapterVungle
@@ -179,7 +182,11 @@ Add following lines to your `plist` file.
 <key>NSCalendarsUsageDescription</key>
 <string>Some ad content may access calendar</string>
 ```  
-
+If you are using Applovin add the following lines to your `plist` file.
+```plist
+<key>AppLovinSdkKey</key>
+<string>YOUR_KEY</string>
+```  
 ## Start Coding
 + <a name="usage1"></a>**Initialization**   
 
@@ -236,6 +243,16 @@ If `didFailToReceiveBanner` callback method is called investigate `error` to adr
     NSLog(error.errorDescription);
 }
 ```
+
++ <a name="usage2.2"></a>**Customize Native Ad Appearance (Optional)**  
+
+You can change the appearance of native ads to suit your application's design. 
+If you are integration AMR with Cocoapods extract CustomXibs.zip in AMRSDK pod to your project. If you are manually integrating AMR add [AMRDemo/Assets/Natives/](https://github.com/admost/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/Assets/Natives) folder to your project. 
+
+You can change the layout and design of following assets; 
+![native assets](https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/Readme.Assets/native_customization.png)
+
+
 + <a name="usage3"></a>**Interstitial Ads**  
 
 To create and show an interstitial ad first import `AMRSDK.h` to your `UIViewController` file;  

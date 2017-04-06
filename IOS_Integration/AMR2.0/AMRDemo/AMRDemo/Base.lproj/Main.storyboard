@@ -387,7 +387,13 @@
                             <constraint firstAttribute="trailing" secondItem="oKC-bc-yxd" secondAttribute="trailing" id="ZKu-CI-nvU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Banner Table Test" id="jcq-xu-Lsa"/>
+                    <navigationItem key="navigationItem" title="Banner Table Test" id="jcq-xu-Lsa">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="3mP-hg-s0t">
+                            <connections>
+                                <action selector="AddMoreData:" destination="K9F-xf-Muq" id="n2N-IB-4kY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tbMain" destination="oKC-bc-yxd" id="f6M-UV-OHC"/>
                     </connections>
