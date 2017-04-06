@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId 'com.kokteyl.amrtest'
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile(name:'admost-1.2.7', ext: 'aar')
+    compile(name:'appnext-2.0.0', ext:'aar')
+    compile(name:'facebook-4.20', ext:'aar')
+    compile(name:'unityads-2.1.0', ext:'aar')
+
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.volley:volley:1.0.0'
+
+    compile 'com.google.android.gms:play-services-ads:10.2.0'
+    compile 'com.google.android.gms:play-services-location:10.2.0'
+
+    compile('com.mopub:mopub-sdk:4.13.0@aar') { transitive = true }
+
+}

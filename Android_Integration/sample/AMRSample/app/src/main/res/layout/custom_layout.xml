@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="120dp"
+             android:background="@color/amr_ad_white"
+             android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="145dp"
+        android:layout_marginLeft="5dp"
+        android:adjustViewBounds="true"
+        android:layout_gravity="left|center"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/news_card_left_right_margin"
+        android:layout_marginRight="@dimen/news_card_left_right_margin"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:id="@+id/cardAttribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+
+            android:text="Ad"
+            android:textColor="#ffacabab"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/cardIcon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="6dp"
+                android:background="@null"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/cardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:maxLines="1"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="Title"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardDetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="2"
+                android:paddingBottom="5dp"
+                android:paddingTop="8dp"
+                android:text="Title Lorem ipsom dolor sit amet consaposod elit"
+                android:textColor="#cc2a2e32"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/CallToActionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="-7dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Go"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/amr_ad_black"
+                android:background="@color/amr_ad_back_yellow"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

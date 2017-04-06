@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="news_card_bottom_margin">5dp</dimen>
+    <dimen name="news_card_left_right_margin">5dp</dimen>
+    <dimen name="news_card_meta_top_margin">5dp</dimen>
+    <dimen name="news_card_category_top_margin">5dp</dimen>
+</resources>
