@@ -1,8 +1,9 @@
 # AMR Android Integration
 * [Requirements](#requirements)  
 * [Install](#install)
-	+ [Gradle](#gradle)
-	+ [Libs](#libs)
+  + [Libs](#libs)
+  + [Manifest](#manifest)
+  + [Gradle](#gradle)
 * [Usage](#usage)
 	+ [Initialization](#initialization)
 	+ [Banner Ads](#banner-ads)
@@ -14,7 +15,11 @@
 # Requirements
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * APP ID & ZONE ID(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
-
+# Install
+### Libs
+Copy the following libraries to the libs folder of your app from [this link](https://github.com/admost/AMR/tree/master/Android_Integration/libs).
+Only Admost, Volley and Google Play Services Ads libraries are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
+### Manifest
 Add the following permissions optionally into your AndroidManifest.xml for improve user targeting and will result in higer performance.
 ```sh
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -24,12 +29,12 @@ Add the following permissions optionally into your AndroidManifest.xml for impro
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 ```
-Add the following line into your AndroidManifest.xml (This needs to go inside the application tag)
-### AppLovin Publishers
+Add the following lines inside the application tag.
+#### AppLovin Publishers
 ```sh
 <meta-data android:name="applovin.sdk.key" android:value="< SDK_KEY >" />
 ```
-### Inmobi Publishers
+#### Inmobi Publishers
 ```sh
 <receiver
     android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
@@ -41,16 +46,15 @@ Add the following line into your AndroidManifest.xml (This needs to go inside th
     </intent-filter>
 </receiver>
 ```
-### Videmob Publishers
+#### Videmob Publishers
 ```sh
 <provider
     android:name="com.cydersoft.core.database.CydersoftContentProvider"
     android:authorities="< PACKAGE_NAME >"
     android:exported="false" />
 ```
-# Install
 ### Gradle
-Add the following lines to your module dependencies
+Add the following lines to your module dependencies.
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
@@ -75,7 +79,35 @@ compile 'net.pubnative:library:2.3.13',
         'net.pubnative:library.feed.banner:2.3.13',
         'net.pubnative:library.video:2.3.13'
 ```
-And Repositories as follows;
+#### AdColony
+```gradle
+compile 'com.android.support:support-annotations:+'
+```
+#### AdFalcon, NativeX
+```gradle
+compile 'com.google.code.gson:gson:+'
+```
+#### Appnext Publishers
+```gradle
+compile 'com.google.android.gms:play-services-basement:+'
+compile 'com.google.android.gms:play-services-location:+'
+```
+#### Avocarrot
+```gradle
+compile 'com.android.support:recyclerview-v7:+'
+compile 'com.android.support:appcompat-v7:+'
+```
+#### DisplayIO
+```gradle
+compile 'com.android.support:appcompat-v7:+'
+compile 'com.android.support:support-v4:+'
+compile 'com.android.support:percent:+'
+```
+#### MediaBrix
+```gradle
+compile 'com.android.support:support-v4:+'
+```
+##### And Repositories as follows
 ```gradle
 repositories {
     flatDir {
@@ -85,11 +117,6 @@ repositories {
     maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
 }
 ```
-### Libs
-Copy the following libraries to the libs folder of your app from [this link](https://github.com/admost/AMR/tree/master/Android_Integration/libs).
-
-Only Admost, Volley and Google Play Services Ads libraries are compulsory for mediation system. If you don’t add any one of the network to your app, the SDK will detect that the ad network library isn't there and fail gracefully; the request will continue with the next network in the mediation waterfall.
-
 # Usage
 Admost Mediation library is a lean yet complete library that allows you to request and show ads.
 Basic integration steps are:
