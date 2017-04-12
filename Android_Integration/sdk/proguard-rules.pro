@@ -153,7 +153,7 @@
 
 # UNITY
 -dontwarn com.unity3d.**
--keep class com.unity3d.ads.android.** { *; }
+-keep class com.unity3d.ads.** { *; }
 
 # FLYMOB
 -dontwarn com.flymob.sdk.**
