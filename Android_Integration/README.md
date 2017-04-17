@@ -30,11 +30,11 @@ Add the following permissions optionally into your AndroidManifest.xml for impro
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 ```
 Add the following lines inside the application tag.
-#### AppLovin Publishers
+##### AppLovin
 ```sh
 <meta-data android:name="applovin.sdk.key" android:value="< SDK_KEY >" />
 ```
-#### Inmobi Publishers
+##### InMobi
 ```sh
 <receiver
     android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
@@ -46,7 +46,12 @@ Add the following lines inside the application tag.
     </intent-filter>
 </receiver>
 ```
-#### Videmob Publishers
+##### LoopMe
+Optional permission removing
+```sh
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
+```
+##### VideMob
 ```sh
 <provider
     android:name="com.cydersoft.core.database.CydersoftContentProvider"
@@ -79,35 +84,35 @@ compile 'net.pubnative:library:2.3.13',
         'net.pubnative:library.feed.banner:2.3.13',
         'net.pubnative:library.video:2.3.13'
 ```
-#### AdColony
+##### AdColony
 ```gradle
 compile 'com.android.support:support-annotations:+'
 ```
-#### AdFalcon, NativeX
+##### AdFalcon, NativeX
 ```gradle
 compile 'com.google.code.gson:gson:+'
 ```
-#### Appnext Publishers
+##### Appnext
 ```gradle
 compile 'com.google.android.gms:play-services-basement:+'
 compile 'com.google.android.gms:play-services-location:+'
 ```
-#### Avocarrot
+##### Avocarrot
 ```gradle
 compile 'com.android.support:recyclerview-v7:+'
 compile 'com.android.support:appcompat-v7:+'
 ```
-#### DisplayIO
+##### DisplayIO
 ```gradle
 compile 'com.android.support:appcompat-v7:+'
 compile 'com.android.support:support-v4:+'
 compile 'com.android.support:percent:+'
 ```
-#### MediaBrix
+##### MediaBrix
 ```gradle
 compile 'com.android.support:support-v4:+'
 ```
-##### And Repositories as follows
+#### And Repositories as follows
 ```gradle
 repositories {
     flatDir {
@@ -254,8 +259,8 @@ INTERSTITIAL.destroy();
 ### Rewarded Video Ads
 ```java
 AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
-	@Override
-	public void onAction(int value) {
+    @Override
+    public void onAction(int value) {
         if (value == AdMostAdListener.LOADED) {
             // Ad Loaded
         } else if (value == AdMostAdListener.COMPLETED) {
@@ -265,12 +270,12 @@ AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdM
         } else if (value == AdMostAdListener.CLOSED) {
             // Ad Closed
         }
-	}
+    }
 
-	@Override
-	public void onRewarded(int value) {
-		// User is Rewarded
-	}
+    @Override
+    public void onRewarded(int value) {
+        // User is Rewarded
+    }
 });
 ```
 ### Offerwalls
