@@ -108,6 +108,12 @@ compile 'com.android.support:appcompat-v7:+'
 compile 'com.android.support:support-v4:+'
 compile 'com.android.support:percent:+'
 ```
+##### InMobi
+```gradle
+compile 'com.squareup.picasso:picasso:2.5.2'
+compile 'com.android.support:appcompat-v7:+'
+compile 'com.android.support:support-v4:+'
+```
 ##### MediaBrix
 ```gradle
 compile 'com.android.support:support-v4:+'
