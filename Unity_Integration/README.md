@@ -47,6 +47,23 @@ config.RewardedVideoIdIOS = "<Your IOS Video Zone Id>";
                                             
 AMR.AMRSDK.startWithConfig(config);
 ```  
+
+Call onApplicationPause in each of the Unity Scenes:
+```c#
+void OnApplicationPause(Boolean paused)
+{   
+	if (paused)
+	{
+	    AMR.AMRSDK.onPause();
+	    AMR.AMRSDK.onStop();
+	} else
+	{
+	    AMR.AMRSDK.onStart();
+	    AMR.AMRSDK.onResume();
+	}
+}
+```  
+
 **<a name="usage2"></a>Banner Ads**  
 
 To create and show a banner ad run the following code
