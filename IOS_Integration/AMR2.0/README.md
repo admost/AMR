@@ -46,11 +46,11 @@ use_frameworks!
 
 target 'MyAwesomeTarget' do
     #core SDK
-   pod 'AMRSDK', '~> 1.0'
+   pod 'AMRSDK', '~> 1.2'
     #mediation adapters
    pod 'AMRAdapterAdcolony', '~> 3.0'
    pod 'AMRAdapterAdfalcon', '~> 3.2'
-   pod 'AMRAdapterAdmob', '~> 7.16'
+   pod 'AMRAdapterAdmob', '~> 7.19'
    pod 'AMRAdapterAdmost', '~> 1.0'
    pod 'AMRAdapterAmazon', '~> 2.2'
    pod 'AMRAdapterApplovin', '~> 3.4'
@@ -62,7 +62,7 @@ target 'MyAwesomeTarget' do
    pod 'AMRAdapterFlurry', '~> 7.10'
    pod 'AMRAdapterFyber', '~> 8.9'
    pod 'AMRAdapterInloco', '~> 2.2'
-   pod 'AMRAdapterInmobi', '~> 6.0'
+   pod 'AMRAdapterInmobi', '~> 6.1'
    pod 'AMRAdapterIronsource', '~> 6.5'
    pod 'AMRAdapterLoopme', '~> 6.0'
    pod 'AMRAdapterMobfox', '~> 3.1'
