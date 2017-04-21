@@ -108,6 +108,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
     
     /// IRONSOURCE
     AMRNetworkTypeIronsource,
+    
+    /// LEADBOLT
+    AMRNetworkTypeLeadbolt,
 
     /// LOOPME
     AMRNetworkTypeLoopme,
@@ -147,6 +150,9 @@ typedef NS_ENUM(NSInteger, AMRNetworkType){
 
     /// TAPJOY
     AMRNetworkTypeTapjoy,
+    
+    /// TAPPX
+    AMRNetworkTypeTappx,
 
     /// UNITY
     AMRNetworkTypeUnityAds,

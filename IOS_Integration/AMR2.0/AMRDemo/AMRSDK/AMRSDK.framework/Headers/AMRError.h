@@ -18,4 +18,5 @@
  * Description of error.
  */
 @property NSString *errorDescription;
++ (instancetype)errorWithError:(NSError *)error;
 @end
