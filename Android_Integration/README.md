@@ -6,13 +6,13 @@
 * [Libs](#libs)
 * [Usage](#usage)
 * [Initialization](#initialization)
-* [Requesting Native Ads](#requesting-native-ads)
+* [Requesting Banner & Native Ads](#requesting-native-ads)
 * [Requesting FullScreen Ads](#requesting-fullscreen-ads)
 * [Requesting Video Ads](#requesting-video-ads)
 * [Misc](#misc)
 * [Proguard](#proguard)
 
-### Requirements
+# Requirements
 
 * Android 2.3 (Gingerbread - API Version 9) or later.
 * Zone Ids provided in Admost Mediation Dashboard.
@@ -62,17 +62,17 @@ Add the following lines to your module dependencies
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.2.7', ext: 'aar')
+compile(name: 'admost-1.2.8', ext: 'aar')
 
 compile(name: 'artofclick-1.2.3', ext: 'aar')
 
-compile(name: 'appnext-2.0.0', ext: 'aar')
+compile(name: 'appnext-2.0.1', ext: 'aar')
 
-compile(name: 'facebook-4.20', ext: 'aar')
+compile(name: 'facebook-4.22', ext: 'aar')
 
-compile(name: 'loopme-5.1.0', ext: 'aar')
+compile(name: 'loopme-5.1.5', ext: 'aar')
 
-compile(name: 'millenialmedia-6.3.1', ext: 'aar')
+compile(name: 'millenialmedia-6.4.0', ext: 'aar')
 
 compile(name: 'unityads-2.1.0', ext: 'aar')
 
@@ -86,15 +86,14 @@ compile 'com.google.android.gms:play-services-ads:10.0.1'
 
 compile('com.mopub:mopub-sdk:4.13.0@aar') { transitive = true }
 
-compile 'net.pubnative:library:2.3.13',
-        'net.pubnative:library.interstitial:2.3.13',
-        'net.pubnative:library.feed.banner:2.3.13',
-        'net.pubnative:library.video:2.3.13'
+compile('tv.teads.sdk:androidsdk:2.4.2:fullRelease@aar') { transitive = true }
 
-compile 'com.inlocomedia.android:android-sdk:2.4.7'
+compile 'com.inlocomedia.android:android-sdk:3.0.1'
 
-compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true }
-
+compile 'net.pubnative:library:2.3.15',
+        'net.pubnative:library.interstitial:2.3.15',
+        'net.pubnative:library.feed.banner:2.3.15',
+        'net.pubnative:library.video:2.3.15'
 ```
 
 And Repositories as follows;
@@ -195,22 +194,22 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	BINDER : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
 */
 
-ADMOST_MEDIATION_VIEW = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
+ADMOST_MEDIATION = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
     @Override
     public void onLoad(String network, int position) {
         if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
-             // No Banner Found
+             // No banner found
         } else {
             // Ad Loaded
-            // You can get adview by calling ADMOST_MEDIATION_VIEW.getView(0)
+            // You can get adview by calling ADMOST_MEDIATION.getView()
             // Attach it to a layout for impression.
-            // Calling ADMOST_MEDIATION_VIEW.getView(0) method multiple times will not cause any side effect.
+            // Calling ADMOST_MEDIATION.getView() method multiple times will not cause any side effect.
         }
     }
 }, < BINDER >);
 
 // Add the following line to load an ad.
-ADMOST_MEDIATION_VIEW.getView(0);
+ADMOST_MEDIATION.getView();
 ```
 
 You have to call destroy method on ondestroy() method of the activity.

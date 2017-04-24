@@ -57,8 +57,20 @@
 -keep class com.revmob.** { public *; }
 
 # INMOBI
+-keepattributes SourceFile,LineNumberTable
 -keep class com.inmobi.** {*;}
 -dontwarn com.inmobi.**
+-keep public class com.google.android.gms.**
+-dontwarn com.google.android.gms.**
+-dontwarn com.squareup.picasso.**
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{public *;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{public *;}
+-keep class com.squareup.picasso.** {*;}
+-dontwarn com.squareup.picasso.**
+-dontwarn com.squareup.okhttp.**
+-keep class com.moat.** {*;}
+-dontwarn com.moat.**
+-keep class com.integralads.avid.library.* {*;}
 
 # CHARTBOOST
 -dontwarn org.apache.http.**
@@ -80,8 +92,6 @@
 # ADCOLONY
 -dontwarn com.jirbo.adcolony.**
 -keep class com.jirbo.adcolony.** { *; }
--dontwarn com.adcolony.**
--keep class com.adcolony.** { *; }
 
 # VUNGLE
 -dontwarn com.vungle.**
@@ -153,7 +163,7 @@
 
 # UNITY
 -dontwarn com.unity3d.**
--keep class com.unity3d.ads.android.** { *; }
+-keep class com.unity3d.ads.** { *; }
 
 # FLYMOB
 -dontwarn com.flymob.sdk.**
@@ -292,6 +302,30 @@
 -keep class com.apptracker.** { *; }
 -dontwarn com.apptracker.**
 -keepclassmembers class **.R$* {
-    public static <fields>;
+	public static <fields>;
 }
 -keep class **.R$*
+
+# INNERACTIVE
+-dontwarn com.inneractive.api.ads.**
+-keep class com.inneractive.api.ads.** {*;}
+-keepclassmembers class com.inneractive.api.ads.** {*;}
+-keepclassmembers class com.inneractive.api.ads.sdk.nativead.** {*;}
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.google.gson.Gson { *; }
+-keep class com.google.gson.GsonBuilder { *; }
+-keep class com.google.gson.FieldNamingStrategy { *; }
+
+# TAPPX
+-keepattributes *Annotation*
+-keepclassmembers class com.google.**.R$* {
+    public static <fields>;
+}
+-keep public class com.google.ads.** {*;}
+-keep public class com.google.android.gms.** {*;}
+-keep public class com.tappx.** { *; }
+-dontwarn com.tappx.**
