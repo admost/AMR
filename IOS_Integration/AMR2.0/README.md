@@ -19,6 +19,7 @@
 
 ## Prerequisites
 * iOS 7 or later. 
+* Xcode 8.3 or later.
 * Application Id provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 * For testing you can use following IDs;
