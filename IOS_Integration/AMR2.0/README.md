@@ -120,6 +120,7 @@ EventKitUI.framework
 Foundation.framework
 JavaScriptCore.framework
 libsqlite3.tbd
+libxml2.tbd
 libz.tbd
 MediaPlayer.framework
 QuartzCore.framework
