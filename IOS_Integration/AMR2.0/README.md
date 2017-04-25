@@ -48,34 +48,33 @@ target 'MyAwesomeTarget' do
     #core SDK
    pod 'AMRSDK', '~> 1.2'
     #mediation adapters
-   pod 'AMRAdapterAdcolony', '~> 3.0'
-   pod 'AMRAdapterAdfalcon', '~> 3.2'
+   pod 'AMRAdapterAdcolony', '~> 3.1'
    pod 'AMRAdapterAdmob', '~> 7.19'
    pod 'AMRAdapterAdmost', '~> 1.0'
    pod 'AMRAdapterAmazon', '~> 2.2'
-   pod 'AMRAdapterApplovin', '~> 3.4'
-   pod 'AMRAdapterAppnext', '~> 1.7'
+   pod 'AMRAdapterApplovin', '~> 4.0'
+   pod 'AMRAdapterAppnext', '~> 1.8'
    pod 'AMRAdapterAvocarrot', '~> 4.2' #ios 8+
    pod 'AMRAdapterChartboost', '~> 6.6'
-   pod 'AMRAdapterConversant', '~> 4.5'
-   pod 'AMRAdapterFacebook', '~> 4.18'
+   pod 'AMRAdapterFacebook', '~> 4.22'
    pod 'AMRAdapterFlurry', '~> 7.10'
-   pod 'AMRAdapterFyber', '~> 8.9'
-   pod 'AMRAdapterInloco', '~> 2.2'
+   pod 'AMRAdapterFyber', '~> 8.11'
    pod 'AMRAdapterInmobi', '~> 6.1'
    pod 'AMRAdapterIronsource', '~> 6.5'
+   pod 'AMRAdapterLeadbolt', '~> 8.0'
    pod 'AMRAdapterLoopme', '~> 6.0'
    pod 'AMRAdapterMobfox', '~> 3.1'
    pod 'AMRAdapterMobusi', '~> 2.3'
-   pod 'AMRAdapterMopub', '~> 4.11'
+   pod 'AMRAdapterMopub', '~> 4.13'
    pod 'AMRAdapterNativex', '~> 5.5'
-   pod 'AMRAdapterNexage', '~> 6.3'
+   pod 'AMRAdapterNexage', '~> 6.4'
    pod 'AMRAdapterPubnative', '~> 1.4'
    pod 'AMRAdapterRevmob', '~> 9.2'
    pod 'AMRAdapterSmaato', '~> 8.0'
    pod 'AMRAdapterStartapp', '~> 3.4'
-   pod 'AMRAdapterTapjoy', '~> 11.8'
-   pod 'AMRAdapterUnity', '~> 2.0'
+   pod 'AMRAdapterTapjoy', '~> 11.10'
+   pod 'AMRAdapterTappx', '~> 3.0'
+   pod 'AMRAdapterUnity', '~> 2.1'
    pod 'AMRAdapterVungle', '~> 4.0'
 
 end
@@ -136,21 +135,19 @@ At least one mediation adapter is required for AMRSDK to show banners. You can a
 Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
 ```perl
 AMRAdapterAdcolony
-AMRAdapterAdFalcon
 AMRAdapterAdmob
 AMRAdapterAdmost
 AMRAdapterAmazon
 AMRAdapterApplovin
 AMRAdapterAppnext
-AMRAdapterAvocarrot -iOS 8+
+AMRAdapterAvocarrot #ios 8+
 AMRAdapterChartboost
-AMRAdapterConversant
 AMRAdapterFacebook
 AMRAdapterFlurry
 AMRAdapterFyber
-AMRAdapterInloco
 AMRAdapterInmobi
 AMRAdapterIronsource
+AMRAdapterLeadbolt
 AMRAdapterLoopme
 AMRAdapterMobfox
 AMRAdapterMobusi
@@ -162,6 +159,7 @@ AMRAdapterRevmob
 AMRAdapterSmaato
 AMRAdapterStartapp
 AMRAdapterTapjoy
+AMRAdapterTappx
 AMRAdapterUnity
 AMRAdapterVungle
 
@@ -169,7 +167,7 @@ AMRAdapterVungle
 + <a name="install4"></a>**Xcode Setup**  
 
 Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
-Add `-ObjC` flag in your target's `Other Linker Flags` in `Build Settings`.  
+Add `-ObjC` and `-lc++` flags in your target's `Other Linker Flags` in `Build Settings`.  
 Add following lines to your `plist` file.
 ```plist
 <key>NSAppTransportSecurity</key>
