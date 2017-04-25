@@ -62,7 +62,7 @@ Add the following lines to your module dependencies
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.2.8', ext: 'aar')
+compile(name: 'admost-1.2.9', ext: 'aar')
 
 compile(name: 'artofclick-1.2.3', ext: 'aar')
 
