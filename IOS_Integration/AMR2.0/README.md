@@ -169,7 +169,7 @@ AMRAdapterVungle
 + <a name="install4"></a>**Xcode Setup**  
 
 Make sure `$(PROJECT_DIR) recursive` is set in your target's `Framework Search Paths` in `Build Settings`.  
-Add `-ObjC` and `-lc++` flag in your target's `Other Linker Flags` in `Build Settings`.  
+Add `-ObjC` and `-lc++` flags in your target's `Other Linker Flags` in `Build Settings`.  
 Add following lines to your `plist` file.
 ```plist
 <key>NSAppTransportSecurity</key>
