@@ -51,9 +51,6 @@ typedef NS_ENUM(NSUInteger, AdColonyZoneType) {
     /** Interstitial zone type */
     AdColonyZoneTypeInterstitial = 0,
     
-    /** Banner zone type */
-    AdColonyZoneTypeBanner,
-    
     /** Native zone type */
     AdColonyZoneTypeNative
 };

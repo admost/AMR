@@ -26,8 +26,14 @@
 @property (nonatomic, assign)   ISGender            userGender;
 @property (nonatomic, assign)   BOOL                trackReachability;
 @property (nonatomic, strong)   NSString            *dynamicUserId;
+@property (nonatomic, assign)   BOOL                adaptersDebug;
 
-+ (ISConfigurations *)configurations;
+/*!
+ @deprecated This method has been deprecated and will be removed in a future version
+ */
++ (ISConfigurations *)configurations DEPRECATED_MSG_ATTRIBUTE("As of version 6.5.2, use class method: getConfigurations");
+
++ (ISConfigurations *)getConfigurations;
 
 @end
 

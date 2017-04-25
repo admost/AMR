@@ -31,6 +31,8 @@
 
 /**
  * Set to `YES` to enforce COPPA (Children's Online Privacy Protection Act) restrictions on ads returned by the ad server.
+ *
+ * @param compliance Whether COPPA compliance is enforced.
 */
 - (void)setCoppaCompliance:(BOOL)compliance;
 

@@ -1,8 +1,0 @@
-
-framework module InLocoMediaAPI {
-  umbrella header "InLocoMedia.h"
-
-  export *
-  module * { export * }
-
-}

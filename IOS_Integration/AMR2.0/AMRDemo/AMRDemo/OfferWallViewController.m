@@ -30,7 +30,7 @@
     [super viewDidAppear:animated];
     if(!_isShown) {
         _isShown = YES;
-        _offerWall = [AMROfferWall offerWallForZoneId:@"c3ccd9f4-f2d7-48d8-93a3-25810fe4cb6c"];
+        _offerWall = [AMROfferWall offerWallForZoneId:@"1cadca08-33f9-4da7-969e-ef116d4e7d0e"];
         _offerWall.delegate = self;
         [_offerWall loadOfferWall];
     }

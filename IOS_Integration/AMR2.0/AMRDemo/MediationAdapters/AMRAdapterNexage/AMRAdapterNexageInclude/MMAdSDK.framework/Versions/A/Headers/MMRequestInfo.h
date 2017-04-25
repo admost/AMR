@@ -20,11 +20,8 @@
 @property (nonatomic, copy, nullable) NSArray* keywords;
 
 
-// TODO MIK-1247 Add impression group to public documentation
-/*
- * The ImpressionGroup value for the current ad request. 
- * Once set, this value will be used for all reporting request, impression, and click events
- * for ad requests which use this individual requestInfo object.
+/**
+ * The impression group ID for sites that are enabled to group traffic in this way.
  */
 @property (nonatomic, copy, nullable) NSString* impressionGroup;
 

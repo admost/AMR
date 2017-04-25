@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Initializes a native ad placement.
  *
  * @param placementId The identifier of the placement that is used by the server for selecting ad content.
- * @param type An NSString object which corresponds to a defined native type, for example, MMNativeAdTypeInline.
+ * @param nativeAdType An NSString object which corresponds to a defined native type, for example, MMNativeAdTypeInline.
  * @return The MMNativeAd object.
  */
 -(nullable instancetype)initWithPlacementId:(NSString*)placementId adType:(NSString*)nativeAdType;

@@ -12,6 +12,7 @@
 #import "ISRewardedVideoDelegate.h"
 #import "ISOfferwallDelegate.h"
 #import "ISInterstitialDelegate.h"
+#import "ISRewardedInterstitialDelegate.h"
 #import "ISLogDelegate.h"
 #import "ISConfigurations.h"
 #import "ISIntegrationHelper.h"
@@ -71,6 +72,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setMediationSegment:(NSString *)segment;
 
 /**
+ @abstract Sets if IronSource SDK should allow ad networks debug logs.
+ @discussion This value will be passed to the supporting ad networks.
+
+ Default is NO.
+
+ @param flag YES to allow ad networks debug logs, NO otherwise.
+ */
++ (void)setAdaptersDebug:(BOOL)flag;
+
+/**
  @abstract Sets a dynamic identifier for the current user.
  @discussion This parameter can be changed throughout the session and will be received in the server-to-server ad rewarded callbacks. 
  
@@ -80,6 +91,14 @@ NS_ASSUME_NONNULL_BEGIN
  @return BOOL that indicates if the dynamic identifier is valid.
  */
 + (BOOL)setDynamicUserId:(NSString *)dynamicUserId;
+
+/**
+ @abstract Retrieves the device's current advertising identifier.
+ @discussion Will first try to retrive IDFA, if impossible, will try to retrive IDFV.
+ 
+ @return The device's current advertising identifier.
+ */
++ (NSString *)advertiserId;
 
 #pragma mark - SDK Initialization
 
@@ -173,6 +192,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setInterstitialDelegate:(id<ISInterstitialDelegate>)delegate;
 
 /**
+ @abstract Sets the delegate for rewarded interstitial callbacks.
+ 
+ @param delegate The 'ISRewardedInterstitialDelegate' for IronSource to send callbacks to.
+ */
++ (void)setRewardedInterstitialDelegate:(id<ISRewardedInterstitialDelegate>)delegate;
+
+/**
  @abstract Loads an interstitial.
  @discussion This method will load interstitial ads from the underlying ad networks according to their priority.
  */
@@ -255,14 +281,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param delegate The 'ISLogDelegate' for IronSource to send callbacks to.
  */
 + (void)setLogDelegate:(id<ISLogDelegate>)delegate;
-
-/**
- @abstract Retrieves the device's current advertising identifier.
- @discussion Will first try to retrive IDFA, if impossible, will try to retrive IDFV.
-
- @return The device's current advertising identifier.
- */
-+ (NSString *)advertiserId;
 
 @end
 

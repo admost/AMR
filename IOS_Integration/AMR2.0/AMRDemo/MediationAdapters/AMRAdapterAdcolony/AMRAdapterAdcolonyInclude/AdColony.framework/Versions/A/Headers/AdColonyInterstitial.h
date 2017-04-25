@@ -107,7 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @abstract Cancels the interstitial and returns control back to the application.
- @discussion Call this method to cancel the interstitial. 
+ @discussion Call this method to cancel the interstitial.
  Note that canceling interstitials before they finish will diminish publisher revenue.
  */
 - (void)cancel;
