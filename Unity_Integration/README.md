@@ -115,8 +115,9 @@ void OnApplicationPause(Boolean paused)
 
 To create and show a banner ad run the following code
 ```c#
-AMR.AMRSDK.showBanner(AMR.Enums.AMRSDKBannerPosition.BannerPositionTop);
+AMR.AMRSDK.loadBanner(AMR.Enums.AMRSDKBannerPosition.BannerPositionTop, true);
 ```
+If you want to show a banner manually after it has loaded, pass `false` as the second parameter of `loadBanner` method and wait for the `OnBannerReady` callback. Then call `showbanner` method to show banner.
 
 Call `hideBanner` method to hide the banner;
 ```c#
