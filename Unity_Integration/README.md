@@ -3,8 +3,7 @@
 
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
-  + [AMR Unity Package](#install1)
-  + [Mediation Adapters](#install2)
+  + [AMR Unity Packages](#install1)
 * [Start Coding](#start-coding)
   + [Initialization](#usage1)
   + [Banner Ads](#usage2)
@@ -17,15 +16,63 @@
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 
 ## Setup
-  + <a name="install1"></a>AMR Unity Package  
+  + <a name="install1"></a>AMR Unity Packages  
 
-[Download](http://www.kokteyl.com/unity/AMRUnity.unitypackage) and extract following package in your Unity Project;
-```perl
-AMRUnity.unitypackage
-```
-+ <a name="install2"></a>Mediation Adapters
+You can import AMR core SDK and network adapter packages from [AMR-UNITY-PACKAGES](https://github.com/admost/AMR-UNITY-PACKAGES) folder.
+Please refer to following table for required (R) and optional (O) packages for your target platform.
 
-All mediation adapters are included in target platform's plugins folder. At least one mediation adapter is required for AMRSDK to show banners. You can keep all adapters (recommended for maximized revenue) or start with a subset of adapters. For android platform you have to keep files which have 'amr_' prefix. Consult your AMR agent for further details.
+| Integration                         | Android | iOS |
+|-------------------------------------|---------|-----|
+| amr_unity_core.unitypackage         |    R    |  R  |
+| amr_android_core.unitypackage       |    R    |  -  |
+| amr_android_adcolony.unitypackage   |    O    |  -  |
+| amr_android_admob_adx.unitypackage  |    O    |  -  |
+| amr_android_applovin.unitypackage   |    O    |  -  |
+| amr_android_appnext.unitypackage    |    O    |  -  |
+| amr_android_avocarrot.unitypackage  |    O    |  -  |
+| amr_android_chartboost.unitypackage |    O    |  -  |
+| amr_android_facebook.unitypackage   |    O    |  -  |
+| amr_android_flurry.unitypackage     |    O    |  -  |
+| amr_android_flymob.unitypackage     |    O    |  -  |
+| amr_android_inmobi.unitypackage     |    O    |  -  |
+| amr_android_ironsource.unitypackage |    O    |  -  |
+| amr_android_leadbolt.unitypackage   |    O    |  -  |
+| amr_android_loopme.unitypackage     |    O    |  -  |
+| amr_android_mobfox.unitypackage     |    O    |  -  |
+| amr_android_mopub.unitypackage      |    O    |  -  |
+| amr_android_nativex.unitypackage    |    O    |  -  |
+| amr_android_revmob.unitypackage     |    O    |  -  |
+| amr_android_startapp.unitypackage   |    O    |  -  |
+| amr_android_tapjoy.unitypackage     |    O    |  -  |
+| amr_android_unityads.unitypackage   |    O    |  -  |
+| amr_android_vungle.unitypackage     |    O    |  -  |
+| amr_ios_core.unitypackage           |    -    |  R  |
+| amr_ios_adcolony.unitypackage       |    -    |  O  |
+| amr_ios_admob_adx.unitypackage      |    -    |  O  |
+| amr_ios_amazon_adx.unitypackage     |    -    |  O  |
+| amr_ios_applovin.unitypackage       |    -    |  O  |
+| amr_ios_appnext.unitypackage        |    -    |  O  |
+| amr_ios_chartboost.unitypackage     |    -    |  O  |
+| amr_ios_facebook.unitypackage       |    -    |  O  |
+| amr_ios_flurry.unitypackage         |    -    |  O  |
+| amr_ios_fyber.unitypackage          |    -    |  O  |
+| amr_ios_inmobi.unitypackage         |    -    |  O  |
+| amr_ios_ironsource.unitypackage     |    -    |  O  |
+| amr_ios_leadbolt.unitypackage       |    -    |  O  |
+| amr_ios_loopme.unitypackage         |    -    |  O  |
+| amr_ios_mobfox.unitypackage         |    -    |  O  |
+| amr_ios_mobusi.unitypackage         |    -    |  O  |
+| amr_ios_mopub.unitypackage          |    -    |  O  |
+| amr_ios_nativex.unitypackage        |    -    |  O  |
+| amr_ios_nexage.unitypackage         |    -    |  O  |
+| amr_ios_pubnative.unitypackage      |    -    |  O  |
+| amr_ios_revmob.unitypackage         |    -    |  O  |
+| amr_ios_smaato.unitypackage         |    -    |  O  |
+| amr_ios_startapp.unitypackage       |    -    |  O  |
+| amr_ios_tapjoy.unitypackage         |    -    |  O  |
+| amr_ios_tappx.unitypackage          |    -    |  O  |
+| amr_ios_unityads.unitypackage       |    -    |  O  |
+| amr_ios_vungle.unitypackage         |    -    |  O  |
 
 ## Start Coding
 **<a name="usage1"></a>Initialization**   
