@@ -2,20 +2,20 @@
 
 * [Requirements](#requirements)  
 * [Install](#install)
-* [Gradle](#gradle)
-* [Libs](#libs)
+  + [Gradle](#gradle)
+  + [Libs](#libs)
 * [Usage](#usage)
-* [Initialization](#initialization)
-* [Requesting Banner & Native Ads](#requesting-native-ads)
-* [Requesting FullScreen Ads](#requesting-fullscreen-ads)
-* [Requesting Video Ads](#requesting-video-ads)
+  + [Initialization](#initialization)
+  + [Requesting Banner & Native Ads](#requesting-native-ads)
+  + [Requesting FullScreen Ads](#requesting-fullscreen-ads)
+  + [Requesting Video Ads](#requesting-video-ads)
 * [Misc](#misc)
-* [Proguard](#proguard)
+  + [Proguard](#proguard)
 
 # Requirements
 
 * Android 2.3 (Gingerbread - API Version 9) or later.
-* Zone Ids provided in Admost Mediation Dashboard.
+* Zone Ids provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 
 Add the following permissions optionally into your AndroidManifest.xml for improve user targeting and will result in higer performance.
 ```sh
