@@ -63,26 +63,24 @@ Add the following lines to your module dependencies.
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.2.7', ext: 'aar')
-compile(name: 'artofclick-1.2.3', ext: 'aar')
-compile(name: 'appnext-2.0.0', ext: 'aar')
-compile(name: 'facebook-4.20', ext: 'aar')
-compile(name: 'loopme-5.1.0', ext: 'aar')
-compile(name: 'millenialmedia-6.3.1', ext: 'aar')
+compile(name: 'admost-1.2.9', ext: 'aar')
+compile(name: 'appnext-2.0.1', ext: 'aar')
+compile(name: 'facebook-4.22', ext: 'aar')
+compile(name: 'loopme-5.1.5', ext: 'aar')
+compile(name: 'millenialmedia-6.4.0', ext: 'aar')
 compile(name: 'unityads-2.1.0', ext: 'aar')
-compile(name: 'youappi-1.0', ext: 'aar')
-
-compile project(':lib-videmob')
 
 compile 'com.android.volley:volley:1.0.0'
 compile 'com.google.android.gms:play-services-ads:10.0.1'
+
 compile('com.mopub:mopub-sdk:4.13.0@aar') { transitive = true }
+
 compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true }
-compile 'com.inlocomedia.android:android-sdk:2.4.7'
-compile 'net.pubnative:library:2.3.13',
-        'net.pubnative:library.interstitial:2.3.13',
-        'net.pubnative:library.feed.banner:2.3.13',
-        'net.pubnative:library.video:2.3.13'
+
+compile 'net.pubnative:library:2.3.15',
+        'net.pubnative:library.interstitial:2.3.15',
+        'net.pubnative:library.feed.banner:2.3.15',
+        'net.pubnative:library.video:2.3.15'
 ```
 ##### AdColony
 ```gradle
@@ -316,7 +314,5 @@ OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
 ```
 
 # Misc
-
 ### Proguard
-
 If you are using Proguard, add [these lines](https://github.com/admost/AMR/tree/master/Android_Integration/sdk/proguard-rules.pro) to your Proguard file.
