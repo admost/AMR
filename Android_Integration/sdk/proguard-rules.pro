@@ -53,8 +53,8 @@
 -keep class com.mopub.mobileads.** {*;}
 
 # REVMOB
--dontwarn com.revmob.**
--keep class com.revmob.** { public *; }
+-dontwarn rm.com.android.sdk.**
+-keep class rm.com.android.sdk.** { public *; }
 
 # INMOBI
 -keepattributes SourceFile,LineNumberTable
@@ -96,10 +96,12 @@
 # VUNGLE
 -dontwarn com.vungle.**
 -keep class com.vungle.** { *; }
--keep class javax.inject.*
+-keep class javax.inject.**
 -keepattributes *Annotation*
 -keepattributes Signature
--keep class dagger.*
+-keep class dagger.**
+-keep class de.greenbot.**
+-keep class rx.**
 
 # AMAZON
 -dontwarn com.amazon.**
@@ -136,6 +138,8 @@
 # AVOCARROT
 -keep class com.avocarrot.** { *; }
 -dontwarn com.avocarrot.**
+-keep class com.google.android.exoplayer2.SimpleExoPlayer
+-dontwarn com.google.android.exoplayer2.SimpleExoPlayer
 
 # APPLOVIN
 -dontwarn com.applovin.**
@@ -144,10 +148,6 @@
 # LOOPME
 -dontwarn com.loopme.**
 -keep class com.loopme.** { *; }
-
-# ADFALCON
--dontwarn com.noqoush.**
--keep class com.noqoush.** { *; }
 
 # MEDIABRIX
 -keep class com.mediabrix.** { *; }
@@ -170,15 +170,17 @@
 -keep public class com.flymob.sdk.common.** { public *; }
 
 # TAPJOY
--keep class com.tapjoy.** { *; }
+-keep class com.tapjoy.** {*;}
+-keep class com.moat.** {*;}
 -keepattributes JavascriptInterface
--keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepattributes *Annotation*
+-keep class * extends java.util.ListResourceBundle {protected Object[][] getContents();}
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {public static final *** NULL;}
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
--keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
--keep class com.google.android.gms.ads.identifier.** { *; }
--dontwarn com.tapjoy.internal.**
+-keepclassmembernames class * {@com.google.android.gms.common.annotation.KeepName *;}
+-keepnames class * implements android.os.Parcelable {public static final ** CREATOR;}
+-keep class com.google.android.gms.ads.identifier.** {*;}
+-dontwarn com.tapjoy.**
 
 # PUBNATIVE
 -keepattributes Signature
@@ -199,93 +201,12 @@
 -keep class com.inlocomedia.** { *; }
 -dontwarn com.inlocomedia.**
 
-# TEADS
-# For WebView JavascriptInterface
--keepattributes JavascriptInterface
--keep public class tv.teads.sdk.adContainer.layout.webview.** { *; }
-
-# Jackson
--dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
--keepnames class com.fasterxml.jackson.** { *; }
--keep public class tv.teads.sdk.adServer.parser.json.** {
-    public protected *;
-    public void set*(***);
-    public *** get*();
-}
--keepattributes *Annotation*,EnclosingMethod,Signature
--keep class com.fasterxml.jackson.databind.ObjectMapper {
-    public <methods>;
-    protected <methods>;
-}
--keep class com.fasterxml.jackson.databind.ObjectWriter {
-    public ** writeValueAsString(**);
-}
-
-# Okio
--dontwarn okio.**
-
-# Enums
--keepattributes InnerClasses
--keep public enum  tv.teads.sdk.adContent.AdContent$** {
-    **[] $VALUES;
-    public *;
-}
--keep public enum  tv.teads.sdk.publisher.TeadsLog$** {
-    **[] $VALUES;
-    public *;
-}
-
-# Google Play Services (used by reflection)
--keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient {
-    **[] $VALUES;
-    public *;
-}
-
--keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient$* {
-   *;
-}
-
-# RUBICON
--keep public class com.rfm.** { *; }
--dontwarn com.rfm.**
-
 # FYBER
 -keep public class com.fyber.** { *; }
 -dontwarn com.fyber.**
-
--keep class com.fyber.mediation.MediationConfigProvider {
-    public static *;
-}
--keep class com.fyber.mediation.MediationAdapterStarter {
-    public static *;
-}
--keepclassmembers class com.fyber.ads.videos.mediation.** {
-    void setValue(java.lang.String);
-}
-
-# CONVERSANT
--keep class com.greystripe.** { *; }
-
-# ARTOFCLICK
--keep class com.artofclick.publisher_sdk.** { *; }
--dontwarn com.artofclick.publisher_sdk.**
-
-# INSTAL
--keep class com.instal.** { *; }
--dontwarn com.instal.**
-
-# APPBRAIN
--keep public class com.appbrain.KeepClass
--keep public class * implements com.appbrain.KeepClass
--keepclassmembers class * implements com.appbrain.KeepClass {
-    <methods>;
-}
--keep class android.webkit.JavascriptInterface
--dontwarn android.webkit.JavascriptInterface
-
-# VIDEMOB
--keep class com.cydersoft.core.** { *; }
--dontwarn com.cydersoft.core.**
+-keep class com.fyber.mediation.MediationConfigProvider { public static *; }
+-keep class com.fyber.mediation.MediationAdapterStarter { public static *; }
+-keepclassmembers class com.fyber.ads.videos.mediation.** { void setValue(java.lang.String); }
 
 # YOUAPPI
 -keep class com.youappi.ai.sdk.** { *; }
@@ -301,9 +222,7 @@
 -dontwarn com.google.android.gms.**
 -keep class com.apptracker.** { *; }
 -dontwarn com.apptracker.**
--keepclassmembers class **.R$* {
-	public static <fields>;
-}
+-keepclassmembers class **.R$* { public static <fields>; }
 -keep class **.R$*
 
 # INNERACTIVE
@@ -322,10 +241,12 @@
 
 # TAPPX
 -keepattributes *Annotation*
--keepclassmembers class com.google.**.R$* {
-    public static <fields>;
-}
+-keepclassmembers class com.google.**.R$* { public static <fields>; }
 -keep public class com.google.ads.** {*;}
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
+
+# ADTRIAL
+-keep class com.adtrial.** { *; }
+-dontwarn com.adtrial.**

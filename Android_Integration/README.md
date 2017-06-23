@@ -51,42 +51,39 @@ Optional permission removing
 ```sh
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
 ```
-##### VideMob
-```sh
-<provider
-    android:name="com.cydersoft.core.database.CydersoftContentProvider"
-    android:authorities="< PACKAGE_NAME >"
-    android:exported="false" />
-```
 ### Gradle
 Add the following lines to your module dependencies.
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.2.9', ext: 'aar')
-compile(name: 'appnext-2.0.1', ext: 'aar')
-compile(name: 'facebook-4.22', ext: 'aar')
-compile(name: 'loopme-5.1.5', ext: 'aar')
+compile(name: 'admost-1.3.3', ext: 'aar')
+compile(name: 'appnext-2.0.3.459', ext: 'aar')
+compile(name: 'facebook-4.23', ext: 'aar')
+compile(name: 'loopme-5.1.7', ext: 'aar')
 compile(name: 'millenialmedia-6.4.0', ext: 'aar')
+compile(name: 'tappx-3.0.4', ext: 'aar')
 compile(name: 'unityads-2.1.0', ext: 'aar')
+compile(name: 'youappi-2.0.8', ext: 'aar')
 
 compile 'com.android.volley:volley:1.0.0'
 compile 'com.google.android.gms:play-services-ads:10.0.1'
 
-compile('com.mopub:mopub-sdk:4.13.0@aar') { transitive = true }
+compile('com.mopub:mopub-sdk:4.15.0@aar') { transitive = true }
 
-compile('tv.teads.sdk:androidsdk:2.3.12:fullRelease@aar') { transitive = true }
+compile 'com.inlocomedia.android:android-sdk:3.0.8'
 
-compile 'net.pubnative:library:2.3.15',
-        'net.pubnative:library.interstitial:2.3.15',
-        'net.pubnative:library.feed.banner:2.3.15',
-        'net.pubnative:library.video:2.3.15'
+compile 'com.fyber:fyber-sdk:8.12.2'
+
+compile 'net.pubnative:library:2.3.16',
+        'net.pubnative:library.interstitial:2.3.16',
+        'net.pubnative:library.feed.banner:2.3.16',
+        'net.pubnative:library.video:2.3.16'
 ```
 ##### AdColony
 ```gradle
 compile 'com.android.support:support-annotations:+'
 ```
-##### AdFalcon, NativeX
+##### NativeX
 ```gradle
 compile 'com.google.code.gson:gson:+'
 ```
@@ -123,7 +120,7 @@ repositories {
         dirs 'libs'
     }
     jcenter()
-    maven { url "http://dl.bintray.com/teads/TeadsSDK-android" }
+    maven { url "https://fyber.bintray.com/maven" }
 }
 ```
 # Usage
@@ -231,6 +228,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.mainImageId(R.id.ad_image)
 	.backImageId(R.id.ad_back)
 	.attributionId(R.id.ad_attribution)
+    .isRoundedMode(false)
 	.isFixed(false)
 	.isCloseable(false)
 	.build();
