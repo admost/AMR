@@ -27,7 +27,6 @@ Add the following permissions optionally into your AndroidManifest.xml for impro
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 ```
 Add the following lines inside the application tag.
 ##### AppLovin
@@ -56,10 +55,10 @@ Add the following lines to your module dependencies.
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.3.3', ext: 'aar')
+compile(name: 'admost-1.3.4', ext: 'aar')
 compile(name: 'appnext-2.0.3.459', ext: 'aar')
+compile(name: 'cactusroad-1.0', ext: 'aar')
 compile(name: 'facebook-4.23', ext: 'aar')
-compile(name: 'loopme-5.1.7', ext: 'aar')
 compile(name: 'millenialmedia-6.4.0', ext: 'aar')
 compile(name: 'tappx-3.0.4', ext: 'aar')
 compile(name: 'unityads-2.1.0', ext: 'aar')
@@ -139,7 +138,25 @@ configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());
 ```
-For all ad type, AMR sdk has to be aware of the activities lifecycle. So please use the following methods of AMR in your activities which ads are called.
+Use the following methods of AMR in your Activities which ads are called
+##### MoPub & Chartoost
+```java
+@Override
+public void onBackPressed() {
+    super.onBackPressed();
+    AdMost.getInstance().onBackPressed(this);
+}
+```
+##### Fyber
+```java
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    //Only for Fyber Publishers
+    if (requestCode == AdMost.FYBER_REQUEST_CODE)
+        OFFERWALL.setFyberResult(resultCode, data);
+}
+```
+and if the project minSDKVersion is 13 (Honeycomb) or older.
 ```java
 @Override
 public void onStart() {
@@ -169,19 +186,6 @@ public void onStop() {
 public void onDestroy() {
     super.onDestroy();
     AdMost.getInstance().onDestroy(this);
-}
-
-@Override
-public void onBackPressed() {
-    super.onBackPressed();
-    AdMost.getInstance().onBackPressed(this);
-}
-
-@Override
-public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    //Only for Fyber Publishers
-    if (requestCode == AdMost.FYBER_REQUEST_CODE)
-        OFFERWALL.setFyberResult(resultCode, data);
 }
 ```
 ### Banner Ads
