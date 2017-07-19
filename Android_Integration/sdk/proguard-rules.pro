@@ -250,14 +250,18 @@
 -keep class com.unity3d.ads.** { *; }
 
 # VUNGLE
--dontwarn com.vungle.**
--keep class com.vungle.** { *; }
--keep class javax.inject.**
 -keepattributes *Annotation*
 -keepattributes Signature
+-dontwarn com.vungle.**
+-dontnote com.vungle.**
+-keep class com.vungle.** { *; }
+-keep class javax.inject.**
 -keep class dagger.**
 -keep class de.greenbot.**
 -keep class rx.**
+-dontwarn rx.**
+-dontwarn com.moat.**
+-keep class com.moat.** { *; }
 
 # YOUAPPI
 -keep class com.youappi.ai.sdk.** { *; }

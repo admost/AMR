@@ -55,12 +55,13 @@ Add the following lines to your module dependencies.
 ```gradle
 compile fileTree(include: ['*.jar'], dir: 'libs')
 
-compile(name: 'admost-1.3.4', ext: 'aar')
+compile(name: 'admost-1.3.5', ext: 'aar')
+compile(name: 'adtrial-2017-07-17', ext: 'aar')
 compile(name: 'appnext-2.0.3.459', ext: 'aar')
 compile(name: 'cactusroad-1.0', ext: 'aar')
-compile(name: 'facebook-4.23', ext: 'aar')
+compile(name: 'facebook-4.24', ext: 'aar')
 compile(name: 'millenialmedia-6.4.0', ext: 'aar')
-compile(name: 'tappx-3.0.4', ext: 'aar')
+compile(name: 'tappx-3.0.5', ext: 'aar')
 compile(name: 'unityads-2.1.0', ext: 'aar')
 compile(name: 'youappi-2.0.8', ext: 'aar')
 
@@ -139,7 +140,7 @@ configuration.interests(“Games, Sports, News”);
 AdMost.getInstance().init(configuration.build());
 ```
 Use the following methods of AMR in your Activities which ads are called
-##### MoPub & Chartoost
+##### MoPub & Chartboost
 ```java
 @Override
 public void onBackPressed() {
