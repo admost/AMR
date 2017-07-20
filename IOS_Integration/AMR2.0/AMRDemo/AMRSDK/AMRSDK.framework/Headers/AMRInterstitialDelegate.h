@@ -32,6 +32,14 @@
  */
 - (void)didFailToReceiveInterstitial:(AMRInterstitial *)interstitial error:(AMRError * )error;
 
+@optional
+
+/**
+ * Successfully shown received interstital.
+ * @param interstitial Shown AMRInterstitial object
+ */
+- (void)didShowInterstitial:(AMRInterstitial *)interstitial;
+
 /**
  * Presented interstital is dismissed. Continue stopped tasks while the interstital ad is present.
  * @param interstitial Dismissed AMRInterstitial object

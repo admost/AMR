@@ -35,16 +35,16 @@
 @optional
 
 /**
- * Presented rewardedvideo is dismissed. Continue stopped tasks while the rewardedvideo ad is present. Called both after didCompleteRewardedVideo and didCancelRewardedVideo delegate callbacks.
+ * Successfully shown received rewarded video.
+ * @param rewardedVideo Shown AMRRewardedVideo object
+ */
+- (void)didShowRewardedVideo:(AMRRewardedVideo *)rewardedVideo;
+
+/**
+ * Presented rewardedvideo is dismissed. Continue stopped tasks while the rewardedvideo ad is present. Called after didCompleteRewardedVideo delegate callback.
  * @param rewardedVideo Dismissed AMRRewardedVideo object
  */
 - (void)didDismissRewardedVideo:(AMRRewardedVideo *)rewardedVideo;
-
-/**
- * User skipped rewarded video -if skip option is provided by network-. User is not rewarded.
- * @param rewardedVideo AMRRewardedVideo object
- */
-- (void)didCancelRewardedVideo:(AMRRewardedVideo *)rewardedVideo;
 
 /**
  * User watched rewarded video till end. User can get the reward.

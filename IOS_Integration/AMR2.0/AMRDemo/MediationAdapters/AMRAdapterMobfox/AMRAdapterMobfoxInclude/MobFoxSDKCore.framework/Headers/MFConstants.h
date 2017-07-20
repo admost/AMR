@@ -9,8 +9,12 @@
 
 #import <UIKit/UIKit.h>
 
+/* Core target's name  */
+extern NSString* const CORE_TARGET;
+
+
 /* Versions */
-#define SDK_VERSION @"Core_3.1.5"
+#define SDK_VERSION @"Core_3.1.6"
 #define OS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define FW_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]
 #define BUILD_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey]

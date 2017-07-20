@@ -16,13 +16,15 @@
   + [Customize Native Ad Appearance (Optional)](#usage2.2)
   + [Interstitial Ads](#usage3)
   + [Rewarded Video Ads](#usage4)
+* [Extras](#extras)
+  + [DFP/Admob Mediation Integration](#extras1)
 
 ## Prerequisites
 * iOS 7 or later. 
 * Xcode 8.3 or later.
 * Application Id provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
 * Zone Id(s) provided in [Admost Mediation Dashboard](http://dashboard.admost.com).
-* For testing you can use following IDs;
+* For testing you can use following Ids;
 ```
 Application Id: @"15066ddc-9c18-492c-8185-bea7e4c7f88c"
 Banner Zone Id: @"b4009772-de04-42c4-bbaa-c18da9e4a1ab"
@@ -76,7 +78,7 @@ target 'MyAwesomeTarget' do
    pod 'AMRAdapterTapjoy', '~> 11.10'
    pod 'AMRAdapterTappx', '~> 3.0'
    pod 'AMRAdapterUnity', '~> 2.1'
-   pod 'AMRAdapterVungle', '~> 4.0'
+   pod 'AMRAdapterVungle', '~> 4.1'
 
 end
 
@@ -118,6 +120,7 @@ CoreMotion.framework
 CoreTelephony.framework
 EventKit.framework
 EventKitUI.framework
+ImageIO.framework
 Foundation.framework
 JavaScriptCore.framework
 libsqlite3.tbd
@@ -134,7 +137,7 @@ WebKit.framework
 + <a name="install3"></a>**Mediation Adapters**  
 
 At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for further details.  
-Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/kokteyldev/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
+Create a folder called Mediation Adapters (name is optonal) and add adapters in [AMRDemo/MediationAdapters](https://github.com/admost/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder.  
 ```perl
 AMRAdapterAdcolony
 AMRAdapterAdmob
@@ -332,3 +335,30 @@ If `didFailToReceiveRewardedVideo` callback method is called investigate `error`
     NSLog(error.errorDescription);
 }
 ```
+
+## Extras
++ <a name="extras1"></a>**DFP/Admob Mediation Integration**   
+
+The AMR DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP or Admob Mediation set as main ad mediation layer.
+
+In order to show AMR ads in DFP/Admob Mediation you should first follow dedicated steps of DFP or Admob Mediation to set AMR as an ad mediation source.
+
+After adding AMR as an ad mediation source you should define class names for banner and interstitial ad custom events. Enter `AMRDFPCustomEventBanner` and `AMRDFPCustomEventInterstitial` class names for banner and interstitial class names respectively. You must pass your AMR zone Id to custom event via Parameter field.
+
+![dfp banner](https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/Readme.Assets/dfp_banner.png)
+
+![dfp interstitial](https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/Readme.Assets/dfp_interstitial.png)
+
+Include Admost DFP Adapter in your project after setup, if you are using CocoaPods add following line to ypur podfile and run the following command to install.
+```ruby
+pod #AMRAdapterDFP
+```
+```bash
+$ pod install
+```
+
+If you are integration Admost manually add `AMRAdapterDFP` from [AMRDemo/MediationAdapters](https://github.com/admost/AMR/tree/master/IOS_Integration/AMR2.0/AMRDemo/MediationAdapters) folder to your project.
+
+Now you can show AMR banner and interstitial ads via DFP or Admob Mediation.
+
+You can check DFP banner and interstitial example in demo project; [DFPCustomEventsViewController](https://github.com/admost/AMR/blob/master/IOS_Integration/AMR2.0/AMRDemo/AMRDemo/DFPCustomEvents/DFPCustomEventsViewController.m). 

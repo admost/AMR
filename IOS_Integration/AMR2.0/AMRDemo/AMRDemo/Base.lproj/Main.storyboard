@@ -22,9 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Iyl-8A-QR4">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                            </activityIndicatorView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaH-5J-Iw2">
                                 <rect key="frame" x="0.0" y="74" width="320" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,12 +46,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Iyl-8A-QR4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="31y-0g-DjY"/>
                             <constraint firstItem="NaH-5J-Iw2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Amq-sf-Cxk"/>
                             <constraint firstAttribute="trailing" secondItem="Mt7-WB-kLX" secondAttribute="trailing" id="Bb4-Ee-Gsh"/>
                             <constraint firstAttribute="trailing" secondItem="HYF-ix-BQw" secondAttribute="trailing" id="BcE-LC-GFX"/>
                             <constraint firstItem="NaH-5J-Iw2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Cfv-05-KHv"/>
-                            <constraint firstItem="Iyl-8A-QR4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nyi-GU-D1M"/>
                             <constraint firstItem="HYF-ix-BQw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ssv-G5-RBs"/>
                             <constraint firstItem="HYF-ix-BQw" firstAttribute="top" secondItem="Mt7-WB-kLX" secondAttribute="bottom" constant="20" id="cC6-Ac-29S"/>
                             <constraint firstAttribute="trailing" secondItem="NaH-5J-Iw2" secondAttribute="trailing" id="myO-bJ-wa6"/>
@@ -70,7 +65,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AILoading" destination="Iyl-8A-QR4" id="nIo-iw-xM7"/>
                         <outlet property="VBannerContainer250" destination="HYF-ix-BQw" id="1eF-Pj-QF6"/>
                         <outlet property="VBannerContainer50" destination="NaH-5J-Iw2" id="LdI-Xx-7HP"/>
                         <outlet property="VBannerContainer90" destination="Mt7-WB-kLX" id="c8I-hq-A8I"/>
@@ -106,53 +100,62 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFn-gn-S36">
-                                <rect key="frame" x="99" y="241" width="123" height="30"/>
+                                <rect key="frame" x="99" y="231" width="123" height="30"/>
                                 <state key="normal" title="Banner Table Test"/>
                                 <connections>
                                     <segue destination="K9F-xf-Muq" kind="show" id="MWd-uR-iJS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3s-WJ-KrN">
-                                <rect key="frame" x="109" y="371" width="102" height="30"/>
+                                <rect key="frame" x="109" y="341" width="102" height="30"/>
                                 <state key="normal" title="Rewarded Test"/>
                                 <connections>
                                     <segue destination="90D-gQ-Q8Q" kind="show" id="0kj-Ay-8LI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxo-ai-a3d">
-                                <rect key="frame" x="113" y="436" width="95" height="30"/>
+                                <rect key="frame" x="113" y="396" width="95" height="30"/>
                                 <state key="normal" title="Offerwall Test"/>
                                 <connections>
                                     <segue destination="1H1-j4-Pfq" kind="show" id="M8n-C6-XkT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-lR-qiU">
-                                <rect key="frame" x="105" y="501" width="111" height="30"/>
+                                <rect key="frame" x="105" y="451" width="111" height="30"/>
                                 <state key="normal" title="Spend Currency"/>
                                 <connections>
                                     <segue destination="kUG-jn-9JX" kind="show" id="Yx7-pe-YMs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-MQ-K1o">
-                                <rect key="frame" x="110" y="306" width="101" height="30"/>
+                                <rect key="frame" x="110" y="286" width="101" height="30"/>
                                 <state key="normal" title="Interstitial Test"/>
                                 <connections>
                                     <segue destination="Lgj-j3-aAx" kind="show" id="TW4-ra-iRO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-nN-bQy">
+                                <rect key="frame" x="92" y="506" width="136" height="30"/>
+                                <state key="normal" title="DFP Custom Events"/>
+                                <connections>
+                                    <segue destination="8m5-Eb-KID" kind="show" id="ChL-2T-LRk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Su8-MQ-K1o" firstAttribute="top" secondItem="HFn-gn-S36" secondAttribute="bottom" constant="35" id="A2X-zU-Pt5"/>
+                            <constraint firstItem="vM6-nN-bQy" firstAttribute="top" secondItem="2Gu-lR-qiU" secondAttribute="bottom" constant="25" id="11B-Zw-4un"/>
+                            <constraint firstItem="Su8-MQ-K1o" firstAttribute="top" secondItem="HFn-gn-S36" secondAttribute="bottom" constant="25" id="A2X-zU-Pt5"/>
                             <constraint firstItem="2Gu-lR-qiU" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="DC0-OU-hNa"/>
                             <constraint firstItem="xxo-ai-a3d" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="LLp-Kz-Mun"/>
                             <constraint firstItem="4zx-i3-QtJ" firstAttribute="top" secondItem="V6y-Dm-BO3" secondAttribute="bottom" constant="47" id="QHT-pg-EXD"/>
-                            <constraint firstItem="e3s-WJ-KrN" firstAttribute="top" secondItem="Su8-MQ-K1o" secondAttribute="bottom" constant="35" id="SzS-OB-Pcg"/>
+                            <constraint firstItem="vM6-nN-bQy" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="Qoc-Dk-WWC"/>
+                            <constraint firstItem="e3s-WJ-KrN" firstAttribute="top" secondItem="Su8-MQ-K1o" secondAttribute="bottom" constant="25" id="SzS-OB-Pcg"/>
                             <constraint firstItem="IV7-3X-8EL" firstAttribute="top" secondItem="4zx-i3-QtJ" secondAttribute="bottom" constant="35" id="UYF-y5-cwY"/>
                             <constraint firstItem="HFn-gn-S36" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="ZvN-3p-HWX"/>
-                            <constraint firstItem="HFn-gn-S36" firstAttribute="top" secondItem="IV7-3X-8EL" secondAttribute="bottom" constant="35" id="a9T-bV-wp5"/>
-                            <constraint firstItem="xxo-ai-a3d" firstAttribute="top" secondItem="e3s-WJ-KrN" secondAttribute="bottom" constant="35" id="bX4-RC-gbM"/>
-                            <constraint firstItem="2Gu-lR-qiU" firstAttribute="top" secondItem="xxo-ai-a3d" secondAttribute="bottom" constant="35" id="kSj-4B-gMR"/>
+                            <constraint firstItem="HFn-gn-S36" firstAttribute="top" secondItem="IV7-3X-8EL" secondAttribute="bottom" constant="25" id="a9T-bV-wp5"/>
+                            <constraint firstItem="xxo-ai-a3d" firstAttribute="top" secondItem="e3s-WJ-KrN" secondAttribute="bottom" constant="25" id="bX4-RC-gbM"/>
+                            <constraint firstItem="2Gu-lR-qiU" firstAttribute="top" secondItem="xxo-ai-a3d" secondAttribute="bottom" constant="25" id="kSj-4B-gMR"/>
                             <constraint firstItem="Su8-MQ-K1o" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="lZN-Za-zsa"/>
                             <constraint firstItem="e3s-WJ-KrN" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="lhi-6C-0hB"/>
                             <constraint firstItem="IV7-3X-8EL" firstAttribute="centerX" secondItem="sxM-Gf-Sa9" secondAttribute="centerX" id="r4x-Y3-XLd"/>
@@ -401,6 +404,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b9-At-rch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4083.75" y="450"/>
+        </scene>
+        <!--DFP Custom Events-->
+        <scene sceneID="ZZY-en-U1o">
+            <objects>
+                <viewController id="8m5-Eb-KID" customClass="DFPCustomEventsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fkg-sR-RiU"/>
+                        <viewControllerLayoutGuide type="bottom" id="e1l-ks-noN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zen-ui-PR5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkw-ak-gxT">
+                                <rect key="frame" x="117" y="164" width="86" height="30"/>
+                                <state key="normal" title="Load banner"/>
+                                <connections>
+                                    <action selector="loadBanner" destination="8m5-Eb-KID" eventType="touchUpInside" id="mXP-7l-qPH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFO-Gj-A5T">
+                                <rect key="frame" x="108" y="219" width="105" height="30"/>
+                                <state key="normal" title="Load interstitial"/>
+                                <connections>
+                                    <action selector="loadInterstitial" destination="8m5-Eb-KID" eventType="touchUpInside" id="3Pn-a3-8Nf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHH-dv-Y0j">
+                                <rect key="frame" x="101" y="269" width="118" height="30"/>
+                                <state key="normal" title="Load DFP banner"/>
+                                <connections>
+                                    <action selector="loadDFPBanner" destination="8m5-Eb-KID" eventType="touchUpInside" id="5CM-El-Smo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-HN-OxA">
+                                <rect key="frame" x="91" y="319" width="138" height="30"/>
+                                <state key="normal" title="Load DFP interstitial"/>
+                                <connections>
+                                    <action selector="loadDFPInterstitial" destination="8m5-Eb-KID" eventType="touchUpInside" id="Vp3-zw-o7u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uHH-dv-Y0j" firstAttribute="top" secondItem="pFO-Gj-A5T" secondAttribute="bottom" constant="20" id="3xA-aU-etp"/>
+                            <constraint firstItem="pFO-Gj-A5T" firstAttribute="top" secondItem="pkw-ak-gxT" secondAttribute="bottom" constant="25" id="DBc-ry-Oto"/>
+                            <constraint firstItem="L2K-HN-OxA" firstAttribute="top" secondItem="uHH-dv-Y0j" secondAttribute="bottom" constant="20" id="L4n-fj-87z"/>
+                            <constraint firstItem="pkw-ak-gxT" firstAttribute="centerX" secondItem="zen-ui-PR5" secondAttribute="centerX" id="R4j-qH-zBG"/>
+                            <constraint firstItem="pFO-Gj-A5T" firstAttribute="centerX" secondItem="zen-ui-PR5" secondAttribute="centerX" id="TQv-sy-1wq"/>
+                            <constraint firstItem="uHH-dv-Y0j" firstAttribute="centerX" secondItem="zen-ui-PR5" secondAttribute="centerX" id="aG2-ak-Rfv"/>
+                            <constraint firstItem="L2K-HN-OxA" firstAttribute="centerX" secondItem="zen-ui-PR5" secondAttribute="centerX" id="bh4-y2-Mxa"/>
+                            <constraint firstItem="pkw-ak-gxT" firstAttribute="top" secondItem="Fkg-sR-RiU" secondAttribute="bottom" constant="100" id="tTV-JP-ImX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="DFP Custom Events" id="gVa-Iz-TnY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ke-VNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4929" y="455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fra-vw-bR3">

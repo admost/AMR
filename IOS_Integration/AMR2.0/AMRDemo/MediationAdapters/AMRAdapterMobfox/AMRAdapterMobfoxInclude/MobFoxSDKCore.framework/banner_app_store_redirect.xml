@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request type="textAd"><htmlString><![CDATA[
+    
+    <iframe src="http://appstore.com" style="width:304px;height:228px;">
+    
+    </iframe>
+  
+]]></htmlString><clicktype>safari</clicktype><clickurl><![CDATA[http://tokyo-my.mobfox.com/exchange.click.php?h=0973a739e5a5d0879b8702fd21d6351d]]></clickurl><urltype>link</urltype><refresh>30</refresh><scale>no</scale><skippreflight>yes</skippreflight><demandPartner><id>422</id><name><![CDATA[MobFox DSP - APAC]]></name></demandPartner></request>
+
