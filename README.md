@@ -1,3 +1,5 @@
+## [Integration Guides](https://admost.github.io/)
+
 ## What is AMR?
  
 AMR (Admost Mediation Router) is a solely mobile ad mediation tool which is used to optimise the ad networks, country and ad type based, to maximise the revenue of applications.

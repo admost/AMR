@@ -1,6 +1,0 @@
-framework module AMRAdmostSDK {
-  umbrella header "AMRAdmostSDK.h"
-
-  export *
-  module * { export * }
-}
